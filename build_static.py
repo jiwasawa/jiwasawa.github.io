@@ -8,18 +8,33 @@ import signal
 import sys
 
 
-def fix_github_pages_links(html_content, repo_name):
+def fix_github_pages_links(html_content, repo_name, current_path):
     """
     Rewrite all internal links to include the repository name for GitHub Pages.
+    Also fixes relative paths for assets like images and PDFs.
+    
+    Args:
+        html_content: The HTML content to fix
+        repo_name: The GitHub repository name
+        current_path: The current path being processed (e.g., "/", "/publications")
     """
-    # Fix href attributes in a tags
+    # Fix href and src attributes that start with "/" (absolute paths)
     html_content = html_content.replace('href="/', f'href="/{repo_name}/')
-    
-    # Fix src attributes in img, script tags
     html_content = html_content.replace('src="/', f'src="/{repo_name}/')
-    
-    # Fix other attributes that might contain links (like data-src)
     html_content = html_content.replace('data-src="/', f'data-src="/{repo_name}/')
+    
+    # Fix relative paths for assets based on current path depth
+    if current_path != "/":
+        # Count the directory depth
+        depth = current_path.count("/") - 1  # -1 because the leading "/" counts as one
+        path_prefix = "../" * depth
+        
+        # Replace relative asset references with path-adjusted ones
+        # Be careful to only replace attributes that don't already have a protocol or leading /
+        html_content = html_content.replace('src="profile_img.jpg"', f'src="{path_prefix}profile_img.jpg"')
+        html_content = html_content.replace('href="junichiro_iwasawa_cv.pdf"', f'href="{path_prefix}junichiro_iwasawa_cv.pdf"')
+        
+        # Add more replacements for other assets as needed
     
     return html_content
 
@@ -41,6 +56,8 @@ if Path("static").exists():
 # Copy profile image if it exists
 if Path("profile_img.jpg").exists():
     shutil.copy("profile_img.jpg", output_dir / "profile_img.jpg")
+if Path("junichiro_iwasawa_cv.pdf").exists():
+    shutil.copy("junichiro_iwasawa_cv.pdf", output_dir / "junichiro_iwasawa_cv.pdf")
 
 # Create a simple robots.txt
 with open(output_dir / "robots.txt", "w") as f:
