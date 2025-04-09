@@ -70,9 +70,9 @@ with open(output_dir / ".nojekyll", "w") as f:
 # Define routes to capture
 routes = [
     ("/", "index.html"),
-    ("/publications", "publications/index.html"),
-    ("/research", "research/index.html"),
-    ("/talks", "talks/index.html"),
+    ("/publications", "publicationshtml"),
+    ("/research", "research.html"),
+    ("/talks", "talks.html"),
     ("/blog", "blog/index.html")
 ]
 
