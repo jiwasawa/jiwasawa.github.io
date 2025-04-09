@@ -2,9 +2,7 @@ from fasthtml.common import *
 from monsterui.all import *
 import os, shutil
 from pathlib import Path
-
-# Import your app and route handler from main.py
-from main import app, rt
+from fasthtml.render import render_html
 
 # Import your page components
 from src.home import home
@@ -27,30 +25,41 @@ static_dir.mkdir(exist_ok=True)
 if Path("static").exists():
     shutil.copytree("static", static_dir, dirs_exist_ok=True)
 
-# Helper function to render HTML properly
-def render_page(title, content):
-    from fasthtml.common import render_to_string
-    page = Title(title), content
-    return "<!DOCTYPE html>\n" + render_to_string(page)
+# Set up theme and headers
+theme_headers = Theme.blue.headers()
 
 # Generate HTML for each page
 pages = [
-    ("index.html", "About - Junichiro Iwasawa", home()),
-    ("publications/index.html", "Publications - Junichiro Iwasawa", publications_page()),
-    ("research/index.html", "Research - Junichiro Iwasawa", research_page()),
-    ("talks/index.html", "Talks - Junichiro Iwasawa", presentations_page()),
-    ("blog/index.html", "Blog - Junichiro Iwasawa", blog_page())
+    ("index.html", "Home", home()),
+    ("publications/index.html", "Publications", publications_page()),
+    ("research/index.html", "Research", research_page()),
+    ("talks/index.html", "Presentations", presentations_page()),
+    ("blog/index.html", "Blog", blog_page())
 ]
 
 for path, title, content in pages:
     file_path = output_dir / path
     file_path.parent.mkdir(exist_ok=True, parents=True)
     
-    # Render HTML properly
-    html = render_page(title, content)
+    # Wrap content with proper HTML structure including headers
+    full_page = Div(
+        "<!DOCTYPE html>",
+        Html(
+            Head(
+                Meta(charset="utf-8"),
+                Meta(name="viewport", content="width=device-width, initial-scale=1"),
+                Title(f"{title} - Junichiro Iwasawa"),
+                *theme_headers
+            ),
+            Body(content)
+        )
+    )
+    
+    # Render to HTML string with all dependencies
+    html_content = render_html(full_page)
     
     # Write to file
     with open(file_path, "w", encoding="utf-8") as f:
-        f.write(html)
+        f.write(html_content)
 
 print(f"Static site generated in {output_dir}")
