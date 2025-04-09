@@ -7,6 +7,23 @@ import time
 import signal
 import sys
 
+
+def fix_github_pages_links(html_content, repo_name):
+    """
+    Rewrite all internal links to include the repository name for GitHub Pages.
+    """
+    # Fix href attributes in a tags
+    html_content = html_content.replace('href="/', f'href="/{repo_name}/')
+    
+    # Fix src attributes in img, script tags
+    html_content = html_content.replace('src="/', f'src="/{repo_name}/')
+    
+    # Fix other attributes that might contain links (like data-src)
+    html_content = html_content.replace('data-src="/', f'data-src="/{repo_name}/')
+    
+    return html_content
+
+
 # Create output directory
 output_dir = Path("_site")
 if output_dir.exists():
@@ -65,10 +82,12 @@ try:
             # Create directory if needed
             file_path = output_dir / output_path
             file_path.parent.mkdir(exist_ok=True, parents=True)
+
+            fixed_html = fix_github_pages_links(response.text, "personal-webpage")
             
             # Save the HTML content
             with open(file_path, "w", encoding="utf-8") as f:
-                f.write(response.text)
+                f.write(fixed_html)
             
             print(f"Saved {output_path}")
         else:
