@@ -27,28 +27,30 @@ static_dir.mkdir(exist_ok=True)
 if Path("static").exists():
     shutil.copytree("static", static_dir, dirs_exist_ok=True)
 
+# Helper function to render HTML properly
+def render_page(title, content):
+    from fasthtml.common import render_to_string
+    page = Title(title), content
+    return "<!DOCTYPE html>\n" + render_to_string(page)
+
 # Generate HTML for each page
 pages = [
-    ("index.html", home()),
-    ("publications/index.html", publications_page()),
-    ("research/index.html", research_page()),
-    ("talks/index.html", presentations_page()),
-    ("blog/index.html", blog_page())
+    ("index.html", "About - Junichiro Iwasawa", home()),
+    ("publications/index.html", "Publications - Junichiro Iwasawa", publications_page()),
+    ("research/index.html", "Research - Junichiro Iwasawa", research_page()),
+    ("talks/index.html", "Talks - Junichiro Iwasawa", presentations_page()),
+    ("blog/index.html", "Blog - Junichiro Iwasawa", blog_page())
 ]
 
-for path, content in pages:
+for path, title, content in pages:
     file_path = output_dir / path
     file_path.parent.mkdir(exist_ok=True, parents=True)
     
-    # Convert FT objects to HTML string with proper doctype
-    html_content = Div(
-        Title(f"{path.split('/')[0].title() if path != 'index.html' else 'About'} - Junichiro Iwasawa"),
-        content
-    )
-    html = "<!DOCTYPE html>\n" + str(html_content)
+    # Render HTML properly
+    html = render_page(title, content)
     
     # Write to file
-    with open(file_path, "w") as f:
+    with open(file_path, "w", encoding="utf-8") as f:
         f.write(html)
 
 print(f"Static site generated in {output_dir}")
