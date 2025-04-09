@@ -1,2 +1,215 @@
-<!DOCTYPE html>
-(!doctype((),{'html': True}), html((head((meta((),{'charset': 'utf-8'}), meta((),{'name': 'viewport', 'content': 'width=device-width, initial-scale=1'}), title(('Home - Junichiro Iwasawa',),{}), link((),{'rel': 'stylesheet', 'href': 'https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css'}), script(('',),{'type': 'module', 'src': 'https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/core.iife.js'}), script(('',),{'type': 'module', 'src': 'https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/icon.iife.js'}), script(('',),{'src': 'https://cdn.tailwindcss.com/3.4.16'}), script(("\n    tailwind.config = {\n        darkMode: 'selector',\n    }\n    ",),{}), script(('\n        const htmlElement = document.documentElement;\n        \n          \n          const __FRANKEN__ = JSON.parse(localStorage.getItem("__FRANKEN__") || "{}");\n    \n          if (\n            __FRANKEN__.mode === "dark" ||\n            (!__FRANKEN__.mode &&\n              window.matchMedia("(prefers-color-scheme: dark)").matches)\n          ) {\n            htmlElement.classList.add("dark");\n          } else {\n            htmlElement.classList.remove("dark");\n          }\n        \n          htmlElement.classList.add("uk-theme-blue");\n          htmlElement.classList.add(__FRANKEN__.theme || "uk-theme-blue");\n          htmlElement.classList.add(__FRANKEN__.radii || "uk-radii-sm");\n          htmlElement.classList.add(__FRANKEN__.shadows || "uk-shadows-sm");\n          htmlElement.classList.add(__FRANKEN__.font || "uk-font-sm");\n    ',),{}), style(("\n.monster-navbar.navbar-bold a {\n    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n}\n.monster-navbar.navbar-bold a.uk-active {\n    transform: scale(1.15) ;\n    font-weight: bold;\n    text-shadow: 0 0 12px rgba(var(--p-rgb), 0.4);\n    letter-spacing: 0.02em;\n    color: hsl(var(--p) / 1);\n}\n.monster-navbar.navbar-underline a.uk-active { position: relative; }\n.monster-navbar.navbar-underline a.uk-active::after {\n    content: '';\n    position: absolute;\n    left: 0;\n    bottom: -2px;\n    width: 100%;\n    height: 2px;\n    background: currentColor;\n    animation: slideIn 0.3s ease forwards;\n}\n@keyframes slideIn {\n    from { transform: scaleX(0); }\n    to { transform: scaleX(1); }\n}\n",),{}), link((),{'rel': 'stylesheet', 'href': 'https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css'}), style(('\n:root {\n  --b1: from hsl(var(--background)) l c h;\n  --bc: from hsl(var(--foreground)) l c h;\n  --m: from hsl(var(--muted)) l c h;\n  --mc: from hsl(var(--muted-foreground)) l c h;\n  --po: from hsl(var(--popover)) l c h;\n  --poc: from hsl(var(--popover-foreground)) l c h;\n  --b2: from hsl(var(--card)) l c h;\n  --b2c: from hsl(var(--card-foreground)) l c h;\n  --br: from hsl(var(--border)) l c h;\n  --in: from hsl(var(--input)) l c h;\n  --p: from hsl(var(--primary)) l c h;\n  --pc: from hsl(var(--primary-foreground)) l c h;\n  --s: from hsl(var(--secondary)) l c h;\n  --sc: from hsl(var(--secondary-foreground)) l c h;\n  --a: from hsl(var(--accent)) l c h;\n  --ac: from hsl(var(--accent-foreground)) l c h;\n  --er: from hsl(var(--destructive)) l c h;\n  --erc: from hsl(var(--destructive-foreground)) l c h;\n  --b3: from hsl(var(--ring)) l c h;\n  --ch1: from hsl(var(--chart-1)) l c h;\n  --ch2: from hsl(var(--chart-2)) l c h;\n  --ch3: from hsl(var(--chart-3)) l c h;\n  --ch4: from hsl(var(--chart-4)) l c h;\n  --ch5: from hsl(var(--chart-5)) l c h;\n  --rd: var(--radius);\n}\n',),{}), link((),{'rel': 'stylesheet', 'href': 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css'}), script(("\n                import katex from 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.mjs';\n                import autoRender from 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.mjs';\n                const options = {\n                  delimiters: [\n                    {left: '$$', right: '$$', display: true},\n                    {left: '$', right: '$', display: false}\n                  ],\n                  ignoredClasses: ['nomath']\n                };\n\n                document.addEventListener('htmx:load', evt => {\n                  const element = evt.detail.elt || document.body;\n                  autoRender(element,options);\n                });\n                ",),{'type': 'module'})),{}), body((div((div((div((div((h3(('Junichiro Iwasawa',),{'class': 'uk-h3 text-2xl font-semibold'}), a((uk-icon((),{'icon': 'menu', 'height': 30, 'width': 30, 'class': None}),),{'class': 'md:hidden', 'data-uk-toggle': 'target: #_5nNMD2VQQdqSc1mwLEMSfg; cls: hidden'}), div((a(('About',),{'href': '/', 'class': 'mx-3'}), a(('Publications',),{'href': '/publications', 'class': 'mx-3'}), a(('Research',),{'href': '/research', 'class': 'mx-3'}), a(('Talks',),{'href': '/talks', 'class': 'mx-3'}), a(('Blog',),{'href': '/blog', 'class': 'mx-3'})),{'class': 'items-center space-x-4 hidden md:flex', 'uk-scrollspy-nav': False})),{'class': 'flex justify-between items-center w-full'}),),{'class': 'monster-navbar px-4 py-2 container navbar-underline'}), div((a(('About',),{'href': '/', 'class': 'mx-3'}), a(('Publications',),{'href': '/publications', 'class': 'mx-3'}), a(('Research',),{'href': '/research', 'class': 'mx-3'}), a(('Talks',),{'href': '/talks', 'class': 'mx-3'}), a(('Blog',),{'href': '/blog', 'class': 'mx-3'})),{'class': 'flex flex-col items-center justify-center space-y-4 px-4 py-2 container navbar-underline hidden md:hidden monster-navbar', 'id': '_5nNMD2VQQdqSc1mwLEMSfg', 'uk-scrollspy-nav': False})),{'class': ''}), div((div((div((div((img((),{'src': 'profile_img.jpg', 'class': 'rounded-full w-full h-auto mb-4'}), h4(('Junichiro Iwasawa',),{'class': 'uk-h4 text-1xl font-semibold'}), p(('Researcher at Preferred Networks Inc.',),{'class': <TextPresets.muted_sm: 'text-gray-500 dark:text-gray-200 text-sm'>}), p(('iwasawa [at] preferred.jp',),{'class': <TextPresets.muted_sm: 'text-gray-500 dark:text-gray-200 text-sm'>}), div((),{'class': 'mt-6'}), div((a((div((uk-icon((),{'icon': 'twitter', 'class': 'mr-2'}), span(('Twitter',),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'href': 'https://twitter.com/jiwasawa', 'class': 'flex items-center mb-2 text-primary hover:underline'}), a((div((uk-icon((),{'icon': 'linkedin', 'class': 'mr-2'}), span(('LinkedIn',),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'href': 'https://www.linkedin.com/in/junichiro-iwasawa-875b37130/', 'class': 'flex items-center mb-2 text-primary hover:underline'}), a((div((uk-icon((),{'icon': 'graduation-cap', 'class': 'mr-2'}), span(('Google Scholar',),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'href': 'https://scholar.google.co.jp/citations?user=LampCPIAAAAJ&hl=en', 'class': 'flex items-center mb-2 text-primary hover:underline'}), a((div((uk-icon((),{'icon': 'github', 'class': 'mr-2'}), span(('GitHub',),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'href': 'https://github.com/jiwasawa', 'class': 'flex items-center mb-2 text-primary hover:underline'}), a((div((uk-icon((),{'icon': 'book-open', 'class': 'mr-2'}), span(('researchmap',),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'href': 'https://researchmap.jp/jiwasawa?lang=en', 'class': 'flex items-center mb-2 text-primary hover:underline'})),{'class': 'mt-4 text-left'})),{'class': 'text-center p-4'}),),{'class': 'sticky top-8 col-span-2'}), div((div((h2(('About Junichiro',),{'class': 'uk-h2 text-3xl font-semibold mb-4'}), p(('As a Researcher at ', a(('Preferred Networks Inc.',),{'href': 'https://www.preferred.jp/en/', 'class': <AT.primary: 'uk-link text-primary hover:text-primary-focus underline'>}), ', I primarily engage with clients \n            in the healthcare and life sciences sectors.\n            Currently, I serve as the tech lead for providing BtoB solutions using Large Language Models (LLMs) .'),{'class': 'mb-3 leading-relaxed text-base'}), p(('I led a research project to build a medical domain-specialized LLM, \n            resulting in ', a(('Llama3-Preferred-MedSwallow-70B',),{'href': 'https://huggingface.co/pfnet/Llama3-Preferred-MedSwallow-70B', 'class': <AT.primary: 'uk-link text-primary hover:text-primary-focus underline'>}), ' and ', a(('Preferred-MedLLM-Qwen-72B',),{'href': 'https://huggingface.co/pfnet/Preferred-MedLLM-Qwen-72B', 'class': <AT.primary: 'uk-link text-primary hover:text-primary-focus underline'>}), ', the first open LLMs that \n            surpass GPT-4 in the Japanese Medical Licensing Exam (JMLE).\n            Over the past few years, I have also been leading a project for developing a deep learning based solution \n            aimed at enhancing the diagnosis of endometriosis through the analysis of MRIs, \n            in collaboration with a leading pharmaceutical company.'),{'class': 'mb-3 leading-relaxed text-base'}), p(('I have experience formulating problems through consultations with clients and \n            providing solutions based on deep learning / machine learning.\n            Additionally, I have been the main mentor for four research interns and one part-time engineer.',),{'class': 'mb-3 leading-relaxed text-base'}), p(('During my PhD, I have been working on the development of machine learning methods \n            for gene expression/mutation data to tackle the problem of antibiotic resistance of bacteria.',),{'class': 'mb-3 leading-relaxed text-base'}), div((label(('Large Language Models',),{'class': 'uk-label mr-2 mb-2'}), label(('Machine Learning',),{'class': 'uk-label mr-2 mb-2'}), label(('Healthcare',),{'class': 'uk-label mr-2 mb-2'}), label(('Biophysics',),{'class': 'uk-label mr-2 mb-2'}), label(('Statistical Physics',),{'class': 'uk-label mr-2 mb-2'})),{'class': 'mt-6 flex flex-wrap'})),{'class': 'uk-section mb-12'}), div((h2(('CV',),{'class': 'uk-h2 text-3xl font-semibold mb-4'}), p(('Junichiro Iwasawa (岩澤 諄一郎)',),{'class': 'text-gray-500 dark:text-gray-200 text-lg  mb-4'}), div((uk-icon((),{'icon': 'file-text', 'class': 'mr-2'}), a(('Link to CV (pdf)',),{'href': 'junichiro_iwasawa_cv.pdf', 'class': <AT.primary: 'uk-link text-primary hover:text-primary-focus underline'>})),{'class': 'flex justify-start items-center mb-6'}), div((div((div((span(('Mar. 2025–present',),{'class': <TextPresets.muted_sm: 'text-gray-500 dark:text-gray-200 text-sm'>}), div((h4(('Tech Lead',),{'class': 'uk-h4 font-bold'}), p(('Preferred Networks Inc.',),{'class': <TextPresets.muted_sm: 'text-gray-500 dark:text-gray-200 text-sm'>})),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'class': 'uk-card-body space-y-6'}),),{'class': 'uk-card mb-4 p-4'}), div((div((div((span(('Apr. 2021–present',),{'class': <TextPresets.muted_sm: 'text-gray-500 dark:text-gray-200 text-sm'>}), div((h4(('Researcher',),{'class': 'uk-h4 font-bold'}), p(('Preferred Networks Inc.',),{'class': <TextPresets.muted_sm: 'text-gray-500 dark:text-gray-200 text-sm'>})),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'class': 'uk-card-body space-y-6'}),),{'class': 'uk-card mb-4 p-4'}), div((div((div((span(('Apr. 2018–Mar. 2021',),{'class': <TextPresets.muted_sm: 'text-gray-500 dark:text-gray-200 text-sm'>}), div((h4(('Doctor of Philosophy',),{'class': 'uk-h4 font-bold'}), p(('Furusawa Laboratory, Dept. of Physics, The University of Tokyo',),{'class': <TextPresets.muted_sm: 'text-gray-500 dark:text-gray-200 text-sm'>})),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'class': 'uk-card-body space-y-6'}),),{'class': 'uk-card mb-4 p-4'}), div((div((div((span(('Apr. 2016–Mar. 2018',),{'class': <TextPresets.muted_sm: 'text-gray-500 dark:text-gray-200 text-sm'>}), div((h4(('Master of Science',),{'class': 'uk-h4 font-bold'}), p(('Sano Laboratory, Dept. of Physics, The University of Tokyo',),{'class': <TextPresets.muted_sm: 'text-gray-500 dark:text-gray-200 text-sm'>})),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'class': 'uk-card-body space-y-6'}),),{'class': 'uk-card mb-4 p-4'}), div((div((div((span(('Apr. 2012–Mar. 2016',),{'class': <TextPresets.muted_sm: 'text-gray-500 dark:text-gray-200 text-sm'>}), div((h4(('Bachelor of Science',),{'class': 'uk-h4 font-bold'}), p(('Dept. of Physics, The University of Tokyo',),{'class': <TextPresets.muted_sm: 'text-gray-500 dark:text-gray-200 text-sm'>})),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'class': 'uk-card-body space-y-6'}),),{'class': 'uk-card mb-4 p-4'})),{'class': 'uk-section mb-8'})),{'class': 'col-span-7'})),{'class': 'grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-8 mt-8'}),),{'class': 'uk-container uk-container-xl'})),{}),),{})),{}))
+ <!doctype html>
+ <html>
+   <head>
+     <title>About - Junichiro Iwasawa</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.4/dist/htmx.min.js"></script><script src="https://cdn.jsdelivr.net/gh/answerdotai/fasthtml-js@1.0.12/fasthtml.js"></script><script src="https://cdn.jsdelivr.net/gh/answerdotai/surreal@main/surreal.js"></script><script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@main/script.js"></script>     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/core.iife.js"></script><script type="module" src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/icon.iife.js"></script><script src="https://cdn.tailwindcss.com/3.4.16"></script><script>
+    tailwind.config = {
+        darkMode: 'selector',
+    }
+    </script><script>
+        const htmlElement = document.documentElement;
+        
+          const __FRANKEN__ = JSON.parse(localStorage.getItem("__FRANKEN__") || "{}");
+    
+htmlElement.classList.remove("dark");
+          htmlElement.classList.add("uk-theme-blue");
+          htmlElement.classList.add(__FRANKEN__.theme || "uk-theme-blue");
+          htmlElement.classList.add(__FRANKEN__.radii || "uk-radii-sm");
+          htmlElement.classList.add(__FRANKEN__.shadows || "uk-shadows-sm");
+          htmlElement.classList.add(__FRANKEN__.font || "uk-font-sm");
+    </script>     <style>
+.monster-navbar.navbar-bold a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.monster-navbar.navbar-bold a.uk-active {
+    transform: scale(1.15) ;
+    font-weight: bold;
+    text-shadow: 0 0 12px rgba(var(--p-rgb), 0.4);
+    letter-spacing: 0.02em;
+    color: hsl(var(--p) / 1);
+}
+.monster-navbar.navbar-underline a.uk-active { position: relative; }
+.monster-navbar.navbar-underline a.uk-active::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    animation: slideIn 0.3s ease forwards;
+}
+@keyframes slideIn {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+</style>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css">
+     <style>
+:root {
+  --b1: from hsl(var(--background)) l c h;
+  --bc: from hsl(var(--foreground)) l c h;
+  --m: from hsl(var(--muted)) l c h;
+  --mc: from hsl(var(--muted-foreground)) l c h;
+  --po: from hsl(var(--popover)) l c h;
+  --poc: from hsl(var(--popover-foreground)) l c h;
+  --b2: from hsl(var(--card)) l c h;
+  --b2c: from hsl(var(--card-foreground)) l c h;
+  --br: from hsl(var(--border)) l c h;
+  --in: from hsl(var(--input)) l c h;
+  --p: from hsl(var(--primary)) l c h;
+  --pc: from hsl(var(--primary-foreground)) l c h;
+  --s: from hsl(var(--secondary)) l c h;
+  --sc: from hsl(var(--secondary-foreground)) l c h;
+  --a: from hsl(var(--accent)) l c h;
+  --ac: from hsl(var(--accent-foreground)) l c h;
+  --er: from hsl(var(--destructive)) l c h;
+  --erc: from hsl(var(--destructive-foreground)) l c h;
+  --b3: from hsl(var(--ring)) l c h;
+  --ch1: from hsl(var(--chart-1)) l c h;
+  --ch2: from hsl(var(--chart-2)) l c h;
+  --ch3: from hsl(var(--chart-3)) l c h;
+  --ch4: from hsl(var(--chart-4)) l c h;
+  --ch5: from hsl(var(--chart-5)) l c h;
+  --rd: var(--radius);
+}
+</style>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+<script type="module">
+                import katex from 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.mjs';
+                import autoRender from 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.mjs';
+                const options = {
+                  delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                  ],
+                  ignoredClasses: ['nomath']
+                };
+
+                document.addEventListener('htmx:load', evt => {
+                  const element = evt.detail.elt || document.body;
+                  autoRender(element,options);
+                });
+                </script>   </head>
+   <body class=" bg-background text-foreground">
+     <div>
+       <div>
+         <div class="monster-navbar px-4 py-2 container navbar-underline">
+           <div class="flex justify-between items-center w-full">
+             <h3 class="uk-h3 text-2xl font-semibold">Junichiro Iwasawa</h3>
+<a class="md:hidden" data-uk-toggle="target: #_NMJs_yFDSpya2aTStbP3Vw; cls: hidden"><uk-icon icon="menu" height="30" width="30"></uk-icon></a>             <div class="items-center space-x-4 hidden md:flex">
+<a href="/" class="mx-3">About</a><a href="/publications" class="mx-3">Publications</a><a href="/research" class="mx-3">Research</a><a href="/talks" class="mx-3">Talks</a><a href="/blog" class="mx-3">Blog</a>             </div>
+           </div>
+         </div>
+         <div class="flex flex-col items-center justify-center space-y-4 px-4 py-2 container navbar-underline hidden md:hidden monster-navbar" id="_NMJs_yFDSpya2aTStbP3Vw">
+<a href="/" class="mx-3">About</a><a href="/publications" class="mx-3">Publications</a><a href="/research" class="mx-3">Research</a><a href="/talks" class="mx-3">Talks</a><a href="/blog" class="mx-3">Blog</a>         </div>
+       </div>
+       <div class="uk-container uk-container-xl">
+         <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-8 mt-8">
+           <div class="sticky top-8 col-span-2">
+             <div class="text-center p-4">
+<img src="profile_img.jpg" class="rounded-full w-full h-auto mb-4">               <h4 class="uk-h4 text-1xl font-semibold">Junichiro Iwasawa</h4>
+               <p class="text-gray-500 dark:text-gray-200 text-sm">Researcher at Preferred Networks Inc.</p>
+               <p class="text-gray-500 dark:text-gray-200 text-sm">iwasawa [at] preferred.jp</p>
+               <div class="mt-6"></div>
+               <div class="mt-4 text-left">
+<a href="https://twitter.com/jiwasawa" class="flex items-center mb-2 text-primary hover:underline">                   <div class="flex justify-start items-center space-x-4">
+<uk-icon icon="twitter" class="mr-2"></uk-icon><span>Twitter</span>                   </div>
+</a><a href="https://www.linkedin.com/in/junichiro-iwasawa-875b37130/" class="flex items-center mb-2 text-primary hover:underline">                   <div class="flex justify-start items-center space-x-4">
+<uk-icon icon="linkedin" class="mr-2"></uk-icon><span>LinkedIn</span>                   </div>
+</a><a href="https://scholar.google.co.jp/citations?user=LampCPIAAAAJ&amp;hl=en" class="flex items-center mb-2 text-primary hover:underline">                   <div class="flex justify-start items-center space-x-4">
+<uk-icon icon="graduation-cap" class="mr-2"></uk-icon><span>Google Scholar</span>                   </div>
+</a><a href="https://github.com/jiwasawa" class="flex items-center mb-2 text-primary hover:underline">                   <div class="flex justify-start items-center space-x-4">
+<uk-icon icon="github" class="mr-2"></uk-icon><span>GitHub</span>                   </div>
+</a><a href="https://researchmap.jp/jiwasawa?lang=en" class="flex items-center mb-2 text-primary hover:underline">                   <div class="flex justify-start items-center space-x-4">
+<uk-icon icon="book-open" class="mr-2"></uk-icon><span>researchmap</span>                   </div>
+</a>               </div>
+             </div>
+           </div>
+           <div class="col-span-7">
+             <div class="uk-section mb-12">
+               <h2 class="uk-h2 text-3xl font-semibold mb-4">About Junichiro</h2>
+               <p class="mb-3 leading-relaxed text-base">
+As a Researcher at <a href="https://www.preferred.jp/en/" class="uk-link text-primary hover:text-primary-focus underline">Preferred Networks Inc.</a>, I primarily engage with clients 
+            in the healthcare and life sciences sectors.
+            Currently, I serve as the tech lead for providing BtoB solutions using Large Language Models (LLMs) .               </p>
+               <p class="mb-3 leading-relaxed text-base">
+I led a research project to build a medical domain-specialized LLM, 
+            resulting in <a href="https://huggingface.co/pfnet/Llama3-Preferred-MedSwallow-70B" class="uk-link text-primary hover:text-primary-focus underline">Llama3-Preferred-MedSwallow-70B</a> and <a href="https://huggingface.co/pfnet/Preferred-MedLLM-Qwen-72B" class="uk-link text-primary hover:text-primary-focus underline">Preferred-MedLLM-Qwen-72B</a>, the first open LLMs that 
+            surpass GPT-4 in the Japanese Medical Licensing Exam (JMLE).
+            Over the past few years, I have also been leading a project for developing a deep learning based solution 
+            aimed at enhancing the diagnosis of endometriosis through the analysis of MRIs, 
+            in collaboration with a leading pharmaceutical company.               </p>
+               <p class="mb-3 leading-relaxed text-base">I have experience formulating problems through consultations with clients and 
+            providing solutions based on deep learning / machine learning.
+            Additionally, I have been the main mentor for four research interns and one part-time engineer.</p>
+               <p class="mb-3 leading-relaxed text-base">During my PhD, I have been working on the development of machine learning methods 
+            for gene expression/mutation data to tackle the problem of antibiotic resistance of bacteria.</p>
+               <div class="mt-6 flex flex-wrap">
+<label class="uk-label mr-2 mb-2">Large Language Models</label><label class="uk-label mr-2 mb-2">Machine Learning</label><label class="uk-label mr-2 mb-2">Healthcare</label><label class="uk-label mr-2 mb-2">Biophysics</label><label class="uk-label mr-2 mb-2">Statistical Physics</label>               </div>
+             </div>
+             <div class="uk-section mb-8">
+               <h2 class="uk-h2 text-3xl font-semibold mb-4">CV</h2>
+               <p class="text-gray-500 dark:text-gray-200 text-lg  mb-4">Junichiro Iwasawa (岩澤 諄一郎)</p>
+               <div class="flex justify-start items-center mb-6">
+<uk-icon icon="file-text" class="mr-2"></uk-icon><a href="junichiro_iwasawa_cv.pdf" class="uk-link text-primary hover:text-primary-focus underline">Link to CV (pdf)</a>               </div>
+               <div class="uk-card mb-4 p-4">
+                 <div class="uk-card-body space-y-6">
+                   <div class="flex justify-start items-center space-x-4">
+<span class="text-gray-500 dark:text-gray-200 text-sm">Mar. 2025–present</span>                     <div>
+                       <h4 class="uk-h4 font-bold">Tech Lead</h4>
+                       <p class="text-gray-500 dark:text-gray-200 text-sm">Preferred Networks Inc.</p>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <div class="uk-card mb-4 p-4">
+                 <div class="uk-card-body space-y-6">
+                   <div class="flex justify-start items-center space-x-4">
+<span class="text-gray-500 dark:text-gray-200 text-sm">Apr. 2021–present</span>                     <div>
+                       <h4 class="uk-h4 font-bold">Researcher</h4>
+                       <p class="text-gray-500 dark:text-gray-200 text-sm">Preferred Networks Inc.</p>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <div class="uk-card mb-4 p-4">
+                 <div class="uk-card-body space-y-6">
+                   <div class="flex justify-start items-center space-x-4">
+<span class="text-gray-500 dark:text-gray-200 text-sm">Apr. 2018–Mar. 2021</span>                     <div>
+                       <h4 class="uk-h4 font-bold">Doctor of Philosophy</h4>
+                       <p class="text-gray-500 dark:text-gray-200 text-sm">Furusawa Laboratory, Dept. of Physics, The University of Tokyo</p>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <div class="uk-card mb-4 p-4">
+                 <div class="uk-card-body space-y-6">
+                   <div class="flex justify-start items-center space-x-4">
+<span class="text-gray-500 dark:text-gray-200 text-sm">Apr. 2016–Mar. 2018</span>                     <div>
+                       <h4 class="uk-h4 font-bold">Master of Science</h4>
+                       <p class="text-gray-500 dark:text-gray-200 text-sm">Sano Laboratory, Dept. of Physics, The University of Tokyo</p>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+               <div class="uk-card mb-4 p-4">
+                 <div class="uk-card-body space-y-6">
+                   <div class="flex justify-start items-center space-x-4">
+<span class="text-gray-500 dark:text-gray-200 text-sm">Apr. 2012–Mar. 2016</span>                     <div>
+                       <h4 class="uk-h4 font-bold">Bachelor of Science</h4>
+                       <p class="text-gray-500 dark:text-gray-200 text-sm">Dept. of Physics, The University of Tokyo</p>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </body>
+ </html>

@@ -1,2 +1,223 @@
-<!DOCTYPE html>
-(!doctype((),{'html': True}), html((head((meta((),{'charset': 'utf-8'}), meta((),{'name': 'viewport', 'content': 'width=device-width, initial-scale=1'}), title(('Research - Junichiro Iwasawa',),{}), link((),{'rel': 'stylesheet', 'href': 'https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css'}), script(('',),{'type': 'module', 'src': 'https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/core.iife.js'}), script(('',),{'type': 'module', 'src': 'https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/icon.iife.js'}), script(('',),{'src': 'https://cdn.tailwindcss.com/3.4.16'}), script(("\n    tailwind.config = {\n        darkMode: 'selector',\n    }\n    ",),{}), script(('\n        const htmlElement = document.documentElement;\n        \n          \n          const __FRANKEN__ = JSON.parse(localStorage.getItem("__FRANKEN__") || "{}");\n    \n          if (\n            __FRANKEN__.mode === "dark" ||\n            (!__FRANKEN__.mode &&\n              window.matchMedia("(prefers-color-scheme: dark)").matches)\n          ) {\n            htmlElement.classList.add("dark");\n          } else {\n            htmlElement.classList.remove("dark");\n          }\n        \n          htmlElement.classList.add("uk-theme-blue");\n          htmlElement.classList.add(__FRANKEN__.theme || "uk-theme-blue");\n          htmlElement.classList.add(__FRANKEN__.radii || "uk-radii-sm");\n          htmlElement.classList.add(__FRANKEN__.shadows || "uk-shadows-sm");\n          htmlElement.classList.add(__FRANKEN__.font || "uk-font-sm");\n    ',),{}), style(("\n.monster-navbar.navbar-bold a {\n    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n}\n.monster-navbar.navbar-bold a.uk-active {\n    transform: scale(1.15) ;\n    font-weight: bold;\n    text-shadow: 0 0 12px rgba(var(--p-rgb), 0.4);\n    letter-spacing: 0.02em;\n    color: hsl(var(--p) / 1);\n}\n.monster-navbar.navbar-underline a.uk-active { position: relative; }\n.monster-navbar.navbar-underline a.uk-active::after {\n    content: '';\n    position: absolute;\n    left: 0;\n    bottom: -2px;\n    width: 100%;\n    height: 2px;\n    background: currentColor;\n    animation: slideIn 0.3s ease forwards;\n}\n@keyframes slideIn {\n    from { transform: scaleX(0); }\n    to { transform: scaleX(1); }\n}\n",),{}), link((),{'rel': 'stylesheet', 'href': 'https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css'}), style(('\n:root {\n  --b1: from hsl(var(--background)) l c h;\n  --bc: from hsl(var(--foreground)) l c h;\n  --m: from hsl(var(--muted)) l c h;\n  --mc: from hsl(var(--muted-foreground)) l c h;\n  --po: from hsl(var(--popover)) l c h;\n  --poc: from hsl(var(--popover-foreground)) l c h;\n  --b2: from hsl(var(--card)) l c h;\n  --b2c: from hsl(var(--card-foreground)) l c h;\n  --br: from hsl(var(--border)) l c h;\n  --in: from hsl(var(--input)) l c h;\n  --p: from hsl(var(--primary)) l c h;\n  --pc: from hsl(var(--primary-foreground)) l c h;\n  --s: from hsl(var(--secondary)) l c h;\n  --sc: from hsl(var(--secondary-foreground)) l c h;\n  --a: from hsl(var(--accent)) l c h;\n  --ac: from hsl(var(--accent-foreground)) l c h;\n  --er: from hsl(var(--destructive)) l c h;\n  --erc: from hsl(var(--destructive-foreground)) l c h;\n  --b3: from hsl(var(--ring)) l c h;\n  --ch1: from hsl(var(--chart-1)) l c h;\n  --ch2: from hsl(var(--chart-2)) l c h;\n  --ch3: from hsl(var(--chart-3)) l c h;\n  --ch4: from hsl(var(--chart-4)) l c h;\n  --ch5: from hsl(var(--chart-5)) l c h;\n  --rd: var(--radius);\n}\n',),{}), link((),{'rel': 'stylesheet', 'href': 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css'}), script(("\n                import katex from 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.mjs';\n                import autoRender from 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.mjs';\n                const options = {\n                  delimiters: [\n                    {left: '$$', right: '$$', display: true},\n                    {left: '$', right: '$', display: false}\n                  ],\n                  ignoredClasses: ['nomath']\n                };\n\n                document.addEventListener('htmx:load', evt => {\n                  const element = evt.detail.elt || document.body;\n                  autoRender(element,options);\n                });\n                ",),{'type': 'module'})),{}), body((div((div((div((div((h3(('Junichiro Iwasawa',),{'class': 'uk-h3 text-2xl font-semibold'}), a((uk-icon((),{'icon': 'menu', 'height': 30, 'width': 30, 'class': None}),),{'class': 'md:hidden', 'data-uk-toggle': 'target: #_GQawLo6JQdSvaXoi5jt-eQ; cls: hidden'}), div((a(('About',),{'href': '/', 'class': 'mx-3'}), a(('Publications',),{'href': '/publications', 'class': 'mx-3'}), a(('Research',),{'href': '/research', 'class': 'mx-3'}), a(('Talks',),{'href': '/talks', 'class': 'mx-3'}), a(('Blog',),{'href': '/blog', 'class': 'mx-3'})),{'class': 'items-center space-x-4 hidden md:flex', 'uk-scrollspy-nav': False})),{'class': 'flex justify-between items-center w-full'}),),{'class': 'monster-navbar px-4 py-2 container navbar-underline'}), div((a(('About',),{'href': '/', 'class': 'mx-3'}), a(('Publications',),{'href': '/publications', 'class': 'mx-3'}), a(('Research',),{'href': '/research', 'class': 'mx-3'}), a(('Talks',),{'href': '/talks', 'class': 'mx-3'}), a(('Blog',),{'href': '/blog', 'class': 'mx-3'})),{'class': 'flex flex-col items-center justify-center space-y-4 px-4 py-2 container navbar-underline hidden md:hidden monster-navbar', 'id': '_GQawLo6JQdSvaXoi5jt-eQ', 'uk-scrollspy-nav': False})),{'class': ''}), div((div((div((div((img((),{'src': 'profile_img.jpg', 'class': 'rounded-full w-full h-auto mb-4'}), h4(('Junichiro Iwasawa',),{'class': 'uk-h4 text-1xl font-semibold'}), p(('Researcher at Preferred Networks Inc.',),{'class': <TextPresets.muted_sm: 'text-gray-500 dark:text-gray-200 text-sm'>}), p(('iwasawa [at] preferred.jp',),{'class': <TextPresets.muted_sm: 'text-gray-500 dark:text-gray-200 text-sm'>}), div((),{'class': 'mt-6'}), div((a((div((uk-icon((),{'icon': 'twitter', 'class': 'mr-2'}), span(('Twitter',),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'href': 'https://twitter.com/jiwasawa', 'class': 'flex items-center mb-2 text-primary hover:underline'}), a((div((uk-icon((),{'icon': 'linkedin', 'class': 'mr-2'}), span(('LinkedIn',),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'href': 'https://www.linkedin.com/in/junichiro-iwasawa-875b37130/', 'class': 'flex items-center mb-2 text-primary hover:underline'}), a((div((uk-icon((),{'icon': 'graduation-cap', 'class': 'mr-2'}), span(('Google Scholar',),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'href': 'https://scholar.google.co.jp/citations?user=LampCPIAAAAJ&hl=en', 'class': 'flex items-center mb-2 text-primary hover:underline'}), a((div((uk-icon((),{'icon': 'github', 'class': 'mr-2'}), span(('GitHub',),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'href': 'https://github.com/jiwasawa', 'class': 'flex items-center mb-2 text-primary hover:underline'}), a((div((uk-icon((),{'icon': 'book-open', 'class': 'mr-2'}), span(('researchmap',),{})),{'class': 'flex justify-start items-center space-x-4'}),),{'href': 'https://researchmap.jp/jiwasawa?lang=en', 'class': 'flex items-center mb-2 text-primary hover:underline'})),{'class': 'mt-4 text-left'})),{'class': 'text-center p-4'}),),{'class': 'sticky top-8 col-span-2'}), div((div((h2(('Research',),{'class': 'uk-h2 text-3xl font-semibold mb-6'}), p(('My research spans several interdisciplinary areas, ranging from physics, biology to machine learning.',),{'class': 'mb-6 text-lg'})),{'class': 'uk-section mb-8'}), div((div((h3(('Large Language Models for Healthcare',),{'class': 'uk-h3 text-2xl font-semibold mb-3'}), p(("As part of my work at Preferred Networks, I've been leading projects focused on applying Large Language Models (LLMs) to healthcare challenges. \n                This includes developing specialized medical LLMs that can understand and generate domain-specific knowledge, assisting healthcare professionals \n                in diagnosis, and enhancing patient care through natural language processing.\n                \n                A major achievement was the development of medical domain-specialized LLMs, including ", a(('Llama3-Preferred-MedSwallow-70B',),{'href': 'https://huggingface.co/pfnet/Llama3-Preferred-MedSwallow-70B', 'class': <AT.primary: 'uk-link text-primary hover:text-primary-focus underline'>}), ' and ', a(('Preferred-MedLLM-Qwen-72B',),{'href': 'https://huggingface.co/pfnet/Preferred-MedLLM-Qwen-72B', 'class': <AT.primary: 'uk-link text-primary hover:text-primary-focus underline'>}), ', which are the first open LLMs to surpass GPT-4 in the Japanese Medical Licensing Exam (JMLE). These models demonstrate the potential for LLMs to \n                serve as valuable tools in healthcare settings, providing accurate medical information and supporting clinical decision-making.'),{'class': 'mb-4 leading-relaxed text-base'}), div((h4(('Related Publications:',),{'class': 'uk-h4 text-lg font-semibold mb-2'}), ul((li(('<a href="https://huggingface.co/pfnet/Preferred-MedLLM-Qwen-72B" class="text-primary hover:underline">Preferred-MedLLM-Qwen-72B</a>',),{'class': 'mb-2'}), li(('<a href="https://huggingface.co/pfnet/Llama3-Preferred-MedSwallow-70B" class="text-primary hover:underline">Llama3-Preferred-MedSwallow-70B</a>',),{'class': 'mb-2'})),{'class': 'list-disc pl-5'})),{'class': 'mt-4 text-base'})),{'class': 'mb-12 pb-8 border-b border-gray-200 last:border-0'}), div((h3(('Deciphering evolutionary constraints of Escherichia coli',),{'class': 'uk-h3 text-2xl font-semibold mb-3'}), p(('The prediction and control of evolution is a crucial topic for both evolutionary biology and tackling antibiotic resistance. \n                Although the lack of sufficient data has long hindered the mechanism of evolution, laboratory evolution experiments equipped \n                with high-throughput sequencing/phenotyping are now gradually changing this situation. The emerging data from recent laboratory \n                evolution experiments revealed repeatable features in evolutionary processes, suggesting the existence of constraints which could \n                lead to actual predictions of evolutionary outcomes. These results also paint an upbeat picture of evolution: biologically feasible \n                states and evolutionary trajectories could be distributed on a low-dimensional manifold within the high-dimensional space spanned \n                by biological features.\n                \n                By combining machine learning techniques with experimental data from high-throughput laboratory evolution experiments, we aim to \n                decipher the constraints which cause the low-dimensional evolutionary dynamics.',),{'class': 'mb-4 leading-relaxed text-base'}), div((h4(('Related Publications:',),{'class': 'uk-h4 text-lg font-semibold mb-2'}), ul((li(('Junichiro Iwasawa, Tomoya Maeda, Atsushi Shibai, Hazuki Kotani, Masako Kawada, and Chikara Furusawa,\n                    <a href="https://doi.org/10.1371/journal.pbio.3001920" class="text-primary hover:underline">Analysis of the evolution of resistance to multiple antibiotics enables prediction of the Escherichia coli phenotype-based fitness landscape</a>, \n                    PLOS Biology 20(12): e3001920 (2022).',),{'class': 'mb-2'}), li(('Tomoya Maeda*, Junichiro Iwasawa*, Hazuki Kotani, Natsue Sakata, Masako Kawada, Takaaki Horinouchi, Aki Sakai, Kumi Tanabe, \n                    and Chikara Furusawa (*first co-authors), <a href="https://doi.org/10.1038/s41467-020-19713-w" class="text-primary hover:underline">High-throughput laboratory evolution and evolutionary constraints in Escherichia coli</a>, \n                    Nature Communications 11, 5970 (2020).',),{'class': 'mb-2'})),{'class': 'list-disc pl-5'})),{'class': 'mt-4 text-base'})),{'class': 'mb-12 pb-8 border-b border-gray-200 last:border-0'}), div((h3(('Collective phenomena of active colloidal particles (Janus particles)',),{'class': 'uk-h3 text-2xl font-semibold mb-3'}), p(('Collective motion can be observed in a wide variety of systems, from flocks of birds to the collective migration of living cells. \n                The ubiquitousness of this collective phenomena strongly hints the existence of universal properties which can be explained from basic \n                features of the system, and thus has motivated physicists for the past few decades leading to a field which is now called Active Matter.\n                \n                Janus particles, which are asymmetric colloidal particles with distinct hemispheres with different physical properties, can function as \n                self-propelled particles by dissipating energy to the surrounding fluid under an AC electric field. Since they provide a perfect test bed \n                for active matter research, Janus particles have increasingly gained attention in the field of active matter through the past decade. \n                We have explored universal features of collective motion through the active dynamics of Janus particles.',),{'class': 'mb-4 leading-relaxed text-base'}), div((h4(('Related Publications:',),{'class': 'uk-h4 text-lg font-semibold mb-2'}), ul((li(('Junichiro Iwasawa, Daiki Nishiguchi, and Masaki Sano, <a href="https://doi.org/10.1103/PhysRevResearch.3.043104" class="text-primary hover:underline">Algebraic correlations and anomalous fluctuations in ordered flocks of \n                    Janus particles fueled by an AC electric field</a>, Physical Review Research 3, 043104 (2021).',),{'class': 'mb-2'}), li(('Daiki Nishiguchi, Junichiro Iwasawa, Hong-Ren Jiang, and Masaki Sano, <a href="https://doi.org/10.1088/1367-2630/aa9b5b" class="text-primary hover:underline">Flagellar dynamics of chains of active Janus particles \n                    fueled by an AC electric field</a>, New Journal of Physics 20, 015002 (2018).',),{'class': 'mb-2'})),{'class': 'list-disc pl-5'})),{'class': 'mt-4 text-base'})),{'class': 'mb-12 pb-8 border-b border-gray-200 last:border-0'}), div((h3(('Medical image analysis in the small data regime',),{'class': 'uk-h3 text-2xl font-semibold mb-3'}), p(('Although neural networks are emerging in a wide range of topics, the preparation of sufficient data still remains as a hurdle to overcome, \n                especially for biological/medical data. Recently, self-supervised learning has been suggested as an effective pre-training method for various \n                fields such as natural language processing and image classification. The idea of self-supervised learning is to utilize unlabeled data to improve \n                task performance when only a few labeled data is available through the utilization of pre-text tasks. However, self-supervised learning requires \n                heavy computing before the main task, which could be a burden in certain scenarios.\n                \n                We have been working on methods where pre-text tasks could be utilized as auxillary tasks for regularizing segmentation models in the small labeled \n                data regime, making the learning process more data and cost-efficient.',),{'class': 'mb-4 leading-relaxed text-base'}), div((h4(('Related Publications:',),{'class': 'uk-h4 text-lg font-semibold mb-2'}), ul((li(('Junichiro Iwasawa, Yuichiro Hirano, and Yohei Sugawara, <a href="https://arxiv.org/abs/2009.11160" class="text-primary hover:underline">Label-Efficient Multi-Task Segmentation using Contrastive Learning</a>, \n                    Brainlesion: Glioma, Multiple Sclerosis, Stroke and Traumatic Brain Injuries, LNCS 12658, 101 (2021). arXiv: 2009.11160.',),{'class': 'mb-2'}),),{'class': 'list-disc pl-5'})),{'class': 'mt-4 text-base'})),{'class': 'mb-12 pb-8 border-b border-gray-200 last:border-0'})),{'class': 'uk-section space-y-8'})),{'class': 'col-span-7'})),{'class': 'grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-8 mt-8'}),),{'class': 'uk-container uk-container-xl'})),{}),),{})),{}))
+ <!doctype html>
+ <html>
+   <head>
+     <title>Research - Junichiro Iwasawa</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.4/dist/htmx.min.js"></script><script src="https://cdn.jsdelivr.net/gh/answerdotai/fasthtml-js@1.0.12/fasthtml.js"></script><script src="https://cdn.jsdelivr.net/gh/answerdotai/surreal@main/surreal.js"></script><script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@main/script.js"></script>     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/core.iife.js"></script><script type="module" src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/icon.iife.js"></script><script src="https://cdn.tailwindcss.com/3.4.16"></script><script>
+    tailwind.config = {
+        darkMode: 'selector',
+    }
+    </script><script>
+        const htmlElement = document.documentElement;
+        
+          const __FRANKEN__ = JSON.parse(localStorage.getItem("__FRANKEN__") || "{}");
+    
+htmlElement.classList.remove("dark");
+          htmlElement.classList.add("uk-theme-blue");
+          htmlElement.classList.add(__FRANKEN__.theme || "uk-theme-blue");
+          htmlElement.classList.add(__FRANKEN__.radii || "uk-radii-sm");
+          htmlElement.classList.add(__FRANKEN__.shadows || "uk-shadows-sm");
+          htmlElement.classList.add(__FRANKEN__.font || "uk-font-sm");
+    </script>     <style>
+.monster-navbar.navbar-bold a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.monster-navbar.navbar-bold a.uk-active {
+    transform: scale(1.15) ;
+    font-weight: bold;
+    text-shadow: 0 0 12px rgba(var(--p-rgb), 0.4);
+    letter-spacing: 0.02em;
+    color: hsl(var(--p) / 1);
+}
+.monster-navbar.navbar-underline a.uk-active { position: relative; }
+.monster-navbar.navbar-underline a.uk-active::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    animation: slideIn 0.3s ease forwards;
+}
+@keyframes slideIn {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+</style>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css">
+     <style>
+:root {
+  --b1: from hsl(var(--background)) l c h;
+  --bc: from hsl(var(--foreground)) l c h;
+  --m: from hsl(var(--muted)) l c h;
+  --mc: from hsl(var(--muted-foreground)) l c h;
+  --po: from hsl(var(--popover)) l c h;
+  --poc: from hsl(var(--popover-foreground)) l c h;
+  --b2: from hsl(var(--card)) l c h;
+  --b2c: from hsl(var(--card-foreground)) l c h;
+  --br: from hsl(var(--border)) l c h;
+  --in: from hsl(var(--input)) l c h;
+  --p: from hsl(var(--primary)) l c h;
+  --pc: from hsl(var(--primary-foreground)) l c h;
+  --s: from hsl(var(--secondary)) l c h;
+  --sc: from hsl(var(--secondary-foreground)) l c h;
+  --a: from hsl(var(--accent)) l c h;
+  --ac: from hsl(var(--accent-foreground)) l c h;
+  --er: from hsl(var(--destructive)) l c h;
+  --erc: from hsl(var(--destructive-foreground)) l c h;
+  --b3: from hsl(var(--ring)) l c h;
+  --ch1: from hsl(var(--chart-1)) l c h;
+  --ch2: from hsl(var(--chart-2)) l c h;
+  --ch3: from hsl(var(--chart-3)) l c h;
+  --ch4: from hsl(var(--chart-4)) l c h;
+  --ch5: from hsl(var(--chart-5)) l c h;
+  --rd: var(--radius);
+}
+</style>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+<script type="module">
+                import katex from 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.mjs';
+                import autoRender from 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.mjs';
+                const options = {
+                  delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                  ],
+                  ignoredClasses: ['nomath']
+                };
+
+                document.addEventListener('htmx:load', evt => {
+                  const element = evt.detail.elt || document.body;
+                  autoRender(element,options);
+                });
+                </script>   </head>
+   <body class=" bg-background text-foreground">
+     <div>
+       <div>
+         <div class="monster-navbar px-4 py-2 container navbar-underline">
+           <div class="flex justify-between items-center w-full">
+             <h3 class="uk-h3 text-2xl font-semibold">Junichiro Iwasawa</h3>
+<a class="md:hidden" data-uk-toggle="target: #_MnndA4z1T82kuaE7-rnl4Q; cls: hidden"><uk-icon icon="menu" height="30" width="30"></uk-icon></a>             <div class="items-center space-x-4 hidden md:flex">
+<a href="/" class="mx-3">About</a><a href="/publications" class="mx-3">Publications</a><a href="/research" class="mx-3">Research</a><a href="/talks" class="mx-3">Talks</a><a href="/blog" class="mx-3">Blog</a>             </div>
+           </div>
+         </div>
+         <div class="flex flex-col items-center justify-center space-y-4 px-4 py-2 container navbar-underline hidden md:hidden monster-navbar" id="_MnndA4z1T82kuaE7-rnl4Q">
+<a href="/" class="mx-3">About</a><a href="/publications" class="mx-3">Publications</a><a href="/research" class="mx-3">Research</a><a href="/talks" class="mx-3">Talks</a><a href="/blog" class="mx-3">Blog</a>         </div>
+       </div>
+       <div class="uk-container uk-container-xl">
+         <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-8 mt-8">
+           <div class="sticky top-8 col-span-2">
+             <div class="text-center p-4">
+<img src="profile_img.jpg" class="rounded-full w-full h-auto mb-4">               <h4 class="uk-h4 text-1xl font-semibold">Junichiro Iwasawa</h4>
+               <p class="text-gray-500 dark:text-gray-200 text-sm">Researcher at Preferred Networks Inc.</p>
+               <p class="text-gray-500 dark:text-gray-200 text-sm">iwasawa [at] preferred.jp</p>
+               <div class="mt-6"></div>
+               <div class="mt-4 text-left">
+<a href="https://twitter.com/jiwasawa" class="flex items-center mb-2 text-primary hover:underline">                   <div class="flex justify-start items-center space-x-4">
+<uk-icon icon="twitter" class="mr-2"></uk-icon><span>Twitter</span>                   </div>
+</a><a href="https://www.linkedin.com/in/junichiro-iwasawa-875b37130/" class="flex items-center mb-2 text-primary hover:underline">                   <div class="flex justify-start items-center space-x-4">
+<uk-icon icon="linkedin" class="mr-2"></uk-icon><span>LinkedIn</span>                   </div>
+</a><a href="https://scholar.google.co.jp/citations?user=LampCPIAAAAJ&amp;hl=en" class="flex items-center mb-2 text-primary hover:underline">                   <div class="flex justify-start items-center space-x-4">
+<uk-icon icon="graduation-cap" class="mr-2"></uk-icon><span>Google Scholar</span>                   </div>
+</a><a href="https://github.com/jiwasawa" class="flex items-center mb-2 text-primary hover:underline">                   <div class="flex justify-start items-center space-x-4">
+<uk-icon icon="github" class="mr-2"></uk-icon><span>GitHub</span>                   </div>
+</a><a href="https://researchmap.jp/jiwasawa?lang=en" class="flex items-center mb-2 text-primary hover:underline">                   <div class="flex justify-start items-center space-x-4">
+<uk-icon icon="book-open" class="mr-2"></uk-icon><span>researchmap</span>                   </div>
+</a>               </div>
+             </div>
+           </div>
+           <div class="col-span-7">
+             <div class="uk-section mb-8">
+               <h2 class="uk-h2 text-3xl font-semibold mb-6">Research</h2>
+               <p class="mb-6 text-lg">My research spans several interdisciplinary areas, ranging from physics, biology to machine learning.</p>
+             </div>
+             <div class="uk-section space-y-8">
+               <div class="mb-12 pb-8 border-b border-gray-200 last:border-0">
+                 <h3 class="uk-h3 text-2xl font-semibold mb-3">Large Language Models for Healthcare</h3>
+                 <p class="mb-4 leading-relaxed text-base">
+As part of my work at Preferred Networks, I&#x27;ve been leading projects focused on applying Large Language Models (LLMs) to healthcare challenges. 
+                This includes developing specialized medical LLMs that can understand and generate domain-specific knowledge, assisting healthcare professionals 
+                in diagnosis, and enhancing patient care through natural language processing.
+                
+                A major achievement was the development of medical domain-specialized LLMs, including <a href="https://huggingface.co/pfnet/Llama3-Preferred-MedSwallow-70B" class="uk-link text-primary hover:text-primary-focus underline">Llama3-Preferred-MedSwallow-70B</a> and <a href="https://huggingface.co/pfnet/Preferred-MedLLM-Qwen-72B" class="uk-link text-primary hover:text-primary-focus underline">Preferred-MedLLM-Qwen-72B</a>, which are the first open LLMs to surpass GPT-4 in the Japanese Medical Licensing Exam (JMLE). These models demonstrate the potential for LLMs to 
+                serve as valuable tools in healthcare settings, providing accurate medical information and supporting clinical decision-making.                 </p>
+                 <div class="mt-4 text-base">
+                   <h4 class="uk-h4 text-lg font-semibold mb-2">Related Publications:</h4>
+                   <ul class="list-disc pl-5">
+                     <li class="mb-2"><a href="https://huggingface.co/pfnet/Preferred-MedLLM-Qwen-72B" class="text-primary hover:underline">Preferred-MedLLM-Qwen-72B</a></li>
+                     <li class="mb-2"><a href="https://huggingface.co/pfnet/Llama3-Preferred-MedSwallow-70B" class="text-primary hover:underline">Llama3-Preferred-MedSwallow-70B</a></li>
+                   </ul>
+                 </div>
+               </div>
+               <div class="mb-12 pb-8 border-b border-gray-200 last:border-0">
+                 <h3 class="uk-h3 text-2xl font-semibold mb-3">Deciphering evolutionary constraints of Escherichia coli</h3>
+                 <p class="mb-4 leading-relaxed text-base">The prediction and control of evolution is a crucial topic for both evolutionary biology and tackling antibiotic resistance. 
+                Although the lack of sufficient data has long hindered the mechanism of evolution, laboratory evolution experiments equipped 
+                with high-throughput sequencing/phenotyping are now gradually changing this situation. The emerging data from recent laboratory 
+                evolution experiments revealed repeatable features in evolutionary processes, suggesting the existence of constraints which could 
+                lead to actual predictions of evolutionary outcomes. These results also paint an upbeat picture of evolution: biologically feasible 
+                states and evolutionary trajectories could be distributed on a low-dimensional manifold within the high-dimensional space spanned 
+                by biological features.
+                
+                By combining machine learning techniques with experimental data from high-throughput laboratory evolution experiments, we aim to 
+                decipher the constraints which cause the low-dimensional evolutionary dynamics.</p>
+                 <div class="mt-4 text-base">
+                   <h4 class="uk-h4 text-lg font-semibold mb-2">Related Publications:</h4>
+                   <ul class="list-disc pl-5">
+                     <li class="mb-2">Junichiro Iwasawa, Tomoya Maeda, Atsushi Shibai, Hazuki Kotani, Masako Kawada, and Chikara Furusawa,
+                    <a href="https://doi.org/10.1371/journal.pbio.3001920" class="text-primary hover:underline">Analysis of the evolution of resistance to multiple antibiotics enables prediction of the Escherichia coli phenotype-based fitness landscape</a>, 
+                    PLOS Biology 20(12): e3001920 (2022).</li>
+                     <li class="mb-2">Tomoya Maeda*, Junichiro Iwasawa*, Hazuki Kotani, Natsue Sakata, Masako Kawada, Takaaki Horinouchi, Aki Sakai, Kumi Tanabe, 
+                    and Chikara Furusawa (*first co-authors), <a href="https://doi.org/10.1038/s41467-020-19713-w" class="text-primary hover:underline">High-throughput laboratory evolution and evolutionary constraints in Escherichia coli</a>, 
+                    Nature Communications 11, 5970 (2020).</li>
+                   </ul>
+                 </div>
+               </div>
+               <div class="mb-12 pb-8 border-b border-gray-200 last:border-0">
+                 <h3 class="uk-h3 text-2xl font-semibold mb-3">Collective phenomena of active colloidal particles (Janus particles)</h3>
+                 <p class="mb-4 leading-relaxed text-base">Collective motion can be observed in a wide variety of systems, from flocks of birds to the collective migration of living cells. 
+                The ubiquitousness of this collective phenomena strongly hints the existence of universal properties which can be explained from basic 
+                features of the system, and thus has motivated physicists for the past few decades leading to a field which is now called Active Matter.
+                
+                Janus particles, which are asymmetric colloidal particles with distinct hemispheres with different physical properties, can function as 
+                self-propelled particles by dissipating energy to the surrounding fluid under an AC electric field. Since they provide a perfect test bed 
+                for active matter research, Janus particles have increasingly gained attention in the field of active matter through the past decade. 
+                We have explored universal features of collective motion through the active dynamics of Janus particles.</p>
+                 <div class="mt-4 text-base">
+                   <h4 class="uk-h4 text-lg font-semibold mb-2">Related Publications:</h4>
+                   <ul class="list-disc pl-5">
+                     <li class="mb-2">Junichiro Iwasawa, Daiki Nishiguchi, and Masaki Sano, <a href="https://doi.org/10.1103/PhysRevResearch.3.043104" class="text-primary hover:underline">Algebraic correlations and anomalous fluctuations in ordered flocks of 
+                    Janus particles fueled by an AC electric field</a>, Physical Review Research 3, 043104 (2021).</li>
+                     <li class="mb-2">Daiki Nishiguchi, Junichiro Iwasawa, Hong-Ren Jiang, and Masaki Sano, <a href="https://doi.org/10.1088/1367-2630/aa9b5b" class="text-primary hover:underline">Flagellar dynamics of chains of active Janus particles 
+                    fueled by an AC electric field</a>, New Journal of Physics 20, 015002 (2018).</li>
+                   </ul>
+                 </div>
+               </div>
+               <div class="mb-12 pb-8 border-b border-gray-200 last:border-0">
+                 <h3 class="uk-h3 text-2xl font-semibold mb-3">Medical image analysis in the small data regime</h3>
+                 <p class="mb-4 leading-relaxed text-base">Although neural networks are emerging in a wide range of topics, the preparation of sufficient data still remains as a hurdle to overcome, 
+                especially for biological/medical data. Recently, self-supervised learning has been suggested as an effective pre-training method for various 
+                fields such as natural language processing and image classification. The idea of self-supervised learning is to utilize unlabeled data to improve 
+                task performance when only a few labeled data is available through the utilization of pre-text tasks. However, self-supervised learning requires 
+                heavy computing before the main task, which could be a burden in certain scenarios.
+                
+                We have been working on methods where pre-text tasks could be utilized as auxillary tasks for regularizing segmentation models in the small labeled 
+                data regime, making the learning process more data and cost-efficient.</p>
+                 <div class="mt-4 text-base">
+                   <h4 class="uk-h4 text-lg font-semibold mb-2">Related Publications:</h4>
+                   <ul class="list-disc pl-5">
+                     <li class="mb-2">Junichiro Iwasawa, Yuichiro Hirano, and Yohei Sugawara, <a href="https://arxiv.org/abs/2009.11160" class="text-primary hover:underline">Label-Efficient Multi-Task Segmentation using Contrastive Learning</a>, 
+                    Brainlesion: Glioma, Multiple Sclerosis, Stroke and Traumatic Brain Injuries, LNCS 12658, 101 (2021). arXiv: 2009.11160.</li>
+                   </ul>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </body>
+ </html>

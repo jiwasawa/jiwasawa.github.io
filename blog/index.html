@@ -1,2 +1,201 @@
-<!DOCTYPE html>
-(!doctype((),{'html': True}), html((head((meta((),{'charset': 'utf-8'}), meta((),{'name': 'viewport', 'content': 'width=device-width, initial-scale=1'}), title(('Blog - Junichiro Iwasawa',),{}), link((),{'rel': 'stylesheet', 'href': 'https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css'}), script(('',),{'type': 'module', 'src': 'https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/core.iife.js'}), script(('',),{'type': 'module', 'src': 'https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/icon.iife.js'}), script(('',),{'src': 'https://cdn.tailwindcss.com/3.4.16'}), script(("\n    tailwind.config = {\n        darkMode: 'selector',\n    }\n    ",),{}), script(('\n        const htmlElement = document.documentElement;\n        \n          \n          const __FRANKEN__ = JSON.parse(localStorage.getItem("__FRANKEN__") || "{}");\n    \n          if (\n            __FRANKEN__.mode === "dark" ||\n            (!__FRANKEN__.mode &&\n              window.matchMedia("(prefers-color-scheme: dark)").matches)\n          ) {\n            htmlElement.classList.add("dark");\n          } else {\n            htmlElement.classList.remove("dark");\n          }\n        \n          htmlElement.classList.add("uk-theme-blue");\n          htmlElement.classList.add(__FRANKEN__.theme || "uk-theme-blue");\n          htmlElement.classList.add(__FRANKEN__.radii || "uk-radii-sm");\n          htmlElement.classList.add(__FRANKEN__.shadows || "uk-shadows-sm");\n          htmlElement.classList.add(__FRANKEN__.font || "uk-font-sm");\n    ',),{}), style(("\n.monster-navbar.navbar-bold a {\n    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);\n}\n.monster-navbar.navbar-bold a.uk-active {\n    transform: scale(1.15) ;\n    font-weight: bold;\n    text-shadow: 0 0 12px rgba(var(--p-rgb), 0.4);\n    letter-spacing: 0.02em;\n    color: hsl(var(--p) / 1);\n}\n.monster-navbar.navbar-underline a.uk-active { position: relative; }\n.monster-navbar.navbar-underline a.uk-active::after {\n    content: '';\n    position: absolute;\n    left: 0;\n    bottom: -2px;\n    width: 100%;\n    height: 2px;\n    background: currentColor;\n    animation: slideIn 0.3s ease forwards;\n}\n@keyframes slideIn {\n    from { transform: scaleX(0); }\n    to { transform: scaleX(1); }\n}\n",),{}), link((),{'rel': 'stylesheet', 'href': 'https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css'}), style(('\n:root {\n  --b1: from hsl(var(--background)) l c h;\n  --bc: from hsl(var(--foreground)) l c h;\n  --m: from hsl(var(--muted)) l c h;\n  --mc: from hsl(var(--muted-foreground)) l c h;\n  --po: from hsl(var(--popover)) l c h;\n  --poc: from hsl(var(--popover-foreground)) l c h;\n  --b2: from hsl(var(--card)) l c h;\n  --b2c: from hsl(var(--card-foreground)) l c h;\n  --br: from hsl(var(--border)) l c h;\n  --in: from hsl(var(--input)) l c h;\n  --p: from hsl(var(--primary)) l c h;\n  --pc: from hsl(var(--primary-foreground)) l c h;\n  --s: from hsl(var(--secondary)) l c h;\n  --sc: from hsl(var(--secondary-foreground)) l c h;\n  --a: from hsl(var(--accent)) l c h;\n  --ac: from hsl(var(--accent-foreground)) l c h;\n  --er: from hsl(var(--destructive)) l c h;\n  --erc: from hsl(var(--destructive-foreground)) l c h;\n  --b3: from hsl(var(--ring)) l c h;\n  --ch1: from hsl(var(--chart-1)) l c h;\n  --ch2: from hsl(var(--chart-2)) l c h;\n  --ch3: from hsl(var(--chart-3)) l c h;\n  --ch4: from hsl(var(--chart-4)) l c h;\n  --ch5: from hsl(var(--chart-5)) l c h;\n  --rd: var(--radius);\n}\n',),{}), link((),{'rel': 'stylesheet', 'href': 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css'}), script(("\n                import katex from 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.mjs';\n                import autoRender from 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.mjs';\n                const options = {\n                  delimiters: [\n                    {left: '$$', right: '$$', display: true},\n                    {left: '$', right: '$', display: false}\n                  ],\n                  ignoredClasses: ['nomath']\n                };\n\n                document.addEventListener('htmx:load', evt => {\n                  const element = evt.detail.elt || document.body;\n                  autoRender(element,options);\n                });\n                ",),{'type': 'module'})),{}), body((div((div((div((div((h3(('Junichiro Iwasawa',),{'class': 'uk-h3 text-2xl font-semibold'}), a((uk-icon((),{'icon': 'menu', 'height': 30, 'width': 30, 'class': None}),),{'class': 'md:hidden', 'data-uk-toggle': 'target: #_19Z-y5vYT0a-tqB1Awz90A; cls: hidden'}), div((a(('About',),{'href': '/', 'class': 'mx-3'}), a(('Publications',),{'href': '/publications', 'class': 'mx-3'}), a(('Research',),{'href': '/research', 'class': 'mx-3'}), a(('Talks',),{'href': '/talks', 'class': 'mx-3'}), a(('Blog',),{'href': '/blog', 'class': 'mx-3'})),{'class': 'items-center space-x-4 hidden md:flex', 'uk-scrollspy-nav': False})),{'class': 'flex justify-between items-center w-full'}),),{'class': 'monster-navbar px-4 py-2 container navbar-underline'}), div((a(('About',),{'href': '/', 'class': 'mx-3'}), a(('Publications',),{'href': '/publications', 'class': 'mx-3'}), a(('Research',),{'href': '/research', 'class': 'mx-3'}), a(('Talks',),{'href': '/talks', 'class': 'mx-3'}), a(('Blog',),{'href': '/blog', 'class': 'mx-3'})),{'class': 'flex flex-col items-center justify-center space-y-4 px-4 py-2 container navbar-underline hidden md:hidden monster-navbar', 'id': '_19Z-y5vYT0a-tqB1Awz90A', 'uk-scrollspy-nav': False})),{'class': ''}), div((div((h1(("Junichiro Iwasawa's Blog",),{'class': 'uk-h1 text-4xl font-bold mb-8 mt-8'}),),{'class': 'text-center'}), div((div((div((div((div((div((uk-icon((),{'icon': 'file-edit', 'height': 64, 'width': 64, 'class': 'text-primary mb-4'}), h3(('Blog Posts Coming Soon!',),{'class': 'uk-h3 text-2xl font-semibold mb-2'}), p(("I'm working on some interesting articles to share. Check back soon for updates on my research, projects, and thoughts on AI, machine learning, and biophysics.",),{'class': 'text-center max-w-2xl mb-4'}), div((p(('Topics I plan to write about:',),{'class': 'font-semibold mb-2'}), ul((li(('Advances in Large Language Models for healthcare',),{}), li(('Evolutionary constraints and antibiotic resistance',),{}), li(('Self-supervised learning in medical imaging',),{}), li(('Statistical physics approaches to biological systems',),{})),{'class': 'list-disc pl-5 space-y-1'})),{'class': 'text-left'})),{'class': 'flex flex-col items-center justify-center py-8 px-4'}),),{'class': 'p-4'}),),{'class': 'uk-card-body space-y-6'}),),{'class': 'uk-card mb-12'}), div((div((div((div((p(('October 15, 2024',),{'class': 'text-gray-500 dark:text-gray-200  mb-1'}), p(('Junichiro Iwasawa',),{'class': 'text-gray-500 dark:text-gray-200  mb-3'})),{'class': 'mb-2'}), div((div((h3(('The Medical AI Revolution: Specialized LLMs in Healthcare',),{'class': 'uk-h3 text-xl font-semibold mb-3'}), p(('An exploration of how specialized medical language models are transforming healthcare diagnostics and decision-making, with insights from our recent projects at Preferred Networks.',),{'class': 'mb-3'}), div((a(('Medical AI',),{'href': '/blog/tag/medical ai', 'class': 'mr-2 text-sm bg-gray-100 px-2 py-1 rounded'}), a(('LLMs',),{'href': '/blog/tag/llms', 'class': 'mr-2 text-sm bg-gray-100 px-2 py-1 rounded'}), a(('Healthcare',),{'href': '/blog/tag/healthcare', 'class': 'mr-2 text-sm bg-gray-100 px-2 py-1 rounded'})),{'class': 'flex flex-wrap mb-3'}), a(('Read more →',),{'href': '/blog/medical-llms', 'class': <AT.primary: 'uk-link text-primary hover:text-primary-focus underline'>})),{'class': 'space-y-1'}), div((img((),{'src': '/static/blog/medical_llm.jpg', 'class': 'rounded-md object-cover w-full h-40'}),),{})),{'class': 'grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6'})),{'class': 'mb-8 pb-8 border-b border-gray-200'}),),{'class': 'mb-4'}), div((div((div((p(('September 28, 2024',),{'class': 'text-gray-500 dark:text-gray-200  mb-1'}), p(('Junichiro Iwasawa',),{'class': 'text-gray-500 dark:text-gray-200  mb-3'})),{'class': 'mb-2'}), div((div((h3(('Evolutionary Dynamics and Antibiotic Resistance',),{'class': 'uk-h3 text-xl font-semibold mb-3'}), p(('Discussing recent breakthroughs in understanding evolutionary constraints in bacteria and how this knowledge can help combat antibiotic resistance.',),{'class': 'mb-3'}), div((a(('Evolution',),{'href': '/blog/tag/evolution', 'class': 'mr-2 text-sm bg-gray-100 px-2 py-1 rounded'}), a(('Biophysics',),{'href': '/blog/tag/biophysics', 'class': 'mr-2 text-sm bg-gray-100 px-2 py-1 rounded'}), a(('Antibiotic Resistance',),{'href': '/blog/tag/antibiotic resistance', 'class': 'mr-2 text-sm bg-gray-100 px-2 py-1 rounded'})),{'class': 'flex flex-wrap mb-3'}), a(('Read more →',),{'href': '/blog/evolutionary-dynamics', 'class': <AT.primary: 'uk-link text-primary hover:text-primary-focus underline'>})),{'class': 'space-y-1'}), div((img((),{'src': '/static/blog/evolution.jpg', 'class': 'rounded-md object-cover w-full h-40'}),),{})),{'class': 'grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6'})),{'class': 'mb-8 pb-8 border-b border-gray-200'}),),{'class': 'mb-4'})),{'class': 'hidden'})),{'class': 'col-span-8'}), div((div((div((div((h3(('Categories',),{'class': 'uk-h3 text-xl font-semibold mb-4'}), ul((li((a(('All',),{'href': '/blog', 'class': <AT.primary: 'uk-link text-primary hover:text-primary-focus underline'>}), ' (0)'),{}), li((a(('Medical AI',),{'href': '/blog/category/medical-ai', 'class': <AT.primary: 'uk-link text-primary hover:text-primary-focus underline'>}), ' (0)'),{}), li((a(('LLMs',),{'href': '/blog/category/llms', 'class': <AT.primary: 'uk-link text-primary hover:text-primary-focus underline'>}), ' (0)'),{}), li((a(('Biophysics',),{'href': '/blog/category/biophysics', 'class': <AT.primary: 'uk-link text-primary hover:text-primary-focus underline'>}), ' (0)'),{}), li((a(('Machine Learning',),{'href': '/blog/category/machine-learning', 'class': <AT.primary: 'uk-link text-primary hover:text-primary-focus underline'>}), ' (0)'),{}), li((a(('Research',),{'href': '/blog/category/research', 'class': <AT.primary: 'uk-link text-primary hover:text-primary-focus underline'>}), ' (0)'),{})),{'class': 'list-none space-y-2'})),{'class': 'p-4'}),),{'class': 'uk-card-body space-y-6'}),),{'class': 'uk-card '}),),{'class': 'col-span-4 hidden'})),{'class': 'grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-8'})),{'class': 'uk-container uk-container-lg'})),{'class': 'bg-gray-50 min-h-screen'}),),{})),{}))
+ <!doctype html>
+ <html>
+   <head>
+     <title>Blog - Junichiro Iwasawa</title>
+     <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.4/dist/htmx.min.js"></script><script src="https://cdn.jsdelivr.net/gh/answerdotai/fasthtml-js@1.0.12/fasthtml.js"></script><script src="https://cdn.jsdelivr.net/gh/answerdotai/surreal@main/surreal.js"></script><script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@main/script.js"></script>     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css">
+<script type="module" src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/core.iife.js"></script><script type="module" src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/icon.iife.js"></script><script src="https://cdn.tailwindcss.com/3.4.16"></script><script>
+    tailwind.config = {
+        darkMode: 'selector',
+    }
+    </script><script>
+        const htmlElement = document.documentElement;
+        
+          const __FRANKEN__ = JSON.parse(localStorage.getItem("__FRANKEN__") || "{}");
+    
+htmlElement.classList.remove("dark");
+          htmlElement.classList.add("uk-theme-blue");
+          htmlElement.classList.add(__FRANKEN__.theme || "uk-theme-blue");
+          htmlElement.classList.add(__FRANKEN__.radii || "uk-radii-sm");
+          htmlElement.classList.add(__FRANKEN__.shadows || "uk-shadows-sm");
+          htmlElement.classList.add(__FRANKEN__.font || "uk-font-sm");
+    </script>     <style>
+.monster-navbar.navbar-bold a {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.monster-navbar.navbar-bold a.uk-active {
+    transform: scale(1.15) ;
+    font-weight: bold;
+    text-shadow: 0 0 12px rgba(var(--p-rgb), 0.4);
+    letter-spacing: 0.02em;
+    color: hsl(var(--p) / 1);
+}
+.monster-navbar.navbar-underline a.uk-active { position: relative; }
+.monster-navbar.navbar-underline a.uk-active::after {
+    content: &#x27;&#x27;;
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    width: 100%;
+    height: 2px;
+    background: currentColor;
+    animation: slideIn 0.3s ease forwards;
+}
+@keyframes slideIn {
+    from { transform: scaleX(0); }
+    to { transform: scaleX(1); }
+}
+</style>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css">
+     <style>
+:root {
+  --b1: from hsl(var(--background)) l c h;
+  --bc: from hsl(var(--foreground)) l c h;
+  --m: from hsl(var(--muted)) l c h;
+  --mc: from hsl(var(--muted-foreground)) l c h;
+  --po: from hsl(var(--popover)) l c h;
+  --poc: from hsl(var(--popover-foreground)) l c h;
+  --b2: from hsl(var(--card)) l c h;
+  --b2c: from hsl(var(--card-foreground)) l c h;
+  --br: from hsl(var(--border)) l c h;
+  --in: from hsl(var(--input)) l c h;
+  --p: from hsl(var(--primary)) l c h;
+  --pc: from hsl(var(--primary-foreground)) l c h;
+  --s: from hsl(var(--secondary)) l c h;
+  --sc: from hsl(var(--secondary-foreground)) l c h;
+  --a: from hsl(var(--accent)) l c h;
+  --ac: from hsl(var(--accent-foreground)) l c h;
+  --er: from hsl(var(--destructive)) l c h;
+  --erc: from hsl(var(--destructive-foreground)) l c h;
+  --b3: from hsl(var(--ring)) l c h;
+  --ch1: from hsl(var(--chart-1)) l c h;
+  --ch2: from hsl(var(--chart-2)) l c h;
+  --ch3: from hsl(var(--chart-3)) l c h;
+  --ch4: from hsl(var(--chart-4)) l c h;
+  --ch5: from hsl(var(--chart-5)) l c h;
+  --rd: var(--radius);
+}
+</style>
+     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.min.css">
+<script type="module">
+                import katex from 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/katex.mjs';
+                import autoRender from 'https://cdn.jsdelivr.net/npm/katex@0.16.21/dist/contrib/auto-render.mjs';
+                const options = {
+                  delimiters: [
+                    {left: '$$', right: '$$', display: true},
+                    {left: '$', right: '$', display: false}
+                  ],
+                  ignoredClasses: ['nomath']
+                };
+
+                document.addEventListener('htmx:load', evt => {
+                  const element = evt.detail.elt || document.body;
+                  autoRender(element,options);
+                });
+                </script>   </head>
+   <body class=" bg-background text-foreground">
+     <div class="bg-gray-50 min-h-screen">
+       <div>
+         <div class="monster-navbar px-4 py-2 container navbar-underline">
+           <div class="flex justify-between items-center w-full">
+             <h3 class="uk-h3 text-2xl font-semibold">Junichiro Iwasawa</h3>
+<a class="md:hidden" data-uk-toggle="target: #_3agwuFyNSTK6Z3E284rIVw; cls: hidden"><uk-icon icon="menu" height="30" width="30"></uk-icon></a>             <div class="items-center space-x-4 hidden md:flex">
+<a href="/" class="mx-3">About</a><a href="/publications" class="mx-3">Publications</a><a href="/research" class="mx-3">Research</a><a href="/talks" class="mx-3">Talks</a><a href="/blog" class="mx-3">Blog</a>             </div>
+           </div>
+         </div>
+         <div class="flex flex-col items-center justify-center space-y-4 px-4 py-2 container navbar-underline hidden md:hidden monster-navbar" id="_3agwuFyNSTK6Z3E284rIVw">
+<a href="/" class="mx-3">About</a><a href="/publications" class="mx-3">Publications</a><a href="/research" class="mx-3">Research</a><a href="/talks" class="mx-3">Talks</a><a href="/blog" class="mx-3">Blog</a>         </div>
+       </div>
+       <div class="uk-container uk-container-lg">
+         <div class="text-center">
+           <h1 class="uk-h1 text-4xl font-bold mb-8 mt-8">Junichiro Iwasawa&#x27;s Blog</h1>
+         </div>
+         <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-8">
+           <div class="col-span-8">
+             <div class="uk-card mb-12">
+               <div class="uk-card-body space-y-6">
+                 <div class="p-4">
+                   <div class="flex flex-col items-center justify-center py-8 px-4">
+<uk-icon icon="file-edit" height="64" width="64" class="text-primary mb-4"></uk-icon>                     <h3 class="uk-h3 text-2xl font-semibold mb-2">Blog Posts Coming Soon!</h3>
+                     <p class="text-center max-w-2xl mb-4">I&#x27;m working on some interesting articles to share. Check back soon for updates on my research, projects, and thoughts on AI, machine learning, and biophysics.</p>
+                     <div class="text-left">
+                       <p class="font-semibold mb-2">Topics I plan to write about:</p>
+                       <ul class="list-disc pl-5 space-y-1">
+                         <li>Advances in Large Language Models for healthcare</li>
+                         <li>Evolutionary constraints and antibiotic resistance</li>
+                         <li>Self-supervised learning in medical imaging</li>
+                         <li>Statistical physics approaches to biological systems</li>
+                       </ul>
+                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+             <div class="hidden">
+               <div class="mb-4">
+                 <div class="mb-8 pb-8 border-b border-gray-200">
+                   <div class="mb-2">
+                     <p class="text-gray-500 dark:text-gray-200  mb-1">October 15, 2024</p>
+                     <p class="text-gray-500 dark:text-gray-200  mb-3">Junichiro Iwasawa</p>
+                   </div>
+                   <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6">
+                     <div class="space-y-1">
+                       <h3 class="uk-h3 text-xl font-semibold mb-3">The Medical AI Revolution: Specialized LLMs in Healthcare</h3>
+                       <p class="mb-3">An exploration of how specialized medical language models are transforming healthcare diagnostics and decision-making, with insights from our recent projects at Preferred Networks.</p>
+                       <div class="flex flex-wrap mb-3">
+<a href="/blog/tag/medical ai" class="mr-2 text-sm bg-gray-100 px-2 py-1 rounded">Medical AI</a><a href="/blog/tag/llms" class="mr-2 text-sm bg-gray-100 px-2 py-1 rounded">LLMs</a><a href="/blog/tag/healthcare" class="mr-2 text-sm bg-gray-100 px-2 py-1 rounded">Healthcare</a>                       </div>
+<a href="/blog/medical-llms" class="uk-link text-primary hover:text-primary-focus underline">Read more →</a>                     </div>
+                     <div>
+<img src="/static/blog/medical_llm.jpg" class="rounded-md object-cover w-full h-40">                     </div>
+                   </div>
+                 </div>
+               </div>
+               <div class="mb-4">
+                 <div class="mb-8 pb-8 border-b border-gray-200">
+                   <div class="mb-2">
+                     <p class="text-gray-500 dark:text-gray-200  mb-1">September 28, 2024</p>
+                     <p class="text-gray-500 dark:text-gray-200  mb-3">Junichiro Iwasawa</p>
+                   </div>
+                   <div class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-2 gap-6">
+                     <div class="space-y-1">
+                       <h3 class="uk-h3 text-xl font-semibold mb-3">Evolutionary Dynamics and Antibiotic Resistance</h3>
+                       <p class="mb-3">Discussing recent breakthroughs in understanding evolutionary constraints in bacteria and how this knowledge can help combat antibiotic resistance.</p>
+                       <div class="flex flex-wrap mb-3">
+<a href="/blog/tag/evolution" class="mr-2 text-sm bg-gray-100 px-2 py-1 rounded">Evolution</a><a href="/blog/tag/biophysics" class="mr-2 text-sm bg-gray-100 px-2 py-1 rounded">Biophysics</a><a href="/blog/tag/antibiotic resistance" class="mr-2 text-sm bg-gray-100 px-2 py-1 rounded">Antibiotic Resistance</a>                       </div>
+<a href="/blog/evolutionary-dynamics" class="uk-link text-primary hover:text-primary-focus underline">Read more →</a>                     </div>
+                     <div>
+<img src="/static/blog/evolution.jpg" class="rounded-md object-cover w-full h-40">                     </div>
+                   </div>
+                 </div>
+               </div>
+             </div>
+           </div>
+           <div class="col-span-4 hidden">
+             <div class="uk-card ">
+               <div class="uk-card-body space-y-6">
+                 <div class="p-4">
+                   <h3 class="uk-h3 text-xl font-semibold mb-4">Categories</h3>
+                   <ul class="list-none space-y-2">
+                     <li>
+<a href="/blog" class="uk-link text-primary hover:text-primary-focus underline">All</a> (0)                     </li>
+                     <li>
+<a href="/blog/category/medical-ai" class="uk-link text-primary hover:text-primary-focus underline">Medical AI</a> (0)                     </li>
+                     <li>
+<a href="/blog/category/llms" class="uk-link text-primary hover:text-primary-focus underline">LLMs</a> (0)                     </li>
+                     <li>
+<a href="/blog/category/biophysics" class="uk-link text-primary hover:text-primary-focus underline">Biophysics</a> (0)                     </li>
+                     <li>
+<a href="/blog/category/machine-learning" class="uk-link text-primary hover:text-primary-focus underline">Machine Learning</a> (0)                     </li>
+                     <li>
+<a href="/blog/category/research" class="uk-link text-primary hover:text-primary-focus underline">Research</a> (0)                     </li>
+                   </ul>
+                 </div>
+               </div>
+             </div>
+           </div>
+         </div>
+       </div>
+     </div>
+   </body>
+ </html>
