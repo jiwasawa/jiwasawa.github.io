@@ -55,9 +55,9 @@ if Path("static").exists():
 
 # Copy profile image if it exists
 if Path("data/profile_img.jpg").exists():
-    shutil.copy("profile_img.jpg", output_dir / "data" / "profile_img.jpg")
+    shutil.copy("data/profile_img.jpg", output_dir / "data" / "profile_img.jpg")
 if Path("data/junichiro_iwasawa_cv.pdf").exists():
-    shutil.copy("junichiro_iwasawa_cv.pdf", output_dir / "data" / "junichiro_iwasawa_cv.pdf")
+    shutil.copy("data/junichiro_iwasawa_cv.pdf", output_dir / "data" / "junichiro_iwasawa_cv.pdf")
 
 # Create a simple robots.txt
 with open(output_dir / "robots.txt", "w") as f:
