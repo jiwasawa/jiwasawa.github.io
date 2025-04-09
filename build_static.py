@@ -54,10 +54,10 @@ if Path("static").exists():
     shutil.copytree("static", static_dir, dirs_exist_ok=True)
 
 # Copy profile image if it exists
-if Path("profile_img.jpg").exists():
-    shutil.copy("profile_img.jpg", output_dir / "profile_img.jpg")
-if Path("junichiro_iwasawa_cv.pdf").exists():
-    shutil.copy("junichiro_iwasawa_cv.pdf", output_dir / "junichiro_iwasawa_cv.pdf")
+if Path("data/profile_img.jpg").exists():
+    shutil.copy("profile_img.jpg", output_dir / "data" / "profile_img.jpg")
+if Path("data/junichiro_iwasawa_cv.pdf").exists():
+    shutil.copy("junichiro_iwasawa_cv.pdf", output_dir / "data" / "junichiro_iwasawa_cv.pdf")
 
 # Create a simple robots.txt
 with open(output_dir / "robots.txt", "w") as f:
@@ -70,7 +70,7 @@ with open(output_dir / ".nojekyll", "w") as f:
 # Define routes to capture
 routes = [
     ("/", "index.html"),
-    ("/publications", "publicationshtml"),
+    ("/publications", "publications.html"),
     ("/research", "research.html"),
     ("/talks", "talks.html"),
     ("/blog", "blog/index.html")

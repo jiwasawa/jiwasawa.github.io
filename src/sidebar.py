@@ -5,7 +5,7 @@ from monsterui.all import *
 def sidebar():
     return Div(
         Div(
-            Img(src="profile_img.jpg", cls="rounded-full w-full h-auto mb-4"),
+            Img(src="data/profile_img.jpg", cls="rounded-full w-full h-auto mb-4"),
             H4("Junichiro Iwasawa", cls="text-1xl font-semibold"),
             #H5("岩澤 諄一郎", cls="text-1xl font-semibold"),
             P("Researcher at Preferred Networks Inc.", cls=TextPresets.muted_sm),

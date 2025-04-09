@@ -69,7 +69,7 @@ def main_content():
             P("Junichiro Iwasawa (岩澤 諄一郎)", cls=TextPresets.muted_lg + " mb-4"),
             DivLAligned(
                 UkIcon("file-text", cls="mr-2"),
-                A("Link to CV (pdf)", href="junichiro_iwasawa_cv.pdf", cls=AT.primary),
+                A("Link to CV (pdf)", href="data/junichiro_iwasawa_cv.pdf", cls=AT.primary),
                 cls="mb-6"
             ),
             cv_timeline_item("Mar. 2025–present", "Tech Lead", "Preferred Networks Inc."),

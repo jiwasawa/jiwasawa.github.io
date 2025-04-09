@@ -4,7 +4,7 @@ from monsterui.all import *
 from src.sidebar import sidebar, navbar
 
 
-def publication_item(authors, title, journal, year, link="", labels=None):
+def publication_item(authors, title, journal, link="", labels=None):
     labels = labels or []
     return Card(
         Div(
