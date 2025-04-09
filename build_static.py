@@ -19,9 +19,10 @@ def fix_github_pages_links(html_content, repo_name, current_path):
         current_path: The current path being processed (e.g., "/", "/publications")
     """
     # Fix href and src attributes that start with "/" (absolute paths)
-    html_content = html_content.replace('href="/', f'href="/{repo_name}/')
-    html_content = html_content.replace('src="/', f'src="/{repo_name}/')
-    html_content = html_content.replace('data-src="/', f'data-src="/{repo_name}/')
+    if repo_name:
+        html_content = html_content.replace('href="/', f'href="/{repo_name}/')
+        html_content = html_content.replace('src="/', f'src="/{repo_name}/')
+        html_content = html_content.replace('data-src="/', f'data-src="/{repo_name}/')
     
     # Fix relative paths for assets based on current path depth
     if current_path != "/":
@@ -100,7 +101,7 @@ try:
             file_path = output_dir / output_path
             file_path.parent.mkdir(exist_ok=True, parents=True)
 
-            fixed_html = fix_github_pages_links(response.text, "personal-webpage", route)
+            fixed_html = fix_github_pages_links(response.text, None, route)
             
             # Save the HTML content
             with open(file_path, "w", encoding="utf-8") as f:
