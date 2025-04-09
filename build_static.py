@@ -100,7 +100,7 @@ try:
             file_path = output_dir / output_path
             file_path.parent.mkdir(exist_ok=True, parents=True)
 
-            fixed_html = fix_github_pages_links(response.text, "personal-webpage")
+            fixed_html = fix_github_pages_links(response.text, "personal-webpage", route)
             
             # Save the HTML content
             with open(file_path, "w", encoding="utf-8") as f:
