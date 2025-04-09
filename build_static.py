@@ -2,7 +2,6 @@ from fasthtml.common import *
 from monsterui.all import *
 import os, shutil
 from pathlib import Path
-from fasthtml.render import render_html
 
 # Import your page components
 from src.home import home
@@ -41,9 +40,8 @@ for path, title, content in pages:
     file_path = output_dir / path
     file_path.parent.mkdir(exist_ok=True, parents=True)
     
-    # Wrap content with proper HTML structure including headers
-    full_page = Div(
-        "<!DOCTYPE html>",
+    # Create a complete HTML document with proper structure
+    full_page = "<!DOCTYPE html>\n" + str(
         Html(
             Head(
                 Meta(charset="utf-8"),
@@ -55,11 +53,8 @@ for path, title, content in pages:
         )
     )
     
-    # Render to HTML string with all dependencies
-    html_content = render_html(full_page)
-    
     # Write to file
     with open(file_path, "w", encoding="utf-8") as f:
-        f.write(html_content)
+        f.write(full_page)
 
 print(f"Static site generated in {output_dir}")
