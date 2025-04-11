@@ -83,7 +83,8 @@ def publications_content():
             ),
             cls="mb-12"
         ),
-        cls="col-span-7"
+        #cls="col-span-7"
+        cls="col-span-12 md:col-span-7 lg:col-span-7"
     )
 
 

@@ -112,7 +112,8 @@ def research_content():
             ),
             cls="space-y-8"
         ),
-        cls="col-span-7"
+        #cls="col-span-7"
+        cls="col-span-12 md:col-span-7 lg:col-span-7"
     )
 
 

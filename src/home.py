@@ -79,16 +79,20 @@ def main_content():
             cv_timeline_item("Apr. 2012–Mar. 2016", "Bachelor of Science", "Dept. of Physics, The University of Tokyo"),
             cls="mb-8"
         ),
-        cls="col-span-7"  # Added col-span-9 to take up 9/12 columns
+        #cls="col-span-7"
+        cls="col-span-12 md:col-span-7 lg:col-span-7"
     )
+
 
 def home():
     content = Container(
         Grid(
             sidebar(),
             main_content(),
-            cols=12,  # Use a 12-column grid
-            cls="gap-8 mt-8"
+            cols=12,
+            cols_sm=1,  # Single column on small screens
+            #cols_md=12,  # Return to 12 columns on medium screens
+            cls="gap-8 mt-16"  # Increased top margin to prevent overlap with navbar
         ),
         cls=ContainerT.xl,
     )
