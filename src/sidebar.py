@@ -64,7 +64,8 @@ def navbar():
     return NavBar(
         *map(lambda x: A(x[0], href=x[1], cls="mx-3"), 
              [("About", "/"), ("Publications", "/publications"), 
-              ("Research", "/research"), ("Talks", "/talks"), ("ブログ", "/blog_jp")]),
+              ("Research", "/research"), ("Talks", "/talks"), 
+              ("Blog", "/blog"), ("ブログ", "/blog_jp")]),
         brand=H3("Junichiro Iwasawa", cls="text-2xl font-semibold"),
         cls="px-4 py-2 container",  # Add a background color and shadow
         #cls="justify-between container mx-1 px-4 py-2 bg-white rounded-lg"  # Add a background color and shadow
