@@ -5,7 +5,6 @@ from src.talks import presentations_page
 from src.home import home
 from src.publications import publications_page
 from src.research import research_page
-from src.blog import blog_page
 
 
 app, rt = fast_app(hdrs=(Theme.blue.headers(mode="light")))
@@ -28,11 +27,6 @@ def get():
 @rt("/research")
 def get():
     return Title("Research - Junichiro Iwasawa"), research_page()
-
-
-@rt("/blog")
-def get():
-    return Title("Blog - Junichiro Iwasawa"), blog_page()
 
 
 serve()
