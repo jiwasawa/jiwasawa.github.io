@@ -69,7 +69,7 @@ def publications_content():
                     "Daiki Nishiguchi, Junichiro Iwasawa, Hong-Ren Jiang, and Masaki Sano",
                     "Flagellar dynamics of chains of active Janus particles fueled by an AC electric field",
                     "New Journal of Physics 20, 015002 (2018)",
-                    "https://doi.org/10.1088/1367-2630/aa9b5b",
+                    "http://doi.org/10.1088/1367-2630/aa9b48",
                     ["Statistical Physics", "Active Matter"]
                 ),
                 publication_item(

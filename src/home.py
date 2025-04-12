@@ -4,13 +4,14 @@ from monsterui.all import *
 from src.sidebar import sidebar, navbar
 
 
-def cv_timeline_item(period, title, institution):
+def cv_timeline_item(period, title, institution, thesis=None):
     return Card(
         DivLAligned(
             Span(period, cls=TextPresets.muted_sm),
             Div(
                 H4(title, cls=TextT.bold),
-                P(institution, cls=TextPresets.muted_sm)
+                P(institution, cls=TextPresets.muted_sm),
+                P(thesis, cls=TextPresets.muted_sm) if thesis else None,
             ),
             cls="space-x-4"
         ),
@@ -74,8 +75,18 @@ def main_content():
             ),
             cv_timeline_item("Mar. 2025–present", "Tech Lead", "Preferred Networks Inc."),
             cv_timeline_item("Apr. 2021–present", "Researcher", "Preferred Networks Inc."),
-            cv_timeline_item("Apr. 2018–Mar. 2021", "Doctor of Philosophy", "Furusawa Laboratory, Dept. of Physics, The University of Tokyo"),
-            cv_timeline_item("Apr. 2016–Mar. 2018", "Master of Science", "Sano Laboratory, Dept. of Physics, The University of Tokyo"),
+            cv_timeline_item(
+                "Apr. 2018–Mar. 2021",
+                "Doctor of Philosophy",
+                "Furusawa Laboratory, Dept. of Physics, The University of Tokyo",
+                #"Dissertation: Deciphering Evolutionary Constraints through Microbial Laboratory Evolution combined with Machine Learning",
+            ),
+            cv_timeline_item(
+                "Apr. 2016–Mar. 2018",
+                "Master of Science",
+                "Sano Laboratory, Dept. of Physics, The University of Tokyo",
+                #"Thesis: Collective Phenomena of Self-Propelled Janus Particles under an AC Electric Field",
+            ),
             cv_timeline_item("Apr. 2012–Mar. 2016", "Bachelor of Science", "Dept. of Physics, The University of Tokyo"),
             cls="mb-8"
         ),
