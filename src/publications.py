@@ -38,6 +38,20 @@ def publications_content():
             H3("Publications and Preprints", cls="text-2xl font-semibold mb-4"),
             Div(
                 publication_item(
+                    "Wataru Kawakami, Keita Suzuki, and Junichiro Iwasawa",
+                    "Stabilizing Reasoning in Medical LLMs with Continued Pretraining and Reasoning Preference Optimization",
+                    "NeurIPS 2025 Workshop GenAI4Health",
+                    "https://openreview.net/forum?id=bGkyFZVyRL",
+                    ["Large Language Models", "Continued Pretraining", "Reasoning Preference Optimization"]
+                ),
+                publication_item(
+                    "Xinkai Zhao, Yuta Tokuoka, Junichiro Iwasawa, and Keita Oda",
+                    "Frequency-calibrated membership inference attacks on medical image diffusion models",
+                    "MICCAI 2025 Workshop on Deep Generative Models",
+                    "https://link.springer.com/chapter/10.1007/978-3-032-05472-2_29",
+                    ["Diffusion Models", "Membership Inference Attacks", "Medical Imaging"]
+                ),
+                publication_item(
                     "Junichiro Iwasawa, Tomoya Maeda, Atsushi Shibai, Hazuki Kotani, Masako Kawada, and Chikara Furusawa",
                     "Analysis of the evolution of resistance to multiple antibiotics enables prediction of the Escherichia coli phenotype-based fitness landscape",
                     "PLOS Biology 20(12): e3001920 (2022)",
