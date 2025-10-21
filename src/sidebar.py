@@ -6,7 +6,8 @@ def sidebar():
     return Div(
         Div(
             Img(
-                src="static/profile_img.jpg",
+                #src="static/profile_img.jpg",
+                src="static/profile_img2.jpg",
                 #cls="rounded-full w-full h-auto mb-4",
                 cls="rounded-full w-full max-w-[150px] h-auto mb-4 mx-auto"
             ),
