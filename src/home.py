@@ -24,35 +24,27 @@ def main_content():
         # Introduction section
         Section(
             H2("About Junichiro", cls="text-3xl font-semibold mb-4"),
-            P("""As a Researcher at """,
-            A("Preferred Networks Inc.", 
-            href="https://www.preferred.jp/en/", 
-            cls=AT.primary), 
-            """, I primarily engage with clients 
-            in the healthcare and life sciences sectors.
-            Currently, I serve as the tech lead for providing BtoB solutions using Large Language Models (LLMs) .""",
+            P("As a Solutions Architect at NVIDIA, I work with Japanese enterprise customers on large language model training and inference, with a focus on the NeMo framework. I joined NVIDIA in February 2026.",
             cls="mb-3 leading-relaxed text-base"),
-            P("""I led a research project to build a medical domain-specialized LLM, 
-            resulting in """, 
-            A("Llama3-Preferred-MedSwallow-70B", 
-            href="https://huggingface.co/pfnet/Llama3-Preferred-MedSwallow-70B", 
-            cls=AT.primary), 
-            """ and """,
-            A("Preferred-MedLLM-Qwen-72B", 
-            href="https://huggingface.co/pfnet/Preferred-MedLLM-Qwen-72B", 
+            P("Previously, as a Researcher at ",
+            A("Preferred Networks Inc.",
+            href="https://www.preferred.jp/en/",
             cls=AT.primary),
-            """, the first open LLMs that 
-            surpass GPT-4 in the Japanese Medical Licensing Exam (JMLE).
-            Over the past few years, I have also been leading a project for developing a deep learning based solution 
-            aimed at enhancing the diagnosis of endometriosis through the analysis of MRIs, 
-            in collaboration with a leading pharmaceutical company.""",
+            ", I primarily engaged with clients in the healthcare and life sciences sectors and served as the tech lead for providing BtoB solutions using Large Language Models (LLMs).",
             cls="mb-3 leading-relaxed text-base"),
-            P("""I have experience formulating problems through consultations with clients and 
-            providing solutions based on deep learning / machine learning.
-            Additionally, I have been the main mentor for four research interns and one part-time engineer.""",
+            P("I led a research project to build a medical domain-specialized LLM, resulting in ",
+            A("Llama3-Preferred-MedSwallow-70B",
+            href="https://huggingface.co/pfnet/Llama3-Preferred-MedSwallow-70B",
+            cls=AT.primary),
+            " and ",
+            A("Preferred-MedLLM-Qwen-72B",
+            href="https://huggingface.co/pfnet/Preferred-MedLLM-Qwen-72B",
+            cls=AT.primary),
+            ", the first open LLMs that surpass GPT-4 in the Japanese Medical Licensing Exam (JMLE). I also led a project for developing a deep learning based solution aimed at enhancing the diagnosis of endometriosis through the analysis of MRIs, in collaboration with a leading pharmaceutical company.",
             cls="mb-3 leading-relaxed text-base"),
-            P("""During my PhD, I have been working on the development of machine learning methods 
-            for gene expression/mutation data to tackle the problem of antibiotic resistance of bacteria.""",
+            P("I have experience formulating problems through consultations with clients and providing solutions based on deep learning / machine learning. I have also been the main mentor for four research interns and one part-time engineer.",
+            cls="mb-3 leading-relaxed text-base"),
+            P("During my PhD, I worked on the development of machine learning methods for gene expression/mutation data to tackle the problem of antibiotic resistance of bacteria.",
             cls="mb-3 leading-relaxed text-base"),
             Div(
                 Label("Large Language Models", cls="mr-2 mb-2"),
