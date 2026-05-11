@@ -65,7 +65,8 @@ def main_content():
                 A("Link to CV (pdf)", href="static/junichiro_iwasawa_cv.pdf", cls=AT.primary),
                 cls="mb-6"
             ),
-            cv_timeline_item("Mar. 2025–present", "Tech Lead", "Preferred Networks Inc."),
+            cv_timeline_item("Feb. 2026–present", "Solutions Architect", "NVIDIA"),
+            cv_timeline_item("Mar. 2025–Jan. 2026", "Tech Lead", "Preferred Networks Inc."),
             cv_timeline_item("Apr. 2021–present", "Researcher", "Preferred Networks Inc."),
             cv_timeline_item(
                 "Apr. 2018–Mar. 2021",
