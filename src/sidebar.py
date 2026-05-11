@@ -13,8 +13,7 @@ def sidebar():
             ),
             H4("Junichiro Iwasawa", cls="text-1xl font-semibold"),
             #H5("岩澤 諄一郎", cls="text-1xl font-semibold"),
-            P("Researcher at Preferred Networks Inc.", cls=TextPresets.muted_sm),
-            P("iwasawa [at] preferred.jp", cls=TextPresets.muted_sm),
+            P("Solution Architect at NVIDIA", cls=TextPresets.muted_sm),
             Div(cls="mt-6"),
             # Social media links with icons
             Div(
