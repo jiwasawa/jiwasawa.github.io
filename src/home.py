@@ -4,18 +4,9 @@ from monsterui.all import *
 from src.sidebar import sidebar, navbar
 
 
-def cv_timeline_item(period, title, institution, thesis=None):
-    return Card(
-        DivLAligned(
-            Span(period, cls=TextPresets.muted_sm),
-            Div(
-                H4(title, cls=TextT.bold),
-                P(institution, cls=TextPresets.muted_sm),
-                P(thesis, cls=TextPresets.muted_sm) if thesis else None,
-            ),
-            cls="space-x-4"
-        ),
-        cls="mb-4 p-4"
+def cv_entry(period, title, institution):
+    return Li(
+        Strong(f"{period}."), f" {title}, {institution.rstrip('.')}.",
     )
 
 
@@ -46,17 +37,9 @@ def main_content():
             cls="mb-3 leading-relaxed text-base"),
             P("During my PhD, I worked on the development of machine learning methods for gene expression/mutation data to tackle the problem of antibiotic resistance of bacteria.",
             cls="mb-3 leading-relaxed text-base"),
-            Div(
-                Label("Large Language Models", cls="mr-2 mb-2"),
-                Label("Machine Learning", cls="mr-2 mb-2"),
-                Label("Healthcare", cls="mr-2 mb-2"),
-                Label("Biophysics", cls="mr-2 mb-2"),
-                Label("Statistical Physics", cls="mr-2 mb-2"),
-                cls="mt-6 flex flex-wrap"
-            ),
             cls="mb-12"
         ),
-        
+
         Section(
             H2("CV", cls="text-3xl font-semibold mb-4"),
             P("Junichiro Iwasawa (岩澤 諄一郎)", cls=TextPresets.muted_lg + " mb-4"),
@@ -65,25 +48,25 @@ def main_content():
                 A("Link to CV (pdf)", href="static/junichiro_iwasawa_cv.pdf", cls=AT.primary),
                 cls="mb-6"
             ),
-            cv_timeline_item("Feb. 2026–present", "Solutions Architect", "NVIDIA"),
-            cv_timeline_item("Mar. 2025–Jan. 2026", "Tech Lead", "Preferred Networks Inc."),
-            cv_timeline_item("Apr. 2021–present", "Researcher", "Preferred Networks Inc."),
-            cv_timeline_item(
-                "Apr. 2018–Mar. 2021",
-                "Doctor of Philosophy",
-                "Furusawa Laboratory, Dept. of Physics, The University of Tokyo",
-                #"Dissertation: Deciphering Evolutionary Constraints through Microbial Laboratory Evolution combined with Machine Learning",
+            Ul(
+                cv_entry("Feb. 2026–present", "Solutions Architect", "NVIDIA"),
+                cv_entry("Mar. 2025–Jan. 2026", "Tech Lead", "Preferred Networks Inc."),
+                cv_entry("Apr. 2021–present", "Researcher", "Preferred Networks Inc."),
+                cv_entry(
+                    "Apr. 2018–Mar. 2021",
+                    "Doctor of Philosophy",
+                    "Furusawa Laboratory, Dept. of Physics, The University of Tokyo",
+                ),
+                cv_entry(
+                    "Apr. 2016–Mar. 2018",
+                    "Master of Science",
+                    "Sano Laboratory, Dept. of Physics, The University of Tokyo",
+                ),
+                cv_entry("Apr. 2012–Mar. 2016", "Bachelor of Science", "Dept. of Physics, The University of Tokyo"),
+                cls="list-disc pl-5 space-y-2"
             ),
-            cv_timeline_item(
-                "Apr. 2016–Mar. 2018",
-                "Master of Science",
-                "Sano Laboratory, Dept. of Physics, The University of Tokyo",
-                #"Thesis: Collective Phenomena of Self-Propelled Janus Particles under an AC Electric Field",
-            ),
-            cv_timeline_item("Apr. 2012–Mar. 2016", "Bachelor of Science", "Dept. of Physics, The University of Tokyo"),
-            cls="mb-8"
+            cls="mb-12"
         ),
-        #cls="col-span-7"
         cls="col-span-12 md:col-span-7 lg:col-span-7"
     )
 
@@ -95,7 +78,6 @@ def home():
             main_content(),
             cols=12,
             cols_sm=1,  # Single column on small screens
-            #cols_md=12,  # Return to 12 columns on medium screens
             cls="gap-8 mt-16"  # Increased top margin to prevent overlap with navbar
         ),
         cls=ContainerT.xl,

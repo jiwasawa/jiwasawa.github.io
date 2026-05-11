@@ -1,2 +1,5 @@
 __pycache__/
 .sesskey
+.superpowers/
+_site/
+.DS_Store
