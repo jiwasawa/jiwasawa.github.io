@@ -51,7 +51,7 @@ def main_content():
             Ul(
                 cv_entry("Feb. 2026–present", "Solutions Architect", "NVIDIA"),
                 cv_entry("Mar. 2025–Jan. 2026", "Tech Lead", "Preferred Networks Inc."),
-                cv_entry("Apr. 2021–present", "Researcher", "Preferred Networks Inc."),
+                cv_entry("Apr. 2021–Jan. 2026", "Researcher", "Preferred Networks Inc."),
                 cv_entry(
                     "Apr. 2018–Mar. 2021",
                     "Doctor of Philosophy",
