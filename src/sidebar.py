@@ -74,6 +74,22 @@ def sidebar():
     )
 
 
+def page_layout(content):
+    # Sidebar + content shell shared by the Research / Publications / Talks pages.
+    # The grid is a single column on mobile and only becomes the 12-column split at
+    # md+. Using MonsterUI's Grid(cols=12) here would emit grid-cols-12 at every
+    # breakpoint; on a phone the 11 column gaps (gap-10 = 2.5rem each) add up to
+    # ~27.5rem of forced width and push the content off the right edge of the screen.
+    return Container(
+        Div(
+            sidebar(),
+            content,
+            cls="grid grid-cols-1 md:grid-cols-12 gap-10 mt-12",
+        ),
+        cls=ContainerT.xl,
+    )
+
+
 def _theme_toggle():
     return Button(
         UkIcon("moon", height=18, width=18, cls="block dark:hidden"),

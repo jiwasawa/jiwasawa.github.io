@@ -1,7 +1,7 @@
 from fasthtml.common import *
 from monsterui.all import *
 
-from src.sidebar import sidebar, navbar
+from src.sidebar import navbar, page_layout
 
 
 def presentation_item(title, title_jp, venue, date, location="", venue_link=""):
@@ -278,13 +278,4 @@ def presentations_content():
 
 
 def presentations_page():
-    content = Container(
-        Grid(
-            sidebar(),
-            presentations_content(),
-            cols=12,
-            cls="gap-10 mt-12"
-        ),
-        cls=ContainerT.xl
-    )
-    return Div(navbar(), content)
+    return Div(navbar(), page_layout(presentations_content()))

@@ -1,7 +1,7 @@
 from fasthtml.common import *
 from monsterui.all import *
 
-from src.sidebar import sidebar, navbar
+from src.sidebar import navbar, page_layout
 
 
 def research_project(title, description, related_publications=None):
@@ -121,14 +121,4 @@ def research_content():
 
 
 def research_page():
-    content = Container(
-        Grid(
-            sidebar(),
-            research_content(),
-            cols=12,
-            cls="gap-10 mt-12"
-        ),
-        cls=ContainerT.xl
-    )
-    
-    return Div(navbar(), content)
+    return Div(navbar(), page_layout(research_content()))
