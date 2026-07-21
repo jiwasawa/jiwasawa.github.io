@@ -273,7 +273,7 @@ def presentations_content():
             ),
             cls="mb-12"
         ),
-        cls="col-span-12 md:col-span-8 lg:col-span-9"
+        cls="col-span-1 md:col-span-8 lg:col-span-9"
     )
 
 

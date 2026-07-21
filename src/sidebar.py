@@ -70,7 +70,7 @@ def sidebar():
             ),
             cls="text-center md:text-left p-4",
         ),
-        cls="col-span-12 md:col-span-4 lg:col-span-3 md:sticky md:top-24",
+        cls="col-span-1 md:col-span-4 lg:col-span-3 md:sticky md:top-24",
     )
 
 
@@ -80,6 +80,11 @@ def page_layout(content):
     # md+. Using MonsterUI's Grid(cols=12) here would emit grid-cols-12 at every
     # breakpoint; on a phone the 11 column gaps (gap-10 = 2.5rem each) add up to
     # ~27.5rem of forced width and push the content off the right edge of the screen.
+    #
+    # The two children (sidebar() and content) must default to col-span-1, NOT
+    # col-span-12: a span-12 item inside grid-cols-1 makes the browser create 11
+    # implicit columns, which reintroduces those 27.5rem of gaps and the overflow.
+    # Their md:col-span-4 / md:col-span-8 take over once grid-cols-12 applies.
     return Container(
         Div(
             sidebar(),
