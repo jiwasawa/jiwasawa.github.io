@@ -7,14 +7,17 @@ from src.sidebar import sidebar, navbar
 def research_project(title, description, related_publications=None):
     related_publications = related_publications or []
     return Div(
-        H3(title, cls="text-2xl font-semibold mb-3"),
-        description if not isinstance(description, str) else P(description, cls="mb-4 leading-relaxed text-base"),
+        H3(title, cls="text-2xl font-semibold tracking-tight mb-3"),
+        Div(
+            description if not isinstance(description, str) else P(description, cls="mb-4 leading-relaxed text-base"),
+            cls="max-w-2xl"
+        ),
         Div(
             H4("Related Publications:", cls="text-lg font-semibold mb-2") if related_publications else None,
-            Ul(*[Li(Safe(pub), cls="mb-2") for pub in related_publications], cls="list-disc pl-5"),
+            Ul(*[Li(Safe(pub), cls="mb-2") for pub in related_publications], cls="list-disc pl-5 max-w-2xl"),
             cls="mt-4 text-base"
         ) if related_publications else None,
-        cls="mb-12 pb-8 border-b border-gray-200 last:border-0"
+        cls="mb-12 pb-8 border-b border-border last:border-0"
     )
 
 
@@ -22,10 +25,10 @@ def research_content():
     return Div(
         # Introduction
         Section(
-            H2("Research", cls="text-3xl font-semibold mb-6"),
-            P("My research spans several interdisciplinary areas, ranging from physics, biology to machine learning.", 
-              cls="mb-6 text-lg"),
-            cls="mb-8"
+            H2("Research", cls="text-3xl font-bold tracking-tight mb-6"),
+            P("My research spans several interdisciplinary areas, ranging from physics, biology to machine learning.",
+              cls="mb-6 text-lg max-w-2xl"),
+            cls="mb-12"
         ),
         
         # Research Projects
@@ -112,8 +115,7 @@ def research_content():
             ),
             cls="space-y-8"
         ),
-        #cls="col-span-7"
-        cls="col-span-12 md:col-span-7 lg:col-span-7"
+        cls="col-span-12 md:col-span-8 lg:col-span-9"
     )
 
 
@@ -124,7 +126,7 @@ def research_page():
             sidebar(),
             research_content(),
             cols=12,
-            cls="gap-8 mt-8"
+            cls="gap-10 mt-12"
         ),
         cls=ContainerT.xl
     )
