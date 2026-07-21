@@ -3,7 +3,7 @@ import re
 from fasthtml.common import *
 from monsterui.all import *
 
-from src.sidebar import sidebar, navbar
+from src.sidebar import navbar, page_layout
 
 
 def _authors_with_self_underlined(authors):
@@ -117,20 +117,9 @@ def publications_content():
             ),
             cls="mb-12"
         ),
-        cls="col-span-12 md:col-span-8 lg:col-span-9"
+        cls="col-span-1 md:col-span-8 lg:col-span-9"
     )
 
 
 def publications_page():
-
-    content = Container(
-        Grid(
-            sidebar(),
-            publications_content(),
-            cols=12,
-            cls="gap-10 mt-12"
-        ),
-        cls=ContainerT.xl
-    )
-
-    return Div(navbar(), content)
+    return Div(navbar(), page_layout(publications_content()))
