@@ -27,7 +27,7 @@ def publications_content():
     return Div(
         # Introduction
         Section(
-            H2("Publications", cls="text-3xl font-semibold mb-4"),
+            H2("Publications", cls="text-3xl font-bold tracking-tight mb-4"),
             DivLAligned(
                 UkIcon("graduation-cap", cls="mr-2"),
                 A("Google Scholar Profile",
@@ -113,11 +113,11 @@ def publications_content():
                     "Proceedings of the National Academy of Sciences 114 (13), E2580-E2589 (2017)",
                     "https://doi.org/10.1073/pnas.1616013114",
                 ),
-                cls="list-disc pl-5 space-y-2"
+                cls="list-disc pl-5 space-y-3"
             ),
             cls="mb-12"
         ),
-        cls="col-span-12 md:col-span-7 lg:col-span-7"
+        cls="col-span-12 md:col-span-8 lg:col-span-9"
     )
 
 
@@ -128,7 +128,7 @@ def publications_page():
             sidebar(),
             publications_content(),
             cols=12,
-            cls="gap-8 mt-8"
+            cls="gap-10 mt-12"
         ),
         cls=ContainerT.xl
     )

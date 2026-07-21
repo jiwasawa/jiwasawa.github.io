@@ -77,16 +77,30 @@ routes = [
     ("/blog", "blog/index.html")
 ]
 
-# Start the FastHTML server in a subprocess
+# Start the FastHTML server in a subprocess.
+# Use the same interpreter running this script so the venv's dependencies are available.
 server_process = subprocess.Popen(
-    ["python", "main.py"],
+    [sys.executable, "main.py"],
     stdout=subprocess.PIPE,
     stderr=subprocess.PIPE
 )
 
-# Wait for the server to start
+# Wait for the server to accept connections instead of guessing with a fixed sleep.
 print("Starting server...")
-time.sleep(5)  # Give the server time to start
+for _ in range(30):
+    # If the server process died (e.g. an import error), fail fast with its
+    # output rather than probing a port some other process may be holding.
+    if server_process.poll() is not None:
+        err = server_process.stderr.read().decode(errors="replace") if server_process.stderr else ""
+        raise RuntimeError(f"FastHTML server exited before becoming ready:\n{err}")
+    try:
+        requests.get("http://localhost:5001/", timeout=1)
+        break
+    except requests.exceptions.RequestException:
+        time.sleep(0.5)
+else:
+    server_process.terminate()
+    raise RuntimeError("FastHTML server did not start within 15 seconds")
 
 try:
     # Fetch each page and save it

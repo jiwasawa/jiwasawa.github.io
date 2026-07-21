@@ -17,7 +17,7 @@ def presentation_item(title, title_jp, venue, date, location="", venue_link=""):
 def presentations_content():
     return Div(
         Section(
-            H2("Talks and presentations", cls="text-3xl font-semibold mb-4"),
+            H2("Talks and presentations", cls="text-3xl font-bold tracking-tight mb-4"),
             Div(
                 Ul(
                     Li(A("Invited Talks", href="#invited-talks", cls=AT.primary)),
@@ -273,7 +273,7 @@ def presentations_content():
             ),
             cls="mb-12"
         ),
-        cls="col-span-12 md:col-span-7 lg:col-span-7"
+        cls="col-span-12 md:col-span-8 lg:col-span-9"
     )
 
 
@@ -283,7 +283,7 @@ def presentations_page():
             sidebar(),
             presentations_content(),
             cols=12,
-            cls="gap-8 mt-8"
+            cls="gap-10 mt-12"
         ),
         cls=ContainerT.xl
     )
