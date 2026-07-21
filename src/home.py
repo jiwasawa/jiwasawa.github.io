@@ -170,25 +170,32 @@ def highlights():
 
 
 def about_condensed():
+    # Two-column "label | body" layout: the heading sits in a narrow left
+    # column so the prose reads as an intentional block instead of a lone
+    # max-w-2xl column hugging the far-left edge on wide screens.
     return Section(
-        H2("About", cls="text-2xl font-bold tracking-tight mb-5"),
         Div(
-            P("As a Solutions Architect at NVIDIA, I work with Japanese enterprise "
-              "customers on large language model training and inference, with a focus on "
-              "the NeMo framework. I joined NVIDIA in February 2026."),
-            P("Previously, as a Researcher and Tech Lead at ",
-              A("Preferred Networks Inc.", href="https://www.preferred.jp/en/", cls=AT.primary),
-              ", I engaged with clients in the healthcare and life sciences sectors and "
-              "led BtoB solutions built on large language models."),
-            P("I have experience formulating problems through consultation with clients and "
-              "delivering deep-learning / machine-learning solutions, and I was the main "
-              "mentor for four research interns and one part-time engineer."),
-            P("During my PhD in the Department of Physics at the University of Tokyo, I "
-              "developed machine-learning methods for gene expression and mutation data to "
-              "tackle antibiotic resistance in bacteria."),
-            cls="space-y-4 leading-relaxed text-base",
+            H2("About",
+               cls="text-2xl font-bold tracking-tight md:sticky md:top-24 h-fit"),
+            Div(
+                P("As a Solutions Architect at NVIDIA, I work with Japanese enterprise "
+                  "customers on large language model training and inference, with a focus on "
+                  "the NeMo framework. I joined NVIDIA in February 2026."),
+                P("Previously, as a Researcher and Tech Lead at ",
+                  A("Preferred Networks Inc.", href="https://www.preferred.jp/en/", cls=AT.primary),
+                  ", I engaged with clients in the healthcare and life sciences sectors and "
+                  "led BtoB solutions built on large language models."),
+                P("I have experience formulating problems through consultation with clients and "
+                  "delivering deep-learning / machine-learning solutions, and I was the main "
+                  "mentor for four research interns and one part-time engineer."),
+                P("During my PhD in the Department of Physics at the University of Tokyo, I "
+                  "developed machine-learning methods for gene expression and mutation data to "
+                  "tackle antibiotic resistance in bacteria."),
+                cls="space-y-4 leading-relaxed text-base max-w-2xl",
+            ),
+            cls="grid md:grid-cols-[180px_1fr] gap-6 md:gap-12",
         ),
-        cls="mb-16 max-w-2xl",
+        cls="mb-16",
     )
 
 

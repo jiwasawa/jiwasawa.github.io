@@ -3,3 +3,4 @@ __pycache__/
 .superpowers/
 _site/
 .DS_Store
+docs/
