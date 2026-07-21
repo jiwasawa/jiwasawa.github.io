@@ -13,9 +13,19 @@
     </script><script>
         const htmlElement = document.documentElement;
         
+          
           const __FRANKEN__ = JSON.parse(localStorage.getItem("__FRANKEN__") || "{}");
     
-htmlElement.classList.remove("dark");
+          if (
+            __FRANKEN__.mode === "dark" ||
+            (!__FRANKEN__.mode &&
+              window.matchMedia("(prefers-color-scheme: dark)").matches)
+          ) {
+            htmlElement.classList.add("dark");
+          } else {
+            htmlElement.classList.remove("dark");
+          }
+        
           htmlElement.classList.add(__FRANKEN__.theme || "uk-theme-blue");
           htmlElement.classList.add(__FRANKEN__.radii || "uk-radii-sm");
           htmlElement.classList.add(__FRANKEN__.shadows || "uk-shadows-sm");
@@ -77,69 +87,89 @@ htmlElement.classList.remove("dark");
   --rd: var(--radius);
 }
 </style>
-  </head>
+    <style>
+    :focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; border-radius: 6px; }
+    a, button { transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
+</style>
+<script>
+function __toggleMode(){
+  const html = document.documentElement;
+  const isDark = html.classList.toggle('dark');
+  let s = {};
+  try { s = JSON.parse(localStorage.getItem('__FRANKEN__')) || {}; } catch (e) {}
+  s.mode = isDark ? 'dark' : 'light';
+  localStorage.setItem('__FRANKEN__', JSON.stringify(s));
+}
+</script>  </head>
   <body class=" bg-background text-foreground">
     <div>
-      <nav class="monster-navbar flex flex-wrap items-center justify-between w-full px-4 py-2 container mb-4  ">
-        <h3 class="uk-h3 text-2xl font-semibold">Junichiro Iwasawa</h3>
+      <nav class="monster-navbar flex flex-wrap items-center justify-between w-full px-4 py-2 mb-4  sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
+        <h3 class="uk-h3 text-xl font-semibold tracking-tight">Junichiro Iwasawa</h3>
 <button aria-controls="mobile-menu" type="button" data-uk-toggle="target: #mobile-menu; cls: hidden" class="md:hidden inline-flex items-center justify-center uk-rounded focus:outline-none focus:ring-2 p-2"><span class="sr-only">Open main menu</span><uk-icon icon="menu" height="24" width="24" class="size-6"></uk-icon></button>        <div id="mobile-menu" class="hidden mt-2 md:mt-0 w-full md:block md:w-auto ">
           <div class="flex gap-3 flex-col items-end md:flex-row md:items-center md:gap-3">
-<a href="/" class="mx-3">About</a><a href="/publications" class="mx-3">Publications</a><a href="/research" class="mx-3">Research</a><a href="/talks" class="mx-3">Talks</a><a href="/blog" class="mx-3">Blog</a><a href="/blog_jp" class="mx-3">ブログ</a>          </div>
+<a href="/" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">About</a><a href="/publications" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">Publications</a><a href="/research" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">Research</a><a href="/talks" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">Talks</a><a href="/blog" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">Blog</a><a href="/blog_jp" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">ブログ</a><button onclick="__toggleMode()" aria-label="Toggle dark mode" type="submit" class="uk-btn p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="Toggle dark mode"><uk-icon icon="moon" height="18" width="18" class="block dark:hidden"></uk-icon><uk-icon icon="sun" height="18" width="18" class="hidden dark:block"></uk-icon></button>          </div>
         </div>
       </nav>
       <div class="uk-container uk-container-xl">
-        <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-8 mt-16">
-          <div class="col-span-12 md:col-span-3 lg:col-span-2 md:sticky md:top-8">
-            <div class="text-center p-4">
-<img src="static/profile_img2.jpg" class="rounded-full w-full max-w-[150px] h-auto mb-4 mx-auto">              <h4 class="uk-h4 text-1xl font-semibold">Junichiro Iwasawa</h4>
+        <div class="grid grid-cols-12 sm:grid-cols-12 md:grid-cols-12 lg:grid-cols-12 xl:grid-cols-12 gap-10 mt-12">
+          <div class="col-span-12 md:col-span-4 lg:col-span-3 md:sticky md:top-24">
+            <div class="text-center md:text-left p-4">
+<img src="static/profile_img2.jpg" alt="Junichiro Iwasawa" class="w-40 h-40 rounded-full object-cover mx-auto md:mx-0 ring-4 ring-primary/25 shadow-sm mb-5">              <h4 class="uk-h4 text-lg font-semibold tracking-tight">Junichiro Iwasawa</h4>
               <p class="text-gray-500 dark:text-gray-200 text-sm">Solutions Architect at NVIDIA</p>
-              <div class="mt-6"></div>
-              <div class="mt-4 text-left flex flex-col">
-<a href="https://twitter.com/jiwasawa" class="flex items-center mb-2 text-primary hover:underline w-full">                  <div class="flex justify-start items-center space-x-4">
-<uk-icon icon="twitter" class="mr-2"></uk-icon><span>Twitter</span>                  </div>
-</a><a href="https://www.linkedin.com/in/junichiro-iwasawa-875b37130/" class="flex items-center mb-2 text-primary hover:underline w-full">                  <div class="flex justify-start items-center space-x-4">
-<uk-icon icon="linkedin" class="mr-2"></uk-icon><span>LinkedIn</span>                  </div>
-</a><a href="https://scholar.google.co.jp/citations?user=LampCPIAAAAJ&amp;hl=en" class="flex items-center mb-2 text-primary hover:underline w-full">                  <div class="flex justify-start items-center space-x-4">
-<uk-icon icon="graduation-cap" class="mr-2"></uk-icon><span>Google Scholar</span>                  </div>
-</a><a href="https://github.com/jiwasawa" class="flex items-center mb-2 text-primary hover:underline w-full">                  <div class="flex justify-start items-center space-x-4">
-<uk-icon icon="github" class="mr-2"></uk-icon><span>GitHub</span>                  </div>
-</a><a href="https://researchmap.jp/jiwasawa?lang=en" class="flex items-center mb-2 text-primary hover:underline w-full">                  <div class="flex justify-start items-center space-x-4">
-<uk-icon icon="book-open" class="mr-2"></uk-icon><span>researchmap</span>                  </div>
-</a><a href="https://jiwasawa.github.io/blog/" class="flex items-center mb-2 text-primary hover:underline w-full">                  <div class="flex justify-start items-center space-x-4">
-<uk-icon icon="notebook-pen" class="mr-2"></uk-icon><span>Blog</span>                  </div>
-</a>              </div>
-            </div>
+              <div class="flex flex-wrap items-center gap-1 -ml-1.5 mt-5 justify-center md:justify-start">
+<a href="https://twitter.com/jiwasawa" aria-label="Twitter" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="Twitter"><uk-icon icon="twitter" height="18" width="18"></uk-icon></a><a href="https://www.linkedin.com/in/junichiro-iwasawa-875b37130/" aria-label="LinkedIn" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="LinkedIn"><uk-icon icon="linkedin" height="18" width="18"></uk-icon></a><a href="https://scholar.google.co.jp/citations?user=LampCPIAAAAJ&amp;hl=en" aria-label="Google Scholar" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="Google Scholar"><uk-icon icon="graduation-cap" height="18" width="18"></uk-icon></a><a href="https://github.com/jiwasawa" aria-label="GitHub" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="GitHub"><uk-icon icon="github" height="18" width="18"></uk-icon></a><a href="https://researchmap.jp/jiwasawa?lang=en" aria-label="researchmap" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="researchmap"><uk-icon icon="book-open" height="18" width="18"></uk-icon></a>              </div>
+<a href="static/junichiro_iwasawa_cv.pdf" class="inline-flex items-center mt-6 px-3.5 py-2 text-sm font-medium rounded-lg border border-border hover:border-primary hover:text-primary transition-colors">                <div class="flex justify-start items-center space-x-2">
+<uk-icon icon="file-text" height="16" width="16"></uk-icon><span>Curriculum Vitae</span>                </div>
+</a>            </div>
           </div>
-          <div class="col-span-12 md:col-span-7 lg:col-span-7">
-            <div class="uk-section mb-12">
-              <h2 class="uk-h2 text-3xl font-semibold mb-4">About Junichiro</h2>
-              <p class="mb-3 leading-relaxed text-base">As a Solutions Architect at NVIDIA, I work with Japanese enterprise customers on large language model training and inference, with a focus on the NeMo framework. I joined NVIDIA in February 2026.</p>
-              <p class="mb-3 leading-relaxed text-base">
-Previously, as a Researcher at <a href="https://www.preferred.jp/en/" class="uk-link text-primary hover:text-primary-focus underline">Preferred Networks Inc.</a>, I primarily engaged with clients in the healthcare and life sciences sectors and served as the tech lead for providing BtoB solutions using Large Language Models (LLMs).              </p>
-              <p class="mb-3 leading-relaxed text-base">
-I led a research project to build a medical domain-specialized LLM, resulting in <a href="https://huggingface.co/pfnet/Llama3-Preferred-MedSwallow-70B" class="uk-link text-primary hover:text-primary-focus underline">Llama3-Preferred-MedSwallow-70B</a> and <a href="https://huggingface.co/pfnet/Preferred-MedLLM-Qwen-72B" class="uk-link text-primary hover:text-primary-focus underline">Preferred-MedLLM-Qwen-72B</a>, the first open LLMs that surpass GPT-4 in the Japanese Medical Licensing Exam (JMLE). I also led a project for developing a deep learning based solution aimed at enhancing the diagnosis of endometriosis through the analysis of MRIs, in collaboration with a leading pharmaceutical company.              </p>
-              <p class="mb-3 leading-relaxed text-base">I have experience formulating problems through consultations with clients and providing solutions based on deep learning / machine learning. I have also been the main mentor for four research interns and one part-time engineer.</p>
-              <p class="mb-3 leading-relaxed text-base">During my PhD, I worked on the development of machine learning methods for gene expression/mutation data to tackle the problem of antibiotic resistance of bacteria.</p>
+          <div class="col-span-12 md:col-span-8 lg:col-span-9">
+            <div class="uk-section mb-16">
+              <h2 class="uk-h2 text-3xl font-bold tracking-tight mb-6">About</h2>
+              <div class="max-w-2xl space-y-4 leading-relaxed text-base">
+                <p>As a Solutions Architect at NVIDIA, I work with Japanese enterprise customers on large language model training and inference, with a focus on the NeMo framework. I joined NVIDIA in February 2026.</p>
+                <p>
+Previously, as a Researcher at <a href="https://www.preferred.jp/en/" class="uk-link text-primary hover:text-primary-focus underline">Preferred Networks Inc.</a>, I primarily engaged with clients in the healthcare and life sciences sectors and served as the tech lead for providing BtoB solutions using Large Language Models (LLMs).                </p>
+                <p>
+I led a research project to build a medical domain-specialized LLM, resulting in <a href="https://huggingface.co/pfnet/Llama3-Preferred-MedSwallow-70B" class="uk-link text-primary hover:text-primary-focus underline">Llama3-Preferred-MedSwallow-70B</a> and <a href="https://huggingface.co/pfnet/Preferred-MedLLM-Qwen-72B" class="uk-link text-primary hover:text-primary-focus underline">Preferred-MedLLM-Qwen-72B</a>, the first open LLMs that surpass GPT-4 in the Japanese Medical Licensing Exam (JMLE). I also led a project for developing a deep learning based solution aimed at enhancing the diagnosis of endometriosis through the analysis of MRIs, in collaboration with a leading pharmaceutical company.                </p>
+                <p>I have experience formulating problems through consultations with clients and providing solutions based on deep learning / machine learning. I have also been the main mentor for four research interns and one part-time engineer.</p>
+                <p>During my PhD, I worked on the development of machine learning methods for gene expression/mutation data to tackle the problem of antibiotic resistance of bacteria.</p>
+              </div>
             </div>
-            <div class="uk-section mb-12">
-              <h2 class="uk-h2 text-3xl font-semibold mb-4">CV</h2>
-              <p class="text-gray-500 dark:text-gray-200 text-lg  mb-4">Junichiro Iwasawa (岩澤 諄一郎)</p>
-              <div class="flex justify-start items-center mb-6">
-<uk-icon icon="file-text" class="mr-2"></uk-icon><a href="static/junichiro_iwasawa_cv.pdf" class="uk-link text-primary hover:text-primary-focus underline">Link to CV (pdf)</a>              </div>
-              <ul class="list-disc pl-5 space-y-2">
-                <li>
-<strong class="font-bold ">Feb. 2026–present.</strong> Solutions Architect, NVIDIA.                </li>
-                <li>
-<strong class="font-bold ">Mar. 2025–Jan. 2026.</strong> Tech Lead, Preferred Networks Inc.                </li>
-                <li>
-<strong class="font-bold ">Apr. 2021–Jan. 2026.</strong> Researcher, Preferred Networks Inc.                </li>
-                <li>
-<strong class="font-bold ">Apr. 2018–Mar. 2021.</strong> Doctor of Philosophy, Furusawa Laboratory, Dept. of Physics, The University of Tokyo.                </li>
-                <li>
-<strong class="font-bold ">Apr. 2016–Mar. 2018.</strong> Master of Science, Sano Laboratory, Dept. of Physics, The University of Tokyo.                </li>
-                <li>
-<strong class="font-bold ">Apr. 2012–Mar. 2016.</strong> Bachelor of Science, Dept. of Physics, The University of Tokyo.                </li>
-              </ul>
+            <div class="uk-section mb-16">
+              <h2 class="uk-h2 text-3xl font-bold tracking-tight mb-2">CV</h2>
+              <p class="text-gray-500 dark:text-gray-200 text-lg  mb-8">Junichiro Iwasawa (岩澤 諄一郎)</p>
+              <ol class="relative border-l border-border ml-2">
+                <li class="ml-6 pb-7 last:pb-0 relative">
+<span class="absolute -left-[30px] top-1.5 w-3 h-3 rounded-full bg-primary ring-4 ring-background"></span>                  <p class="text-xs font-semibold uppercase tracking-wide text-primary">Feb. 2026 – present</p>
+                  <p class="font-medium mt-0.5">Solutions Architect</p>
+                  <p class="text-sm text-muted-foreground">NVIDIA</p>
+                </li>
+                <li class="ml-6 pb-7 last:pb-0 relative">
+<span class="absolute -left-[30px] top-1.5 w-3 h-3 rounded-full bg-muted-foreground/40 ring-4 ring-background"></span>                  <p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Mar. 2025 – Jan. 2026</p>
+                  <p class="font-medium mt-0.5">Tech Lead</p>
+                  <p class="text-sm text-muted-foreground">Preferred Networks Inc</p>
+                </li>
+                <li class="ml-6 pb-7 last:pb-0 relative">
+<span class="absolute -left-[30px] top-1.5 w-3 h-3 rounded-full bg-muted-foreground/40 ring-4 ring-background"></span>                  <p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Apr. 2021 – Jan. 2026</p>
+                  <p class="font-medium mt-0.5">Researcher</p>
+                  <p class="text-sm text-muted-foreground">Preferred Networks Inc</p>
+                </li>
+                <li class="ml-6 pb-7 last:pb-0 relative">
+<span class="absolute -left-[30px] top-1.5 w-3 h-3 rounded-full bg-muted-foreground/40 ring-4 ring-background"></span>                  <p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Apr. 2018 – Mar. 2021</p>
+                  <p class="font-medium mt-0.5">Doctor of Philosophy</p>
+                  <p class="text-sm text-muted-foreground">Furusawa Laboratory, Dept. of Physics, The University of Tokyo</p>
+                </li>
+                <li class="ml-6 pb-7 last:pb-0 relative">
+<span class="absolute -left-[30px] top-1.5 w-3 h-3 rounded-full bg-muted-foreground/40 ring-4 ring-background"></span>                  <p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Apr. 2016 – Mar. 2018</p>
+                  <p class="font-medium mt-0.5">Master of Science</p>
+                  <p class="text-sm text-muted-foreground">Sano Laboratory, Dept. of Physics, The University of Tokyo</p>
+                </li>
+                <li class="ml-6 pb-7 last:pb-0 relative">
+<span class="absolute -left-[30px] top-1.5 w-3 h-3 rounded-full bg-muted-foreground/40 ring-4 ring-background"></span>                  <p class="text-xs font-semibold uppercase tracking-wide text-muted-foreground">Apr. 2012 – Mar. 2016</p>
+                  <p class="font-medium mt-0.5">Bachelor of Science</p>
+                  <p class="text-sm text-muted-foreground">Dept. of Physics, The University of Tokyo</p>
+                </li>
+              </ol>
             </div>
           </div>
         </div>
