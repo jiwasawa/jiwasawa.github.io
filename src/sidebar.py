@@ -59,8 +59,9 @@ def sidebar():
             ),
             A(
                 DivLAligned(
-                    UkIcon("file-text", height=16, width=16, cls="mr-2"),
+                    UkIcon("file-text", height=16, width=16),
                     Span("Curriculum Vitae"),
+                    cls="space-x-2",
                 ),
                 href="static/junichiro_iwasawa_cv.pdf",
                 cls="inline-flex items-center mt-6 px-3.5 py-2 text-sm font-medium "

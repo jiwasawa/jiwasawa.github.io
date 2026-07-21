@@ -88,6 +88,11 @@ server_process = subprocess.Popen(
 # Wait for the server to accept connections instead of guessing with a fixed sleep.
 print("Starting server...")
 for _ in range(30):
+    # If the server process died (e.g. an import error), fail fast with its
+    # output rather than probing a port some other process may be holding.
+    if server_process.poll() is not None:
+        err = server_process.stderr.read().decode(errors="replace") if server_process.stderr else ""
+        raise RuntimeError(f"FastHTML server exited before becoming ready:\n{err}")
     try:
         requests.get("http://localhost:5001/", timeout=1)
         break
