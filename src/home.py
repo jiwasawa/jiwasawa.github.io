@@ -214,27 +214,37 @@ def cv_entry(period, title, institution, current=False):
 
 
 def cv_section():
+    # Same two-column label|body grid as about_condensed(), so the "CV"
+    # heading lines up as a left margin note and the timeline aligns with
+    # the About prose instead of drifting to the far-left edge.
     return Section(
-        H2("CV", cls="text-2xl font-bold tracking-tight mb-1"),
-        P("Junichiro Iwasawa (岩澤 諄一郎)", cls=TextPresets.muted_lg + " mb-8"),
-        Ol(
-            cv_entry("Feb. 2026 – present", "Solutions Architect", "NVIDIA", current=True),
-            cv_entry("Mar. 2025 – Jan. 2026", "Tech Lead", "Preferred Networks Inc."),
-            cv_entry("Apr. 2021 – Jan. 2026", "Researcher", "Preferred Networks Inc."),
-            cv_entry(
-                "Apr. 2018 – Mar. 2021",
-                "Doctor of Philosophy",
-                "Furusawa Laboratory, Dept. of Physics, The University of Tokyo",
+        Div(
+            H2("CV",
+               cls="text-2xl font-bold tracking-tight md:sticky md:top-24 h-fit"),
+            Div(
+                P("Junichiro Iwasawa (岩澤 諄一郎)", cls=TextPresets.muted_lg + " mb-8"),
+                Ol(
+                    cv_entry("Feb. 2026 – present", "Solutions Architect", "NVIDIA", current=True),
+                    cv_entry("Mar. 2025 – Jan. 2026", "Tech Lead", "Preferred Networks Inc."),
+                    cv_entry("Apr. 2021 – Jan. 2026", "Researcher", "Preferred Networks Inc."),
+                    cv_entry(
+                        "Apr. 2018 – Mar. 2021",
+                        "Doctor of Philosophy",
+                        "Furusawa Laboratory, Dept. of Physics, The University of Tokyo",
+                    ),
+                    cv_entry(
+                        "Apr. 2016 – Mar. 2018",
+                        "Master of Science",
+                        "Sano Laboratory, Dept. of Physics, The University of Tokyo",
+                    ),
+                    cv_entry("Apr. 2012 – Mar. 2016", "Bachelor of Science", "Dept. of Physics, The University of Tokyo"),
+                    cls="relative border-l border-border ml-2",
+                ),
+                cls="max-w-2xl",
             ),
-            cv_entry(
-                "Apr. 2016 – Mar. 2018",
-                "Master of Science",
-                "Sano Laboratory, Dept. of Physics, The University of Tokyo",
-            ),
-            cv_entry("Apr. 2012 – Mar. 2016", "Bachelor of Science", "Dept. of Physics, The University of Tokyo"),
-            cls="relative border-l border-border ml-2",
+            cls="grid md:grid-cols-[180px_1fr] gap-6 md:gap-12",
         ),
-        cls="mb-16 max-w-2xl",
+        cls="mb-16",
     )
 
 
