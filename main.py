@@ -1,38 +1,25 @@
 from fasthtml.common import *
-from monsterui.all import *
 
-from src.talks import presentations_page
 from src.home import home
+from src.layout import SITE_HEADERS
 from src.publications import publications_page
 from src.research import research_page
+from src.talks import presentations_page
 
 
-# Cross-page polish shared by every route: keyboard focus rings and smooth
-# color transitions on interactive elements.
-custom_styles = Style("""
-    :focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; border-radius: 6px; }
-    a, button { transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
-""")
+app, rt = fast_app(
+    default_hdrs=False,
+    pico=False,
+    surreal=False,
+    htmx=False,
+    htmlkw={"lang": "en"},
+    hdrs=SITE_HEADERS,
+)
 
-# Persist the light/dark choice the way FrankenUI's own init script reads it,
-# so the selection survives reloads and navigation.
-theme_script = Script("""
-function __toggleMode(){
-  const html = document.documentElement;
-  const isDark = html.classList.toggle('dark');
-  let s = {};
-  try { s = JSON.parse(localStorage.getItem('__FRANKEN__')) || {}; } catch (e) {}
-  s.mode = isDark ? 'dark' : 'light';
-  localStorage.setItem('__FRANKEN__', JSON.stringify(s));
-}
-""")
-
-# mode="auto": honor a saved preference, otherwise follow the OS setting.
-app, rt = fast_app(hdrs=(*Theme.blue.headers(mode="auto"), custom_styles, theme_script))
 
 @rt("/")
 def get():
-    return Title("About - Junichiro Iwasawa"), home()
+    return Title("Junichiro Iwasawa"), home()
 
 
 @rt("/talks")
