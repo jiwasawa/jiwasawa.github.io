@@ -1,165 +1,711 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <title>Publications - Junichiro Iwasawa</title>
     <link rel="canonical" href="https://localhost:5001/publications">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.js"></script><script src="https://cdn.jsdelivr.net/gh/answerdotai/fasthtml-js@1.0.12/fasthtml.js"></script><script src="https://cdn.jsdelivr.net/gh/answerdotai/surreal@main/surreal.js"></script><script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@main/script.js"></script>    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css">
-<script type="module" src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/core.iife.js"></script><script src="https://cdn.tailwindcss.com/3.4.17"></script><script>
-    tailwind.config = {
-        darkMode: 'selector',
-    }
-    </script><script>
-        const htmlElement = document.documentElement;
-        
-          
-          const __FRANKEN__ = JSON.parse(localStorage.getItem("__FRANKEN__") || "{}");
-    
-          if (
-            __FRANKEN__.mode === "dark" ||
-            (!__FRANKEN__.mode &&
-              window.matchMedia("(prefers-color-scheme: dark)").matches)
-          ) {
-            htmlElement.classList.add("dark");
-          } else {
-            htmlElement.classList.remove("dark");
-          }
-        
-          htmlElement.classList.add(__FRANKEN__.theme || "uk-theme-blue");
-          htmlElement.classList.add(__FRANKEN__.radii || "uk-radii-sm");
-          htmlElement.classList.add(__FRANKEN__.shadows || "uk-shadows-sm");
-          htmlElement.classList.add(__FRANKEN__.font || "uk-font-sm");
-    </script>    <style>
-.monster-navbar.navbar-bold a {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.monster-navbar.navbar-bold a.uk-active {
-    transform: scale(1.15) ;
-    font-weight: bold;
-    text-shadow: 0 0 12px rgba(var(--p-rgb), 0.4);
-    letter-spacing: 0.02em;
-    color: hsl(var(--p) / 1);
-}
-.monster-navbar.navbar-underline a.uk-active { position: relative; }
-.monster-navbar.navbar-underline a.uk-active::after {
-    content: '';
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Junichiro Iwasawa — Solutions Architect at NVIDIA, previously Researcher and Tech Lead at Preferred Networks, Ph.D. in Physics (The University of Tokyo).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;family=Noto+Sans+JP:wght@400;500&amp;display=swap">
+    <style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: #ffffff;
+    color: #222222;
+    font-family: 'Lato', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    color: #1772d0;
+    text-decoration: none;
+  }
+  a:hover, a:focus-visible {
+    color: #f09228;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  :focus-visible {
+    outline: 2px solid #1772d0;
+    outline-offset: 2px;
+  }
+
+  .wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 28px 24px 64px;
+  }
+
+  /* Navigation */
+  .topnav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 13.5px;
+    color: #666666;
+    margin-bottom: 34px;
+  }
+  .topnav.with-brand {
+    justify-content: space-between;
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 12px;
+    margin-bottom: 30px;
+  }
+  .topnav-brand {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111111;
+  }
+  .topnav-brand:hover { color: #1772d0; text-decoration: none; }
+  .topnav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .topnav a { color: #555555; }
+  .topnav a:hover { color: #1772d0; }
+  .topnav a.active {
+    color: #111111;
+    font-weight: 700;
+  }
+
+  /* Bio header */
+  .bio {
+    display: grid;
+    grid-template-columns: 1fr 196px;
+    gap: 36px;
+    align-items: start;
+    margin-bottom: 42px;
+  }
+  h1 {
+    margin: 0 0 4px;
+    font-size: 31px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #111111;
+    letter-spacing: -0.01em;
+  }
+  .jp-name {
+    font-size: 14.5px;
+    color: #666666;
+    margin: 0 0 18px;
+    font-weight: 400;
+  }
+  .bio p { margin: 0 0 13px; }
+  .bio-links {
+    margin-top: 18px;
+    font-size: 14.5px;
+    color: #999999;
+    line-height: 1.8;
+  }
+  .bio-links a { white-space: nowrap; }
+  .bio-links .sep { margin: 0 7px; color: #cccccc; }
+  .portrait {
+    width: 186px;
+    height: 186px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    display: block;
+    margin: 8px auto 0;
+  }
+
+  /* Section headings */
+  section { margin-bottom: 40px; }
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+  }
+  h2 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 400;
+    color: #111111;
+  }
+  h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #111111;
+  }
+  .page-title {
+    margin: 0 0 10px;
+    font-size: 26px;
+    font-weight: 400;
+    color: #111111;
+  }
+  .page-lead {
+    margin: 0 0 26px;
+    color: #444444;
+    max-width: 68ch;
+  }
+
+  /* Filter bar & legend */
+  .filter-links {
+    font-size: 13.5px;
+    color: #777777;
+  }
+  .filter-links button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: #1772d0;
+    cursor: pointer;
+  }
+  .filter-links button:hover {
+    color: #f09228;
+    text-decoration: underline;
+  }
+  .filter-links button.active {
+    color: #111111;
+    font-weight: 700;
+    cursor: default;
+    text-decoration: none;
+  }
+  .legend {
+    font-size: 13px;
+    color: #666666;
+    margin: -6px 0 14px;
+  }
+  .swatch {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background: #fdf9e7;
+    border: 1px solid #e5dcaa;
+    vertical-align: -1px;
+    margin-right: 4px;
+  }
+
+  /* Open models block */
+  .models-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .models-list li {
+    padding: 10px 12px;
+    margin: 0 -12px 6px;
+    border-radius: 3px;
+    background: #fdf9e7;
+  }
+  .models-title { font-weight: 700; color: #111111; }
+
+  /* Publications & BibTeX (Design 1 + Design 4) */
+  .pub-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .pub-item {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 12px;
+    padding: 11px 12px;
+    margin: 0 -12px 4px;
+    border-radius: 3px;
+  }
+  .pub-item.highlight { background: #fdf9e7; }
+  .pub-item.hidden { display: none; }
+  .pub-year {
+    font-size: 13.5px;
+    color: #666666;
+    font-variant-numeric: tabular-nums;
+    padding-top: 1px;
+  }
+  .pub-title { font-weight: 700; color: #111111; }
+  .pub-authors {
+    font-size: 14px;
+    color: #444444;
+    margin-top: 2px;
+  }
+  .pub-authors u {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: #111111;
+  }
+  .pub-venue {
+    font-size: 14px;
+    margin-top: 2px;
+    color: #444444;
+  }
+  .pub-venue em { color: #222222; }
+  .pub-actions {
+    margin-left: 6px;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 12.5px;
+    white-space: nowrap;
+  }
+  .model-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 12px;
+    margin-top: 3px;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 12.5px;
+  }
+  .bib-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 6px;
+    font: inherit;
+    color: #6b1d1d;
+    cursor: pointer;
+  }
+  .bib-btn:hover {
+    color: #f09228;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .bib-box {
+    display: none;
+    margin: 8px 0 2px;
+    padding: 10px 58px 10px 12px;
+    background: #f7f7f5;
+    border: 1px solid #d8d8d4;
+    border-radius: 2px;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: #222222;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    position: relative;
+  }
+  .bib-box.open { display: block; }
+  .copy-btn {
     position: absolute;
-    left: 0;
-    bottom: -2px;
+    top: 7px;
+    right: 8px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 11px;
+    padding: 2px 7px;
+    cursor: pointer;
+    color: #333333;
+  }
+  .copy-btn:hover {
+    border-color: #1772d0;
+    color: #1772d0;
+  }
+
+  /* CV table */
+  .cv-table {
     width: 100%;
-    height: 2px;
-    background: currentColor;
-    animation: slideIn 0.3s ease forwards;
-}
-@keyframes slideIn {
-    from { transform: scaleX(0); }
-    to { transform: scaleX(1); }
-}
-</style>
-<script type="module" src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/icon.iife.js"></script>    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css">
-    <style>
-:root {
-  --b1: from hsl(var(--background)) l c h;
-  --bc: from hsl(var(--foreground)) l c h;
-  --m: from hsl(var(--muted)) l c h;
-  --mc: from hsl(var(--muted-foreground)) l c h;
-  --po: from hsl(var(--popover)) l c h;
-  --poc: from hsl(var(--popover-foreground)) l c h;
-  --b2: from hsl(var(--card)) l c h;
-  --b2c: from hsl(var(--card-foreground)) l c h;
-  --br: from hsl(var(--border)) l c h;
-  --in: from hsl(var(--input)) l c h;
-  --p: from hsl(var(--primary)) l c h;
-  --pc: from hsl(var(--primary-foreground)) l c h;
-  --s: from hsl(var(--secondary)) l c h;
-  --sc: from hsl(var(--secondary-foreground)) l c h;
-  --a: from hsl(var(--accent)) l c h;
-  --ac: from hsl(var(--accent-foreground)) l c h;
-  --er: from hsl(var(--destructive)) l c h;
-  --erc: from hsl(var(--destructive-foreground)) l c h;
-  --b3: from hsl(var(--ring)) l c h;
-  --ch1: from hsl(var(--chart-1)) l c h;
-  --ch2: from hsl(var(--chart-2)) l c h;
-  --ch3: from hsl(var(--chart-3)) l c h;
-  --ch4: from hsl(var(--chart-4)) l c h;
-  --ch5: from hsl(var(--chart-5)) l c h;
-  --rd: var(--radius);
-}
-</style>
-    <style>
-    :focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; border-radius: 6px; }
-    a, button { transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
+    border-collapse: collapse;
+    font-size: 14.5px;
+  }
+  .cv-table td {
+    padding: 7px 0;
+    vertical-align: top;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .cv-table tr:last-child td { border-bottom: none; }
+  .cv-period {
+    width: 175px;
+    color: #595959;
+    font-size: 13.5px;
+    font-variant-numeric: tabular-nums;
+    padding-right: 16px;
+  }
+  .cv-role { font-weight: 700; color: #111111; }
+  .cv-inst { color: #444444; }
+
+  /* Research subpage */
+  .research-entry {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #ececec;
+  }
+  .research-entry:last-child { border-bottom: none; margin-bottom: 0; }
+  .research-entry p { margin: 0 0 12px; color: #2d2d2d; }
+  .related-label {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #555555;
+    margin: 14px 0 6px;
+  }
+  .plain-list {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .plain-list li {
+    margin-bottom: 8px;
+    font-size: 14.5px;
+  }
+
+  /* Talks subpage */
+  .jump-bar {
+    font-size: 13.5px;
+    color: #888888;
+    margin: -10px 0 28px;
+    line-height: 1.9;
+  }
+  .jump-bar .sep { margin: 0 7px; color: #cccccc; }
+  .talk-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .talk-list li {
+    padding: 9px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14.5px;
+  }
+  .talk-list li:last-child { border-bottom: none; }
+  .talk-title { font-weight: 700; color: #111111; }
+  .talk-jp { color: #555555; font-size: 14px; }
+  .talk-meta { color: #444444; font-size: 14px; margin-top: 2px; }
+  .sub-h {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #444444;
+    margin: 0 0 10px;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 44px;
+    padding-top: 14px;
+    border-top: 1px solid #ececec;
+    font-size: 12.5px;
+    color: #777777;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  footer a { color: #555555; }
+  footer a:hover { color: #1772d0; }
+
+  @media (max-width: 680px) {
+    .wrap { padding: 20px 16px 48px; }
+    .bio { grid-template-columns: 1fr; gap: 20px; }
+    .bio-photo-col { order: -1; }
+    .portrait { width: 148px; height: 148px; margin: 0 auto; }
+    .pub-item { grid-template-columns: 1fr; gap: 2px; }
+    .pub-year { font-size: 12.5px; color: #777777; }
+    .cv-table td { display: block; padding: 2px 0; border: none; }
+    .cv-table tr { display: block; padding: 7px 0; border-bottom: 1px solid #f0f0f0; }
+    .cv-period { width: auto; }
+  }
 </style>
 <script>
-function __toggleMode(){
-  const html = document.documentElement;
-  const isDark = html.classList.toggle('dark');
-  let s = {};
-  try { s = JSON.parse(localStorage.getItem('__FRANKEN__')) || {}; } catch (e) {}
-  s.mode = isDark ? 'dark' : 'light';
-  localStorage.setItem('__FRANKEN__', JSON.stringify(s));
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const filterBtns = document.querySelectorAll('[data-pub-filter]');
+  const pubItems = document.querySelectorAll('.pub-item');
+  if (filterBtns.length) {
+    const applyFilter = (mode) => {
+      filterBtns.forEach((b) => {
+        const active = b.dataset.pubFilter === mode;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      pubItems.forEach((li) => {
+        li.classList.toggle('hidden', mode === 'highlight' && !li.classList.contains('highlight'));
+      });
+    };
+    filterBtns.forEach((b) => b.addEventListener('click', () => applyFilter(b.dataset.pubFilter)));
+  }
+
+  document.querySelectorAll('.bib-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const box = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!box) return;
+      const open = box.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const code = btn.parentElement && btn.parentElement.querySelector('code');
+      if (!code) return;
+      const text = code.textContent;
+      const done = () => {
+        btn.textContent = 'copied';
+        setTimeout(() => { btn.textContent = 'copy'; }, 1200);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(() => {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy'); } catch (e) {}
+          document.body.removeChild(ta);
+          done();
+        });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        done();
+      }
+    });
+  });
+});
 </script>  </head>
-  <body class=" bg-background text-foreground">
-    <div>
-      <nav class="monster-navbar flex flex-wrap items-center justify-between w-full px-4 py-2 mb-4  sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
-        <h3 class="uk-h3 text-xl font-semibold tracking-tight">Junichiro Iwasawa</h3>
-<button aria-controls="mobile-menu" type="button" data-uk-toggle="target: #mobile-menu; cls: hidden" class="md:hidden inline-flex items-center justify-center uk-rounded focus:outline-none focus:ring-2 p-2"><span class="sr-only">Open main menu</span><uk-icon icon="menu" height="24" width="24" class="size-6"></uk-icon></button>        <div id="mobile-menu" class="hidden mt-2 md:mt-0 w-full md:block md:w-auto ">
-          <div class="flex gap-3 flex-col items-end md:flex-row md:items-center md:gap-3">
-<a href="/" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">About</a><a href="/publications" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">Publications</a><a href="/research" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">Research</a><a href="/talks" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">Talks</a><a href="/blog" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">Blog</a><a href="/blog_jp" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">ブログ</a><button onclick="__toggleMode()" aria-label="Toggle dark mode" type="submit" class="uk-btn p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="Toggle dark mode"><uk-icon icon="moon" height="18" width="18" class="block dark:hidden"></uk-icon><uk-icon icon="sun" height="18" width="18" class="hidden dark:block"></uk-icon></button>          </div>
-        </div>
+  <body>
+    <div class="wrap">
+      <nav aria-label="Site navigation" class="topnav with-brand">
+<a href="/" class="topnav-brand">Junichiro Iwasawa</a>        <div class="topnav-links">
+<a href="/">About</a><a href="/publications" class="active">Publications</a><a href="/research">Research</a><a href="/talks">Talks</a><a href="/blog">Blog</a><a href="/blog_jp">ブログ</a>        </div>
       </nav>
-      <div class="uk-container uk-container-xl">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mt-12">
-          <div class="col-span-1 md:col-span-4 lg:col-span-3 md:sticky md:top-24">
-            <div class="text-center md:text-left p-4">
-<img src="static/profile_img2.jpg" alt="Junichiro Iwasawa" class="w-40 h-40 rounded-full object-cover mx-auto md:mx-0 ring-4 ring-primary/25 shadow-sm mb-5">              <h4 class="uk-h4 text-lg font-semibold tracking-tight">Junichiro Iwasawa</h4>
-              <p class="text-gray-500 dark:text-gray-200 text-sm">Solutions Architect at NVIDIA</p>
-              <div class="flex flex-wrap items-center gap-1 -ml-1.5 mt-5 justify-center md:justify-start">
-<a href="https://twitter.com/jiwasawa" aria-label="Twitter" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="Twitter"><uk-icon icon="twitter" height="18" width="18"></uk-icon></a><a href="https://www.linkedin.com/in/junichiro-iwasawa-875b37130/" aria-label="LinkedIn" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="LinkedIn"><uk-icon icon="linkedin" height="18" width="18"></uk-icon></a><a href="https://scholar.google.co.jp/citations?user=LampCPIAAAAJ&amp;hl=en" aria-label="Google Scholar" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="Google Scholar"><uk-icon icon="graduation-cap" height="18" width="18"></uk-icon></a><a href="https://github.com/jiwasawa" aria-label="GitHub" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="GitHub"><uk-icon icon="github" height="18" width="18"></uk-icon></a><a href="https://researchmap.jp/jiwasawa?lang=en" aria-label="researchmap" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="researchmap"><uk-icon icon="book-open" height="18" width="18"></uk-icon></a>              </div>
-<a href="static/junichiro_iwasawa_cv.pdf" class="inline-flex items-center mt-6 px-3.5 py-2 text-sm font-medium rounded-lg border border-border hover:border-primary hover:text-primary transition-colors">                <div class="flex justify-start items-center space-x-2">
-<uk-icon icon="file-text" height="16" width="16"></uk-icon><span>Curriculum Vitae</span>                </div>
-</a>            </div>
-          </div>
-          <div class="col-span-1 md:col-span-8 lg:col-span-9">
-            <div class="uk-section mb-12">
-              <h2 class="uk-h2 text-3xl font-bold tracking-tight mb-4">Publications</h2>
-              <div class="flex justify-start items-center space-x-4">
-<uk-icon icon="graduation-cap" class="mr-2"></uk-icon><a href="https://scholar.google.co.jp/citations?user=LampCPIAAAAJ&amp;hl=en" class="uk-link text-primary hover:text-primary-focus underline  text-base">Google Scholar Profile</a>              </div>
-            </div>
-            <div class="uk-section mb-12">
-              <h3 class="uk-h3 text-2xl font-semibold mb-4">Publications and Preprints</h3>
-              <ul class="list-disc pl-5 space-y-3">
-                <li>
-Rie Shiokawa, <u class="underline ">Junichiro Iwasawa</u>, Yumiko Oishi Tanaka, Yuta Tokuoka, Yohei Sugawara, Yuichiro Hirano, Ryo Takaji, Yayoi Hayakawa, Keita Oda, Yasunori Kudo, Miho Li, Kazue Mizuno, Kazuhisa Ozeki, Ayako Nishimoto-Kakiuchi, and Kimio Terao. <strong class="font-bold ">Development of an AI-based magnetic resonance imaging reading support program (AMP) for deep endometriosis diagnosis.</strong> <em class="font-medium ">Scientific Reports 16, 790 (2025).</em> <a href="https://doi.org/10.1038/s41598-025-30277-x" class="uk-link text-primary hover:text-primary-focus underline">[link]</a>                </li>
-                <li>
-Wataru Kawakami, Keita Suzuki, and <u class="underline ">Junichiro Iwasawa</u>. <strong class="font-bold ">Stabilizing Reasoning in Medical LLMs with Continued Pretraining and Reasoning Preference Optimization.</strong> <em class="font-medium ">NeurIPS 2025 Workshop GenAI4Health.</em> <a href="https://openreview.net/forum?id=bGkyFZVyRL" class="uk-link text-primary hover:text-primary-focus underline">[link]</a>                </li>
-                <li>
-Naoto Iwase, Hiroki Okuyama, and <u class="underline ">Junichiro Iwasawa</u>. <strong class="font-bold ">MedRECT: A Medical Reasoning Benchmark for Error Correction in Clinical Texts.</strong> <em class="font-medium ">arXiv preprint arXiv:2511.00421 (2025).</em> <a href="https://arxiv.org/abs/2511.00421" class="uk-link text-primary hover:text-primary-focus underline">[link]</a>                </li>
-                <li>
-Xinkai Zhao, Yuta Tokuoka, <u class="underline ">Junichiro Iwasawa</u>, and Keita Oda. <strong class="font-bold ">Frequency-calibrated membership inference attacks on medical image diffusion models.</strong> <em class="font-medium ">MICCAI 2025 Workshop on Deep Generative Models.</em> <a href="https://link.springer.com/chapter/10.1007/978-3-032-05472-2_29" class="uk-link text-primary hover:text-primary-focus underline">[link]</a>                </li>
-                <li>
-Enzhi Zhang, <u class="underline ">Junichiro Iwasawa</u>, Keita Oda, and Yuta Tokuoka. <strong class="font-bold ">SAM2v-BTR: Accelerating SAM 2 Training for 3D Medical Image Segmentation Through Bootstrap and Memory Annealing.</strong> <em class="font-medium ">2025 IEEE International Conference on Systems, Man, and Cybernetics (SMC), 4456-4461 (2025).</em> <a href="https://doi.org/10.1109/SMC58881.2025.11343367" class="uk-link text-primary hover:text-primary-focus underline">[link]</a>                </li>
-                <li>
-<u class="underline ">Junichiro Iwasawa</u> and Kenta Oono. <strong class="font-bold ">Advancements and Challenges in Japanese Medical Large Language Models.</strong> <em class="font-medium ">Journal of the Japanese Society for Artificial Intelligence 40(5), 726-734 (2025).</em> <a href="https://doi.org/10.11517/jjsai.40.5_726" class="uk-link text-primary hover:text-primary-focus underline">[link]</a>                </li>
-                <li>
-<u class="underline ">Junichiro Iwasawa</u>, Tomoya Maeda, Atsushi Shibai, Hazuki Kotani, Masako Kawada, and Chikara Furusawa. <strong class="font-bold ">Analysis of the evolution of resistance to multiple antibiotics enables prediction of the Escherichia coli phenotype-based fitness landscape.</strong> <em class="font-medium ">PLOS Biology 20(12): e3001920 (2022).</em> <a href="https://doi.org/10.1371/journal.pbio.3001920" class="uk-link text-primary hover:text-primary-focus underline">[link]</a>                </li>
-                <li>
-<u class="underline ">Junichiro Iwasawa</u>, Daiki Nishiguchi, and Masaki Sano. <strong class="font-bold ">Algebraic correlations and anomalous fluctuations in ordered flocks of Janus particles fueled by an AC electric field.</strong> <em class="font-medium ">Physical Review Research 3, 043104 (2021).</em> <a href="https://doi.org/10.1103/PhysRevResearch.3.043104" class="uk-link text-primary hover:text-primary-focus underline">[link]</a>                </li>
-                <li>
-<u class="underline ">Junichiro Iwasawa</u>, Yuichiro Hirano, and Yohei Sugawara. <strong class="font-bold ">Label-Efficient Multi-Task Segmentation using Contrastive Learning.</strong> <em class="font-medium ">Brainlesion: Glioma, Multiple Sclerosis, Stroke and Traumatic Brain Injuries, LNCS 12658, 101 (2021).</em> <a href="https://arxiv.org/abs/2009.11160" class="uk-link text-primary hover:text-primary-focus underline">[link]</a>                </li>
-                <li>
-Tomoya Maeda*, <u class="underline ">Junichiro Iwasawa*</u>, Hazuki Kotani, Natsue Sakata, Masako Kawada, Takaaki Horinouchi, Aki Sakai, Kumi Tanabe, and Chikara Furusawa (*co-first authors). <strong class="font-bold ">High-throughput laboratory evolution reveals evolutionary constraints in Escherichia coli.</strong> <em class="font-medium ">Nature Communications 11, 5970 (2020).</em> <a href="https://doi.org/10.1038/s41467-020-19713-w" class="uk-link text-primary hover:text-primary-focus underline">[link]</a>                </li>
-                <li>
-Daiki Nishiguchi, <u class="underline ">Junichiro Iwasawa</u>, Hong-Ren Jiang, and Masaki Sano. <strong class="font-bold ">Flagellar dynamics of chains of active Janus particles fueled by an AC electric field.</strong> <em class="font-medium ">New Journal of Physics 20, 015002 (2018).</em> <a href="http://doi.org/10.1088/1367-2630/aa9b48" class="uk-link text-primary hover:text-primary-focus underline">[link]</a>                </li>
-                <li>
-Tomoyuki Mano, Jean-Baptiste Delfau, <u class="underline ">Junichiro Iwasawa</u> and Masaki Sano. <strong class="font-bold ">Optimal run-and-tumble-based transportation of a Janus particle with active steering.</strong> <em class="font-medium ">Proceedings of the National Academy of Sciences 114 (13), E2580-E2589 (2017).</em> <a href="https://doi.org/10.1073/pnas.1616013114" class="uk-link text-primary hover:text-primary-focus underline">[link]</a>                </li>
-              </ul>
-            </div>
-          </div>
+      <section id="publications">
+        <div class="sec-head">
+          <h1 class="page-title" style="margin:0">Publications</h1>
+          <div class="filter-links">
+Show: <button type="button" data-pub-filter="all" aria-pressed="true" class="active">all (12)</button> / <button type="button" data-pub-filter="highlight" aria-pressed="false">selected (4)</button>          </div>
         </div>
-      </div>
+        <p class="legend">
+<span class="swatch"></span>Highlighted papers represent major themes across medical AI, evolutionary biology, and active matter. Full record on <a href="https://scholar.google.co.jp/citations?user=LampCPIAAAAJ&amp;hl=en">Google Scholar</a>.        </p>
+        <ol class="pub-list">
+          <li class="pub-item highlight">
+            <div class="pub-year">2025</div>
+            <div>
+              <div class="pub-title">Development of an AI-based magnetic resonance imaging reading support program (AMP) for deep endometriosis diagnosis</div>
+              <div class="pub-authors">
+Rie Shiokawa, <u>Junichiro Iwasawa</u>, Yumiko Oishi Tanaka, Yuta Tokuoka, Yohei Sugawara, Yuichiro Hirano, Ryo Takaji, Yayoi Hayakawa, Keita Oda, Yasunori Kudo, Miho Li, Kazue Mizuno, Kazuhisa Ozeki, Ayako Nishimoto-Kakiuchi, and Kimio Terao              </div>
+              <div class="pub-venue">
+<em>Scientific Reports</em> 16, 790 (2025)<span class="pub-actions"><a href="https://doi.org/10.1038/s41598-025-30277-x">[paper]</a><button type="button" aria-expanded="false" aria-controls="bib-shiokawa2025amp" class="bib-btn">[BibTeX]</button></span>              </div>
+<pre id="bib-shiokawa2025amp" class="bib-box"><button type="button" aria-label="Copy BibTeX" class="copy-btn">copy</button><code>@article{shiokawa2025amp,
+  author  = {Shiokawa, Rie and Iwasawa, Junichiro and Tanaka, Yumiko Oishi and Tokuoka, Yuta and Sugawara, Yohei and Hirano, Yuichiro and Takaji, Ryo and Hayakawa, Yayoi and Oda, Keita and Kudo, Yasunori and Li, Miho and Mizuno, Kazue and Ozeki, Kazuhisa and Nishimoto-Kakiuchi, Ayako and Terao, Kimio},
+  title   = {Development of an AI-based magnetic resonance imaging reading support program (AMP) for deep endometriosis diagnosis},
+  journal = {Scientific Reports},
+  volume  = {16},
+  pages   = {790},
+  year    = {2025},
+  doi     = {10.1038/s41598-025-30277-x}
+}</code></pre>            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-year">2025</div>
+            <div>
+              <div class="pub-title">Stabilizing Reasoning in Medical LLMs with Continued Pretraining and Reasoning Preference Optimization</div>
+              <div class="pub-authors">
+Wataru Kawakami, Keita Suzuki, and <u>Junichiro Iwasawa</u>              </div>
+              <div class="pub-venue">
+<em>NeurIPS 2025 Workshop GenAI4Health</em><span class="pub-actions"><a href="https://openreview.net/forum?id=bGkyFZVyRL">[OpenReview]</a><button type="button" aria-expanded="false" aria-controls="bib-kawakami2025stabilizing" class="bib-btn">[BibTeX]</button></span>              </div>
+<pre id="bib-kawakami2025stabilizing" class="bib-box"><button type="button" aria-label="Copy BibTeX" class="copy-btn">copy</button><code>@inproceedings{kawakami2025stabilizing,
+  author    = {Kawakami, Wataru and Suzuki, Keita and Iwasawa, Junichiro},
+  title     = {Stabilizing Reasoning in Medical LLMs with Continued Pretraining and Reasoning Preference Optimization},
+  booktitle = {NeurIPS 2025 Workshop GenAI4Health},
+  year      = {2025},
+  url       = {https://openreview.net/forum?id=bGkyFZVyRL}
+}</code></pre>            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-year">2025</div>
+            <div>
+              <div class="pub-title">MedRECT: A Medical Reasoning Benchmark for Error Correction in Clinical Texts</div>
+              <div class="pub-authors">
+Naoto Iwase, Hiroki Okuyama, and <u>Junichiro Iwasawa</u>              </div>
+              <div class="pub-venue">
+<em>arXiv preprint arXiv:2511.00421</em> (2025)<span class="pub-actions"><a href="https://arxiv.org/abs/2511.00421">[arXiv]</a><button type="button" aria-expanded="false" aria-controls="bib-iwase2025medrect" class="bib-btn">[BibTeX]</button></span>              </div>
+<pre id="bib-iwase2025medrect" class="bib-box"><button type="button" aria-label="Copy BibTeX" class="copy-btn">copy</button><code>@misc{iwase2025medrect,
+  author        = {Iwase, Naoto and Okuyama, Hiroki and Iwasawa, Junichiro},
+  title         = {MedRECT: A Medical Reasoning Benchmark for Error Correction in Clinical Texts},
+  year          = {2025},
+  eprint        = {2511.00421},
+  archivePrefix = {arXiv},
+  url           = {https://arxiv.org/abs/2511.00421}
+}</code></pre>            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-year">2025</div>
+            <div>
+              <div class="pub-title">Frequency-calibrated membership inference attacks on medical image diffusion models</div>
+              <div class="pub-authors">
+Xinkai Zhao, Yuta Tokuoka, <u>Junichiro Iwasawa</u>, and Keita Oda              </div>
+              <div class="pub-venue">
+<em>MICCAI 2025 Workshop on Deep Generative Models</em><span class="pub-actions"><a href="https://link.springer.com/chapter/10.1007/978-3-032-05472-2_29">[paper]</a><button type="button" aria-expanded="false" aria-controls="bib-zhao2025frequency" class="bib-btn">[BibTeX]</button></span>              </div>
+<pre id="bib-zhao2025frequency" class="bib-box"><button type="button" aria-label="Copy BibTeX" class="copy-btn">copy</button><code>@inproceedings{zhao2025frequency,
+  author    = {Zhao, Xinkai and Tokuoka, Yuta and Iwasawa, Junichiro and Oda, Keita},
+  title     = {Frequency-calibrated membership inference attacks on medical image diffusion models},
+  booktitle = {MICCAI 2025 Workshop on Deep Generative Models},
+  year      = {2025},
+  doi       = {10.1007/978-3-032-05472-2_29}
+}</code></pre>            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-year">2025</div>
+            <div>
+              <div class="pub-title">SAM2v-BTR: Accelerating SAM 2 Training for 3D Medical Image Segmentation Through Bootstrap and Memory Annealing</div>
+              <div class="pub-authors">
+Enzhi Zhang, <u>Junichiro Iwasawa</u>, Keita Oda, and Yuta Tokuoka              </div>
+              <div class="pub-venue">
+<em>2025 IEEE International Conference on Systems, Man, and Cybernetics (SMC)</em>, 4456–4461 (2025)<span class="pub-actions"><a href="https://doi.org/10.1109/SMC58881.2025.11343367">[DOI]</a><button type="button" aria-expanded="false" aria-controls="bib-zhang2025sam2vbtr" class="bib-btn">[BibTeX]</button></span>              </div>
+<pre id="bib-zhang2025sam2vbtr" class="bib-box"><button type="button" aria-label="Copy BibTeX" class="copy-btn">copy</button><code>@inproceedings{zhang2025sam2vbtr,
+  author    = {Zhang, Enzhi and Iwasawa, Junichiro and Oda, Keita and Tokuoka, Yuta},
+  title     = {SAM2v-BTR: Accelerating SAM 2 Training for 3D Medical Image Segmentation Through Bootstrap and Memory Annealing},
+  booktitle = {2025 IEEE International Conference on Systems, Man, and Cybernetics (SMC)},
+  pages     = {4456--4461},
+  year      = {2025},
+  doi       = {10.1109/SMC58881.2025.11343367}
+}</code></pre>            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-year">2025</div>
+            <div>
+              <div class="pub-title">Advancements and Challenges in Japanese Medical Large Language Models</div>
+              <div class="pub-authors">
+<u>Junichiro Iwasawa</u> and Kenta Oono              </div>
+              <div class="pub-venue">
+<em>Journal of the Japanese Society for Artificial Intelligence</em> 40(5), 726–734 (2025)<span class="pub-actions"><a href="https://doi.org/10.11517/jjsai.40.5_726">[paper]</a><button type="button" aria-expanded="false" aria-controls="bib-iwasawa2025jsai" class="bib-btn">[BibTeX]</button></span>              </div>
+<pre id="bib-iwasawa2025jsai" class="bib-box"><button type="button" aria-label="Copy BibTeX" class="copy-btn">copy</button><code>@article{iwasawa2025jsai,
+  author  = {Iwasawa, Junichiro and Oono, Kenta},
+  title   = {Advancements and Challenges in Japanese Medical Large Language Models},
+  journal = {Journal of the Japanese Society for Artificial Intelligence},
+  volume  = {40},
+  number  = {5},
+  pages   = {726--734},
+  year    = {2025},
+  doi     = {10.11517/jjsai.40.5_726}
+}</code></pre>            </div>
+          </li>
+          <li class="pub-item highlight">
+            <div class="pub-year">2022</div>
+            <div>
+              <div class="pub-title">
+Analysis of the evolution of resistance to multiple antibiotics enables prediction of the <em>Escherichia coli</em> phenotype-based fitness landscape              </div>
+              <div class="pub-authors">
+<u>Junichiro Iwasawa</u>, Tomoya Maeda, Atsushi Shibai, Hazuki Kotani, Masako Kawada, and Chikara Furusawa              </div>
+              <div class="pub-venue">
+<em>PLOS Biology</em> 20(12): e3001920 (2022)<span class="pub-actions"><a href="https://doi.org/10.1371/journal.pbio.3001920">[paper]</a><button type="button" aria-expanded="false" aria-controls="bib-iwasawa2022plos" class="bib-btn">[BibTeX]</button></span>              </div>
+<pre id="bib-iwasawa2022plos" class="bib-box"><button type="button" aria-label="Copy BibTeX" class="copy-btn">copy</button><code>@article{iwasawa2022plos,
+  author  = {Iwasawa, Junichiro and Maeda, Tomoya and Shibai, Atsushi and Kotani, Hazuki and Kawada, Masako and Furusawa, Chikara},
+  title   = {Analysis of the evolution of resistance to multiple antibiotics enables prediction of the {Escherichia coli} phenotype-based fitness landscape},
+  journal = {PLOS Biology},
+  volume  = {20},
+  number  = {12},
+  pages   = {e3001920},
+  year    = {2022},
+  doi     = {10.1371/journal.pbio.3001920}
+}</code></pre>            </div>
+          </li>
+          <li class="pub-item highlight">
+            <div class="pub-year">2021</div>
+            <div>
+              <div class="pub-title">Algebraic correlations and anomalous fluctuations in ordered flocks of Janus particles fueled by an AC electric field</div>
+              <div class="pub-authors">
+<u>Junichiro Iwasawa</u>, Daiki Nishiguchi, and Masaki Sano              </div>
+              <div class="pub-venue">
+<em>Physical Review Research</em> 3, 043104 (2021)<span class="pub-actions"><a href="https://doi.org/10.1103/PhysRevResearch.3.043104">[paper]</a><button type="button" aria-expanded="false" aria-controls="bib-iwasawa2021prr" class="bib-btn">[BibTeX]</button></span>              </div>
+<pre id="bib-iwasawa2021prr" class="bib-box"><button type="button" aria-label="Copy BibTeX" class="copy-btn">copy</button><code>@article{iwasawa2021prr,
+  author  = {Iwasawa, Junichiro and Nishiguchi, Daiki and Sano, Masaki},
+  title   = {Algebraic correlations and anomalous fluctuations in ordered flocks of Janus particles fueled by an AC electric field},
+  journal = {Physical Review Research},
+  volume  = {3},
+  pages   = {043104},
+  year    = {2021},
+  doi     = {10.1103/PhysRevResearch.3.043104}
+}</code></pre>            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-year">2021</div>
+            <div>
+              <div class="pub-title">Label-Efficient Multi-Task Segmentation using Contrastive Learning</div>
+              <div class="pub-authors">
+<u>Junichiro Iwasawa</u>, Yuichiro Hirano, and Yohei Sugawara              </div>
+              <div class="pub-venue">
+<em>Brainlesion: Glioma, Multiple Sclerosis, Stroke and Traumatic Brain Injuries</em>, LNCS 12658, 101 (2021)<span class="pub-actions"><a href="https://arxiv.org/abs/2009.11160">[arXiv]</a><button type="button" aria-expanded="false" aria-controls="bib-iwasawa2021brainles" class="bib-btn">[BibTeX]</button></span>              </div>
+<pre id="bib-iwasawa2021brainles" class="bib-box"><button type="button" aria-label="Copy BibTeX" class="copy-btn">copy</button><code>@inproceedings{iwasawa2021brainles,
+  author    = {Iwasawa, Junichiro and Hirano, Yuichiro and Sugawara, Yohei},
+  title     = {Label-Efficient Multi-Task Segmentation using Contrastive Learning},
+  booktitle = {Brainlesion: Glioma, Multiple Sclerosis, Stroke and Traumatic Brain Injuries},
+  series    = {LNCS},
+  volume    = {12658},
+  pages     = {101--112},
+  year      = {2021},
+  eprint    = {2009.11160},
+  archivePrefix = {arXiv}
+}</code></pre>            </div>
+          </li>
+          <li class="pub-item highlight">
+            <div class="pub-year">2020</div>
+            <div>
+              <div class="pub-title">
+High-throughput laboratory evolution reveals evolutionary constraints in <em>Escherichia coli</em>              </div>
+              <div class="pub-authors">
+Tomoya Maeda*, <u>Junichiro Iwasawa*</u>, Hazuki Kotani, Natsue Sakata, Masako Kawada, Takaaki Horinouchi, Aki Sakai, Kumi Tanabe, and Chikara Furusawa (*co-first authors)              </div>
+              <div class="pub-venue">
+<em>Nature Communications</em> 11, 5970 (2020)<span class="pub-actions"><a href="https://doi.org/10.1038/s41467-020-19713-w">[paper]</a><button type="button" aria-expanded="false" aria-controls="bib-maeda2020natcomm" class="bib-btn">[BibTeX]</button></span>              </div>
+<pre id="bib-maeda2020natcomm" class="bib-box"><button type="button" aria-label="Copy BibTeX" class="copy-btn">copy</button><code>@article{maeda2020natcomm,
+  author  = {Maeda, Tomoya and Iwasawa, Junichiro and Kotani, Hazuki and Sakata, Natsue and Kawada, Masako and Horinouchi, Takaaki and Sakai, Aki and Tanabe, Kumi and Furusawa, Chikara},
+  title   = {High-throughput laboratory evolution reveals evolutionary constraints in {Escherichia coli}},
+  journal = {Nature Communications},
+  volume  = {11},
+  pages   = {5970},
+  year    = {2020},
+  doi     = {10.1038/s41467-020-19713-w}
+}</code></pre>            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-year">2018</div>
+            <div>
+              <div class="pub-title">Flagellar dynamics of chains of active Janus particles fueled by an AC electric field</div>
+              <div class="pub-authors">
+Daiki Nishiguchi, <u>Junichiro Iwasawa</u>, Hong-Ren Jiang, and Masaki Sano              </div>
+              <div class="pub-venue">
+<em>New Journal of Physics</em> 20, 015002 (2018)<span class="pub-actions"><a href="https://doi.org/10.1088/1367-2630/aa9b48">[paper]</a><button type="button" aria-expanded="false" aria-controls="bib-nishiguchi2018njp" class="bib-btn">[BibTeX]</button></span>              </div>
+<pre id="bib-nishiguchi2018njp" class="bib-box"><button type="button" aria-label="Copy BibTeX" class="copy-btn">copy</button><code>@article{nishiguchi2018njp,
+  author  = {Nishiguchi, Daiki and Iwasawa, Junichiro and Jiang, Hong-Ren and Sano, Masaki},
+  title   = {Flagellar dynamics of chains of active Janus particles fueled by an AC electric field},
+  journal = {New Journal of Physics},
+  volume  = {20},
+  pages   = {015002},
+  year    = {2018},
+  doi     = {10.1088/1367-2630/aa9b48}
+}</code></pre>            </div>
+          </li>
+          <li class="pub-item">
+            <div class="pub-year">2017</div>
+            <div>
+              <div class="pub-title">Optimal run-and-tumble-based transportation of a Janus particle with active steering</div>
+              <div class="pub-authors">
+Tomoyuki Mano, Jean-Baptiste Delfau, <u>Junichiro Iwasawa</u>, and Masaki Sano              </div>
+              <div class="pub-venue">
+<em>Proceedings of the National Academy of Sciences</em> 114(13), E2580–E2589 (2017)<span class="pub-actions"><a href="https://doi.org/10.1073/pnas.1616013114">[paper]</a><button type="button" aria-expanded="false" aria-controls="bib-mano2017pnas" class="bib-btn">[BibTeX]</button></span>              </div>
+<pre id="bib-mano2017pnas" class="bib-box"><button type="button" aria-label="Copy BibTeX" class="copy-btn">copy</button><code>@article{mano2017pnas,
+  author  = {Mano, Tomoyuki and Delfau, Jean-Baptiste and Iwasawa, Junichiro and Sano, Masaki},
+  title   = {Optimal run-and-tumble-based transportation of a Janus particle with active steering},
+  journal = {Proceedings of the National Academy of Sciences},
+  volume  = {114},
+  number  = {13},
+  pages   = {E2580--E2589},
+  year    = {2017},
+  doi     = {10.1073/pnas.1616013114}
+}</code></pre>            </div>
+          </li>
+        </ol>
+      </section>
+      <footer>
+<span>Junichiro Iwasawa · Tokyo, Japan</span><span><a href="/research">Research</a> · <a href="/talks">Talks</a> · <a href="/blog">Blog</a> · <a href="/blog_jp">ブログ</a></span>      </footer>
     </div>
   </body>
 </html>

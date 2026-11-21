@@ -1,224 +1,652 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <title>Talks - Junichiro Iwasawa</title>
     <link rel="canonical" href="https://localhost:5001/talks">
     <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<script src="https://cdn.jsdelivr.net/npm/htmx.org@2.0.7/dist/htmx.js"></script><script src="https://cdn.jsdelivr.net/gh/answerdotai/fasthtml-js@1.0.12/fasthtml.js"></script><script src="https://cdn.jsdelivr.net/gh/answerdotai/surreal@main/surreal.js"></script><script src="https://cdn.jsdelivr.net/gh/gnat/css-scope-inline@main/script.js"></script>    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/css/core.min.css">
-<script type="module" src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/core.iife.js"></script><script src="https://cdn.tailwindcss.com/3.4.17"></script><script>
-    tailwind.config = {
-        darkMode: 'selector',
-    }
-    </script><script>
-        const htmlElement = document.documentElement;
-        
-          
-          const __FRANKEN__ = JSON.parse(localStorage.getItem("__FRANKEN__") || "{}");
-    
-          if (
-            __FRANKEN__.mode === "dark" ||
-            (!__FRANKEN__.mode &&
-              window.matchMedia("(prefers-color-scheme: dark)").matches)
-          ) {
-            htmlElement.classList.add("dark");
-          } else {
-            htmlElement.classList.remove("dark");
-          }
-        
-          htmlElement.classList.add(__FRANKEN__.theme || "uk-theme-blue");
-          htmlElement.classList.add(__FRANKEN__.radii || "uk-radii-sm");
-          htmlElement.classList.add(__FRANKEN__.shadows || "uk-shadows-sm");
-          htmlElement.classList.add(__FRANKEN__.font || "uk-font-sm");
-    </script>    <style>
-.monster-navbar.navbar-bold a {
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-}
-.monster-navbar.navbar-bold a.uk-active {
-    transform: scale(1.15) ;
-    font-weight: bold;
-    text-shadow: 0 0 12px rgba(var(--p-rgb), 0.4);
-    letter-spacing: 0.02em;
-    color: hsl(var(--p) / 1);
-}
-.monster-navbar.navbar-underline a.uk-active { position: relative; }
-.monster-navbar.navbar-underline a.uk-active::after {
-    content: '';
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Junichiro Iwasawa — Solutions Architect at NVIDIA, previously Researcher and Tech Lead at Preferred Networks, Ph.D. in Physics (The University of Tokyo).">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Lato:ital,wght@0,400;0,700;1,400&amp;family=Noto+Sans+JP:wght@400;500&amp;display=swap">
+    <style>
+  *, *::before, *::after { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0;
+    background: #ffffff;
+    color: #222222;
+    font-family: 'Lato', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a {
+    color: #1772d0;
+    text-decoration: none;
+  }
+  a:hover, a:focus-visible {
+    color: #f09228;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  :focus-visible {
+    outline: 2px solid #1772d0;
+    outline-offset: 2px;
+  }
+
+  .wrap {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 28px 24px 64px;
+  }
+
+  /* Navigation */
+  .topnav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 18px;
+    font-size: 13.5px;
+    color: #666666;
+    margin-bottom: 34px;
+  }
+  .topnav.with-brand {
+    justify-content: space-between;
+    border-bottom: 1px solid #ececec;
+    padding-bottom: 12px;
+    margin-bottom: 30px;
+  }
+  .topnav-brand {
+    font-size: 15px;
+    font-weight: 700;
+    color: #111111;
+  }
+  .topnav-brand:hover { color: #1772d0; text-decoration: none; }
+  .topnav-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 18px;
+  }
+  .topnav a { color: #555555; }
+  .topnav a:hover { color: #1772d0; }
+  .topnav a.active {
+    color: #111111;
+    font-weight: 700;
+  }
+
+  /* Bio header */
+  .bio {
+    display: grid;
+    grid-template-columns: 1fr 196px;
+    gap: 36px;
+    align-items: start;
+    margin-bottom: 42px;
+  }
+  h1 {
+    margin: 0 0 4px;
+    font-size: 31px;
+    font-weight: 400;
+    line-height: 1.2;
+    color: #111111;
+    letter-spacing: -0.01em;
+  }
+  .jp-name {
+    font-size: 14.5px;
+    color: #666666;
+    margin: 0 0 18px;
+    font-weight: 400;
+  }
+  .bio p { margin: 0 0 13px; }
+  .bio-links {
+    margin-top: 18px;
+    font-size: 14.5px;
+    color: #999999;
+    line-height: 1.8;
+  }
+  .bio-links a { white-space: nowrap; }
+  .bio-links .sep { margin: 0 7px; color: #cccccc; }
+  .portrait {
+    width: 186px;
+    height: 186px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center 15%;
+    display: block;
+    margin: 8px auto 0;
+  }
+
+  /* Section headings */
+  section { margin-bottom: 40px; }
+  .sec-head {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 12px;
+    border-bottom: 1px solid #e6e6e6;
+    padding-bottom: 6px;
+    margin-bottom: 16px;
+  }
+  h2 {
+    margin: 0;
+    font-size: 21px;
+    font-weight: 400;
+    color: #111111;
+  }
+  h3 {
+    margin: 0 0 8px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #111111;
+  }
+  .page-title {
+    margin: 0 0 10px;
+    font-size: 26px;
+    font-weight: 400;
+    color: #111111;
+  }
+  .page-lead {
+    margin: 0 0 26px;
+    color: #444444;
+    max-width: 68ch;
+  }
+
+  /* Filter bar & legend */
+  .filter-links {
+    font-size: 13.5px;
+    color: #777777;
+  }
+  .filter-links button {
+    background: none;
+    border: none;
+    padding: 0;
+    font: inherit;
+    color: #1772d0;
+    cursor: pointer;
+  }
+  .filter-links button:hover {
+    color: #f09228;
+    text-decoration: underline;
+  }
+  .filter-links button.active {
+    color: #111111;
+    font-weight: 700;
+    cursor: default;
+    text-decoration: none;
+  }
+  .legend {
+    font-size: 13px;
+    color: #666666;
+    margin: -6px 0 14px;
+  }
+  .swatch {
+    display: inline-block;
+    width: 11px;
+    height: 11px;
+    background: #fdf9e7;
+    border: 1px solid #e5dcaa;
+    vertical-align: -1px;
+    margin-right: 4px;
+  }
+
+  /* Open models block */
+  .models-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .models-list li {
+    padding: 10px 12px;
+    margin: 0 -12px 6px;
+    border-radius: 3px;
+    background: #fdf9e7;
+  }
+  .models-title { font-weight: 700; color: #111111; }
+
+  /* Publications & BibTeX (Design 1 + Design 4) */
+  .pub-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .pub-item {
+    display: grid;
+    grid-template-columns: 52px 1fr;
+    gap: 12px;
+    padding: 11px 12px;
+    margin: 0 -12px 4px;
+    border-radius: 3px;
+  }
+  .pub-item.highlight { background: #fdf9e7; }
+  .pub-item.hidden { display: none; }
+  .pub-year {
+    font-size: 13.5px;
+    color: #666666;
+    font-variant-numeric: tabular-nums;
+    padding-top: 1px;
+  }
+  .pub-title { font-weight: 700; color: #111111; }
+  .pub-authors {
+    font-size: 14px;
+    color: #444444;
+    margin-top: 2px;
+  }
+  .pub-authors u {
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    color: #111111;
+  }
+  .pub-venue {
+    font-size: 14px;
+    margin-top: 2px;
+    color: #444444;
+  }
+  .pub-venue em { color: #222222; }
+  .pub-actions {
+    margin-left: 6px;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 12.5px;
+    white-space: nowrap;
+  }
+  .model-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2px 12px;
+    margin-top: 3px;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 12.5px;
+  }
+  .bib-btn {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 6px;
+    font: inherit;
+    color: #6b1d1d;
+    cursor: pointer;
+  }
+  .bib-btn:hover {
+    color: #f09228;
+    text-decoration: underline;
+    text-underline-offset: 2px;
+  }
+  .bib-box {
+    display: none;
+    margin: 8px 0 2px;
+    padding: 10px 58px 10px 12px;
+    background: #f7f7f5;
+    border: 1px solid #d8d8d4;
+    border-radius: 2px;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 11.5px;
+    line-height: 1.5;
+    color: #222222;
+    white-space: pre-wrap;
+    overflow-x: auto;
+    position: relative;
+  }
+  .bib-box.open { display: block; }
+  .copy-btn {
     position: absolute;
-    left: 0;
-    bottom: -2px;
+    top: 7px;
+    right: 8px;
+    background: #ffffff;
+    border: 1px solid #cccccc;
+    border-radius: 2px;
+    font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
+    font-size: 11px;
+    padding: 2px 7px;
+    cursor: pointer;
+    color: #333333;
+  }
+  .copy-btn:hover {
+    border-color: #1772d0;
+    color: #1772d0;
+  }
+
+  /* CV table */
+  .cv-table {
     width: 100%;
-    height: 2px;
-    background: currentColor;
-    animation: slideIn 0.3s ease forwards;
-}
-@keyframes slideIn {
-    from { transform: scaleX(0); }
-    to { transform: scaleX(1); }
-}
-</style>
-<script type="module" src="https://cdn.jsdelivr.net/npm/franken-ui@2.0.0/dist/js/icon.iife.js"></script>    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/daisyui@4.12.24/dist/full.min.css">
-    <style>
-:root {
-  --b1: from hsl(var(--background)) l c h;
-  --bc: from hsl(var(--foreground)) l c h;
-  --m: from hsl(var(--muted)) l c h;
-  --mc: from hsl(var(--muted-foreground)) l c h;
-  --po: from hsl(var(--popover)) l c h;
-  --poc: from hsl(var(--popover-foreground)) l c h;
-  --b2: from hsl(var(--card)) l c h;
-  --b2c: from hsl(var(--card-foreground)) l c h;
-  --br: from hsl(var(--border)) l c h;
-  --in: from hsl(var(--input)) l c h;
-  --p: from hsl(var(--primary)) l c h;
-  --pc: from hsl(var(--primary-foreground)) l c h;
-  --s: from hsl(var(--secondary)) l c h;
-  --sc: from hsl(var(--secondary-foreground)) l c h;
-  --a: from hsl(var(--accent)) l c h;
-  --ac: from hsl(var(--accent-foreground)) l c h;
-  --er: from hsl(var(--destructive)) l c h;
-  --erc: from hsl(var(--destructive-foreground)) l c h;
-  --b3: from hsl(var(--ring)) l c h;
-  --ch1: from hsl(var(--chart-1)) l c h;
-  --ch2: from hsl(var(--chart-2)) l c h;
-  --ch3: from hsl(var(--chart-3)) l c h;
-  --ch4: from hsl(var(--chart-4)) l c h;
-  --ch5: from hsl(var(--chart-5)) l c h;
-  --rd: var(--radius);
-}
-</style>
-    <style>
-    :focus-visible { outline: 2px solid #3b82f6; outline-offset: 2px; border-radius: 6px; }
-    a, button { transition: color .2s ease, background-color .2s ease, border-color .2s ease; }
+    border-collapse: collapse;
+    font-size: 14.5px;
+  }
+  .cv-table td {
+    padding: 7px 0;
+    vertical-align: top;
+    border-bottom: 1px solid #f0f0f0;
+  }
+  .cv-table tr:last-child td { border-bottom: none; }
+  .cv-period {
+    width: 175px;
+    color: #595959;
+    font-size: 13.5px;
+    font-variant-numeric: tabular-nums;
+    padding-right: 16px;
+  }
+  .cv-role { font-weight: 700; color: #111111; }
+  .cv-inst { color: #444444; }
+
+  /* Research subpage */
+  .research-entry {
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+    border-bottom: 1px solid #ececec;
+  }
+  .research-entry:last-child { border-bottom: none; margin-bottom: 0; }
+  .research-entry p { margin: 0 0 12px; color: #2d2d2d; }
+  .related-label {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: #555555;
+    margin: 14px 0 6px;
+  }
+  .plain-list {
+    margin: 0;
+    padding-left: 20px;
+  }
+  .plain-list li {
+    margin-bottom: 8px;
+    font-size: 14.5px;
+  }
+
+  /* Talks subpage */
+  .jump-bar {
+    font-size: 13.5px;
+    color: #888888;
+    margin: -10px 0 28px;
+    line-height: 1.9;
+  }
+  .jump-bar .sep { margin: 0 7px; color: #cccccc; }
+  .talk-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .talk-list li {
+    padding: 9px 0;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14.5px;
+  }
+  .talk-list li:last-child { border-bottom: none; }
+  .talk-title { font-weight: 700; color: #111111; }
+  .talk-jp { color: #555555; font-size: 14px; }
+  .talk-meta { color: #444444; font-size: 14px; margin-top: 2px; }
+  .sub-h {
+    font-size: 15.5px;
+    font-weight: 700;
+    color: #444444;
+    margin: 0 0 10px;
+  }
+
+  /* Footer */
+  footer {
+    margin-top: 44px;
+    padding-top: 14px;
+    border-top: 1px solid #ececec;
+    font-size: 12.5px;
+    color: #777777;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  footer a { color: #555555; }
+  footer a:hover { color: #1772d0; }
+
+  @media (max-width: 680px) {
+    .wrap { padding: 20px 16px 48px; }
+    .bio { grid-template-columns: 1fr; gap: 20px; }
+    .bio-photo-col { order: -1; }
+    .portrait { width: 148px; height: 148px; margin: 0 auto; }
+    .pub-item { grid-template-columns: 1fr; gap: 2px; }
+    .pub-year { font-size: 12.5px; color: #777777; }
+    .cv-table td { display: block; padding: 2px 0; border: none; }
+    .cv-table tr { display: block; padding: 7px 0; border-bottom: 1px solid #f0f0f0; }
+    .cv-period { width: auto; }
+  }
 </style>
 <script>
-function __toggleMode(){
-  const html = document.documentElement;
-  const isDark = html.classList.toggle('dark');
-  let s = {};
-  try { s = JSON.parse(localStorage.getItem('__FRANKEN__')) || {}; } catch (e) {}
-  s.mode = isDark ? 'dark' : 'light';
-  localStorage.setItem('__FRANKEN__', JSON.stringify(s));
-}
+document.addEventListener('DOMContentLoaded', () => {
+  const filterBtns = document.querySelectorAll('[data-pub-filter]');
+  const pubItems = document.querySelectorAll('.pub-item');
+  if (filterBtns.length) {
+    const applyFilter = (mode) => {
+      filterBtns.forEach((b) => {
+        const active = b.dataset.pubFilter === mode;
+        b.classList.toggle('active', active);
+        b.setAttribute('aria-pressed', active ? 'true' : 'false');
+      });
+      pubItems.forEach((li) => {
+        li.classList.toggle('hidden', mode === 'highlight' && !li.classList.contains('highlight'));
+      });
+    };
+    filterBtns.forEach((b) => b.addEventListener('click', () => applyFilter(b.dataset.pubFilter)));
+  }
+
+  document.querySelectorAll('.bib-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const box = document.getElementById(btn.getAttribute('aria-controls'));
+      if (!box) return;
+      const open = box.classList.toggle('open');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    });
+  });
+
+  document.querySelectorAll('.copy-btn').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      const code = btn.parentElement && btn.parentElement.querySelector('code');
+      if (!code) return;
+      const text = code.textContent;
+      const done = () => {
+        btn.textContent = 'copied';
+        setTimeout(() => { btn.textContent = 'copy'; }, 1200);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(done).catch(() => {
+          const ta = document.createElement('textarea');
+          ta.value = text;
+          ta.style.position = 'fixed';
+          ta.style.opacity = '0';
+          document.body.appendChild(ta);
+          ta.select();
+          try { document.execCommand('copy'); } catch (e) {}
+          document.body.removeChild(ta);
+          done();
+        });
+      } else {
+        const ta = document.createElement('textarea');
+        ta.value = text;
+        ta.style.position = 'fixed';
+        ta.style.opacity = '0';
+        document.body.appendChild(ta);
+        ta.select();
+        try { document.execCommand('copy'); } catch (e) {}
+        document.body.removeChild(ta);
+        done();
+      }
+    });
+  });
+});
 </script>  </head>
-  <body class=" bg-background text-foreground">
-    <div>
-      <nav class="monster-navbar flex flex-wrap items-center justify-between w-full px-4 py-2 mb-4  sticky top-0 z-50 bg-background/80 backdrop-blur-sm">
-        <h3 class="uk-h3 text-xl font-semibold tracking-tight">Junichiro Iwasawa</h3>
-<button aria-controls="mobile-menu" type="button" data-uk-toggle="target: #mobile-menu; cls: hidden" class="md:hidden inline-flex items-center justify-center uk-rounded focus:outline-none focus:ring-2 p-2"><span class="sr-only">Open main menu</span><uk-icon icon="menu" height="24" width="24" class="size-6"></uk-icon></button>        <div id="mobile-menu" class="hidden mt-2 md:mt-0 w-full md:block md:w-auto ">
-          <div class="flex gap-3 flex-col items-end md:flex-row md:items-center md:gap-3">
-<a href="/" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">About</a><a href="/publications" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">Publications</a><a href="/research" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">Research</a><a href="/talks" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">Talks</a><a href="/blog" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">Blog</a><a href="/blog_jp" class="px-3 py-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors">ブログ</a><button onclick="__toggleMode()" aria-label="Toggle dark mode" type="submit" class="uk-btn p-2 rounded-md text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="Toggle dark mode"><uk-icon icon="moon" height="18" width="18" class="block dark:hidden"></uk-icon><uk-icon icon="sun" height="18" width="18" class="hidden dark:block"></uk-icon></button>          </div>
-        </div>
+  <body>
+    <div class="wrap">
+      <nav aria-label="Site navigation" class="topnav with-brand">
+<a href="/" class="topnav-brand">Junichiro Iwasawa</a>        <div class="topnav-links">
+<a href="/">About</a><a href="/publications">Publications</a><a href="/research">Research</a><a href="/talks" class="active">Talks</a><a href="/blog">Blog</a><a href="/blog_jp">ブログ</a>        </div>
       </nav>
-      <div class="uk-container uk-container-xl">
-        <div class="grid grid-cols-1 md:grid-cols-12 gap-10 mt-12">
-          <div class="col-span-1 md:col-span-4 lg:col-span-3 md:sticky md:top-24">
-            <div class="text-center md:text-left p-4">
-<img src="static/profile_img2.jpg" alt="Junichiro Iwasawa" class="w-40 h-40 rounded-full object-cover mx-auto md:mx-0 ring-4 ring-primary/25 shadow-sm mb-5">              <h4 class="uk-h4 text-lg font-semibold tracking-tight">Junichiro Iwasawa</h4>
-              <p class="text-gray-500 dark:text-gray-200 text-sm">Solutions Architect at NVIDIA</p>
-              <div class="flex flex-wrap items-center gap-1 -ml-1.5 mt-5 justify-center md:justify-start">
-<a href="https://twitter.com/jiwasawa" aria-label="Twitter" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="Twitter"><uk-icon icon="twitter" height="18" width="18"></uk-icon></a><a href="https://www.linkedin.com/in/junichiro-iwasawa-875b37130/" aria-label="LinkedIn" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="LinkedIn"><uk-icon icon="linkedin" height="18" width="18"></uk-icon></a><a href="https://scholar.google.co.jp/citations?user=LampCPIAAAAJ&amp;hl=en" aria-label="Google Scholar" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="Google Scholar"><uk-icon icon="graduation-cap" height="18" width="18"></uk-icon></a><a href="https://github.com/jiwasawa" aria-label="GitHub" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="GitHub"><uk-icon icon="github" height="18" width="18"></uk-icon></a><a href="https://researchmap.jp/jiwasawa?lang=en" aria-label="researchmap" class="p-1.5 rounded-lg text-muted-foreground hover:text-primary hover:bg-muted transition-colors" title="researchmap"><uk-icon icon="book-open" height="18" width="18"></uk-icon></a>              </div>
-<a href="static/junichiro_iwasawa_cv.pdf" class="inline-flex items-center mt-6 px-3.5 py-2 text-sm font-medium rounded-lg border border-border hover:border-primary hover:text-primary transition-colors">                <div class="flex justify-start items-center space-x-2">
-<uk-icon icon="file-text" height="16" width="16"></uk-icon><span>Curriculum Vitae</span>                </div>
-</a>            </div>
-          </div>
-          <div class="col-span-1 md:col-span-8 lg:col-span-9">
-            <div class="uk-section mb-12">
-              <h2 class="uk-h2 text-3xl font-bold tracking-tight mb-4">Talks and presentations</h2>
-              <div class="mb-8 p-4 rounded-md text-base">
-                <ul class="list-disc pl-5 space-y-1">
-                  <li>
-<a href="#invited-talks" class="uk-link text-primary hover:text-primary-focus underline">Invited Talks</a>                  </li>
-                  <li>
-<a href="#international-talks" class="uk-link text-primary hover:text-primary-focus underline">International Conferences (Oral)</a>                  </li>
-                  <li>
-<a href="#international-posters" class="uk-link text-primary hover:text-primary-focus underline">International Conferences (Posters)</a>                  </li>
-                  <li>
-<a href="#japanese-conferences" class="uk-link text-primary hover:text-primary-focus underline">Japanese Conferences</a>                  </li>
-                  <li>
-<a href="#outreach" class="uk-link text-primary hover:text-primary-focus underline">Outreach</a>                  </li>
-                </ul>
-              </div>
-            </div>
-            <div class="uk-section mb-12">
-              <h3 id="invited-talks" class="uk-h3 text-2xl font-semibold mb-4">Invited Talks</h3>
-              <ul class="list-disc pl-5 space-y-2">
-                <li>
-<strong class="font-bold ">Finetuning Foundation Models for the Development and Application of Healthcare-Specific Models</strong><br>基盤モデルの finetuning による医療特化モデルの構築と応用<br><em class="font-medium "><a href="https://www.isct.ac.jp/ja/news/g0s5tlw8z8vg" class="uk-link text-primary hover:text-primary-focus underline">Science Tokyo設立記念 社会的課題解決型データサイエンス・AI研究推進体シンポジウム ～AI とデータサイエンスが拓く新時代の医療～</a></em>, March 24, 2025, Tokyo, Japan.                </li>
-                <li>
-<strong class="font-bold ">Finetuning or RAG? Towards Building a Medical Domain-Specialized LLM</strong><br>Finetuning or RAG? 医療ドメイン特化 LLM 構築に向けて<br><em class="font-medium "><a href="https://ibisml.org/ibisml055" class="uk-link text-primary hover:text-primary-focus underline">55th meeting of IBISML</a></em>, December 20, 2024, Hokkaido, Japan.                </li>
-                <li>
-<strong class="font-bold ">Latest Developments in Finetuning LLMs for Healthcare</strong><br>医療向けLLM-finetuningの最前線<br><em class="font-medium "><a href="https://www.tohoku.ac.jp/japanese/2024/10/event20241009-01-hosp.html" class="uk-link text-primary hover:text-primary-focus underline">Clinical AI Symposium</a></em>, November 24, 2024, Online.                </li>
-                <li>
-<strong class="font-bold ">High-throughput laboratory evolution with machine learning reveals constraints for drug resistance evolution</strong><br><em class="font-medium "><a href="https://ithems.riken.jp/en/news/biology-seminar-mr-junichiro-iwasawa-february-18-2021" class="uk-link text-primary hover:text-primary-focus underline">RIKEN iTHEMS biology seminar</a></em>, February 18, 2021, Online.                </li>
-                <li>
-<strong class="font-bold ">Analyses of evolutionary constraints using microbial laboratory evolution and machine learning</strong><br>大腸菌進化実験と機械学習を用いた進化的拘束の解析<br><em class="font-medium "><a href="https://sites.google.com/view/ismstatphys/" class="uk-link text-primary hover:text-primary-focus underline">統計物理と統計科学のセミナー</a></em>, February 16, 2021, Online.                </li>
-                <li>
-<strong class="font-bold ">Investigation of evolutionary constraints through large scale laboratory evolution and data analysis</strong><br><em class="font-medium "><a href="http://chaos.c.u-tokyo.ac.jp/index.html" class="uk-link text-primary hover:text-primary-focus underline">Kaneko lab. seminar</a></em>, July 14, 2020, Online.                </li>
-              </ul>
-            </div>
-            <div class="uk-section mb-12">
-              <h3 id="international-talks" class="uk-h3 text-2xl font-semibold mb-4">International Conferences (Oral)</h3>
-              <ul class="list-disc pl-5 space-y-2">
-                <li>
-<strong class="font-bold ">Label-Efficient Multi-Task Segmentation using Contrastive Learning</strong><br><em class="font-medium "><a href="http://www.brainlesion-workshop.org/" class="uk-link text-primary hover:text-primary-focus underline">MICCAI BrainLes 2020 workshop</a></em>, October 4, 2020, Online.                </li>
-                <li>
-<strong class="font-bold ">Combining interpretable machine learning with high dimensional multi-omics data from laboratory evolution</strong><br><em class="font-medium "><a href="https://www2.aeplan.co.jp/icsb2019/index.html" class="uk-link text-primary hover:text-primary-focus underline">The 20th International Conference on Systems Biology</a></em>, November 1-5, 2019, Okinawa, Japan.                </li>
-              </ul>
-            </div>
-            <div class="uk-section mb-12">
-              <h3 id="international-posters" class="uk-h3 text-2xl font-semibold mb-4">International Conferences (Posters)</h3>
-              <ul class="list-disc pl-5 space-y-2">
-                <li>
-<strong class="font-bold ">Deciphering evolutionary constraints through high-dimensional data of E. coli laboratory evolution</strong><br><em class="font-medium "><a href="https://indico.math.cnrs.fr/category/389/" class="uk-link text-primary hover:text-primary-focus underline">Phylogeny and inference: from models to data and back</a></em>, February 1 - 6, 2021, Online.                </li>
-                <li>
-<strong class="font-bold ">Interplay of polarity and motion in swarming Janus particles</strong><br><em class="font-medium "><a href="https://apef2018.org/program" class="uk-link text-primary hover:text-primary-focus underline">International Conference on Advances in Physics of Emergent orders in Fluctuations 2018</a></em>, November 12 - 15, 2018, Tokyo, Japan.                </li>
-                <li>
-<strong class="font-bold ">Collective properties of artificial self-propelling particles fueled by an AC electric field</strong><br><em class="font-medium "><a href="https://microbes.sciencesconf.org/" class="uk-link text-primary hover:text-primary-focus underline">Physical Approaches to Understanding Microbial Life</a></em>, August 28 - September 6, 2018, Gif-sur-Yvette, France.                </li>
-                <li>
-<strong class="font-bold ">Collective Motion of Asymmetric Self-Propelling Particles under an AC Electric Field (Poster Award)</strong><br><em class="font-medium "><a href="http://sfs-dynamics.jp/sfs2017/" class="uk-link text-primary hover:text-primary-focus underline">International Symposium on Fluctuation and Structure out of Equibrium 2017</a></em>, November 20-23, 2017, Miyagi, Japan.                </li>
-                <li>
-<strong class="font-bold ">Properties of Directed Collective Motion of Asymmetric Self-Propelling Particles</strong><br><em class="font-medium "><a href="http://sfs-dynamics.jp/eng/kenkyukai/20161028/index.html" class="uk-link text-primary hover:text-primary-focus underline">Synergy of Fluctuation and Structure Symposium, Current and Future Perspectives in Active Matter</a></em>, October 28-29, 2016, The University of Tokyo, Tokyo, Japan.                </li>
-              </ul>
-            </div>
-            <div class="uk-section mb-12">
-              <h3 id="japanese-conferences" class="uk-h3 text-2xl font-semibold mb-4">Japanese Conferences (Oral)</h3>
-              <ul class="list-disc pl-5 space-y-2">
-                <li>
-<strong class="font-bold ">Inferring E. coli fitness landscapes through drug resistance time series</strong><br>大腸菌進化実験の薬剤耐性時系列を用いた適応度地形の推定<br><em class="font-medium "><a href="https://jps2021s.gakkai-web.net/data/html/program11.html" class="uk-link text-primary hover:text-primary-focus underline">The Physical Society of Japan 2021 Annual Meeting</a></em>, March 14, 2021, Online.                </li>
-                <li>
-<strong class="font-bold ">Long-range order in Janus particles fueled by an AC electric field: Algebraic correlations and anomalous fluctuations</strong><br><em class="font-medium "><a href="https://sites.google.com/view/activematter2021" class="uk-link text-primary hover:text-primary-focus underline">Active Matter Workshop 2021</a></em>, January 23, 2021, Online.                </li>
-                <li>
-<strong class="font-bold ">交流電場下での非対称自己駆動粒子集団の統計的性質</strong><br><em class="font-medium "><a href="http://www.rs.tus.ac.jp/jps2018tus/index.html" class="uk-link text-primary hover:text-primary-focus underline">The Physical Society of Japan 2018 Annual Meeting</a></em>, March 22-25 2018, Tokyo University of Science, Chiba, Japan.                </li>
-                <li>
-<strong class="font-bold ">Directed Collective Motion of Asymmetric Colloidal Particles under an AC electric field</strong><br><em class="font-medium "><a href="http://www.fukui.kyoto-u.ac.jp/users/tarama/workshop/activematter2018.html" class="uk-link text-primary hover:text-primary-focus underline">Active Matter Workshop 2018</a></em>, January 19 20, 2018, Kyoto University, Kyoto, Japan.                </li>
-                <li>
-<strong class="font-bold ">Statistical Properties of Collective Motion of Asymmetric Self-Propelling Particles</strong><br><em class="font-medium "><a href="http://www.fukui.kyoto-u.ac.jp/users/tarama/workshop/activematter2017.html" class="uk-link text-primary hover:text-primary-focus underline">Active Matter Workshop 2017</a></em>, January 20,21, 2017, Kyushu University, Fukuoka, Japan.                </li>
-              </ul>
-            </div>
-            <div class="uk-section mb-12">
-              <h3 id="outreach" class="uk-h3 text-2xl font-semibold mb-4">Outreach</h3>
-              <h4 class="uk-h4 text-xl font-semibold mb-4">Public Talks in Japanese</h4>
-              <ul class="list-disc pl-5 space-y-2">
-                <li>
-<strong class="font-bold ">「進化」は予測可能？</strong><br><em class="font-medium "><a href="https://ut-10min.github.io/kf70/talks.html" class="uk-link text-primary hover:text-primary-focus underline">『10分で伝えます！東大研究最前線』第70回東京大学駒場祭</a></em>, November 22-24, 2019.                </li>
-                <li>
-<strong class="font-bold ">迷子の最適戦略</strong><br><em class="font-medium "><a href="https://ut-10min.github.io/mf92/" class="uk-link text-primary hover:text-primary-focus underline">『10分で伝えます！東大研究最前線』第92回東京大学五月祭</a></em>, May 18, 19, 2019.                </li>
-                <li>
-<strong class="font-bold ">指紋とトポロジー</strong><br><em class="font-medium "><a href="https://ut-10min.github.io/kf69/talks.html" class="uk-link text-primary hover:text-primary-focus underline">『10分で伝えます！東大研究最前線』第69回東京大学駒場祭</a></em>, November 23-25, 2018.                </li>
-                <li>
-<strong class="font-bold ">大腸菌はサイコロを振るか 〜ギャンブル理論を通して見る生物学〜</strong><br><em class="font-medium "><a href="https://www.facebook.com/events/tokyo-womens-plaza-forum/%E7%AC%AC4%E5%9B%9E-%E5%A4%A7%E8%85%B8%E8%8F%8C%E3%81%AF%E3%82%B5%E3%82%A4%E3%82%B3%E3%83%AD%E3%82%92%E6%8C%AF%E3%82%8B%E3%81%8B-%E3%82%AE%E3%83%A3%E3%83%B3%E3%83%96%E3%83%AB%E7%90%86%E8%AB%96%E3%82%92%E9%80%9A%E3%81%97%E3%81%A6%E8%A6%8B%E3%82%8B%E7%94%9F%E7%89%A9%E5%AD%A6/244813266120454/" class="uk-link text-primary hover:text-primary-focus underline">CLASP</a></em>, August 25, 2018.                </li>
-                <li>
-<strong class="font-bold ">大腸菌はサイコロを振るか？</strong><br><em class="font-medium "><a href="https://ut-10min.github.io/mf91/talks.html" class="uk-link text-primary hover:text-primary-focus underline">『10分で伝えます！東大研究最前線』第91回東京大学五月祭</a></em>, May 19, 20, 2018.                </li>
-                <li>
-<strong class="font-bold ">15歳からの相対性理論 ～光速の世界を体験しよう～</strong><br><em class="font-medium "><a href="http://www.kojimachijh-dosokai.jp/dosokai_koushi4.html" class="uk-link text-primary hover:text-primary-focus underline">千代田区立麹町中学校</a></em>, September 12, 2015.                </li>
-                <li>
-<strong class="font-bold ">理科とは何か～アインシュタインから最先端の物理学まで～</strong><br><em class="font-medium "><a href="http://www.kojimachijh-dosokai.jp/dosokai_koushi3.html" class="uk-link text-primary hover:text-primary-focus underline">千代田区立麹町中学校</a></em>, November 2, 2013.                </li>
-              </ul>
-            </div>
-          </div>
+      <h1 class="page-title">Talks &amp; Presentations</h1>
+      <div class="jump-bar">
+<a href="#invited-talks">Invited Talks</a><span class="sep">·</span><a href="#international-talks">International (Oral)</a><span class="sep">·</span><a href="#international-posters">International (Posters)</a><span class="sep">·</span><a href="#japanese-conferences">Japanese Conferences</a><span class="sep">·</span><a href="#outreach">Outreach</a>      </div>
+      <section>
+        <div class="sec-head">
+          <h2 id="invited-talks">Invited Talks</h2>
         </div>
-      </div>
+        <ul class="talk-list">
+          <li>
+            <div class="talk-title">Finetuning Foundation Models for the Development and Application of Healthcare-Specific Models</div>
+            <div class="talk-jp">基盤モデルの finetuning による医療特化モデルの構築と応用</div>
+            <div class="talk-meta">
+<em><a href="https://www.isct.ac.jp/ja/news/g0s5tlw8z8vg">Science Tokyo設立記念 社会的課題解決型データサイエンス・AI研究推進体シンポジウム ～AI とデータサイエンスが拓く新時代の医療～</a></em>, March 24, 2025, Tokyo, Japan.            </div>
+          </li>
+          <li>
+            <div class="talk-title">Finetuning or RAG? Towards Building a Medical Domain-Specialized LLM</div>
+            <div class="talk-jp">Finetuning or RAG? 医療ドメイン特化 LLM 構築に向けて</div>
+            <div class="talk-meta">
+<em><a href="https://ibisml.org/ibisml055">55th meeting of IBISML</a></em>, December 20, 2024, Hokkaido, Japan.            </div>
+          </li>
+          <li>
+            <div class="talk-title">Latest Developments in Finetuning LLMs for Healthcare</div>
+            <div class="talk-jp">医療向けLLM-finetuningの最前線</div>
+            <div class="talk-meta">
+<em><a href="https://www.tohoku.ac.jp/japanese/2024/10/event20241009-01-hosp.html">Clinical AI Symposium</a></em>, November 24, 2024, Online.            </div>
+          </li>
+          <li>
+            <div class="talk-title">High-throughput laboratory evolution with machine learning reveals constraints for drug resistance evolution</div>
+            <div class="talk-meta">
+<em><a href="https://ithems.riken.jp/en/news/biology-seminar-mr-junichiro-iwasawa-february-18-2021">RIKEN iTHEMS biology seminar</a></em>, February 18, 2021, Online.            </div>
+          </li>
+          <li>
+            <div class="talk-title">Analyses of evolutionary constraints using microbial laboratory evolution and machine learning</div>
+            <div class="talk-jp">大腸菌進化実験と機械学習を用いた進化的拘束の解析</div>
+            <div class="talk-meta">
+<em><a href="https://sites.google.com/view/ismstatphys/">統計物理と統計科学のセミナー</a></em>, February 16, 2021, Online.            </div>
+          </li>
+          <li>
+            <div class="talk-title">Investigation of evolutionary constraints through large scale laboratory evolution and data analysis</div>
+            <div class="talk-meta">
+<em><a href="http://chaos.c.u-tokyo.ac.jp/index.html">Kaneko lab. seminar</a></em>, July 14, 2020, Online.            </div>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <div class="sec-head">
+          <h2 id="international-talks">International Conferences (Oral)</h2>
+        </div>
+        <ul class="talk-list">
+          <li>
+            <div class="talk-title">Label-Efficient Multi-Task Segmentation using Contrastive Learning</div>
+            <div class="talk-meta">
+<em><a href="http://www.brainlesion-workshop.org/">MICCAI BrainLes 2020 workshop</a></em>, October 4, 2020, Online.            </div>
+          </li>
+          <li>
+            <div class="talk-title">Combining interpretable machine learning with high dimensional multi-omics data from laboratory evolution</div>
+            <div class="talk-meta">
+<em><a href="https://www2.aeplan.co.jp/icsb2019/index.html">The 20th International Conference on Systems Biology</a></em>, November 1–5, 2019, Okinawa, Japan.            </div>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <div class="sec-head">
+          <h2 id="international-posters">International Conferences (Posters)</h2>
+        </div>
+        <ul class="talk-list">
+          <li>
+            <div class="talk-title">Deciphering evolutionary constraints through high-dimensional data of E. coli laboratory evolution</div>
+            <div class="talk-meta">
+<em><a href="https://indico.math.cnrs.fr/category/389/">Phylogeny and inference: from models to data and back</a></em>, February 1–6, 2021, Online.            </div>
+          </li>
+          <li>
+            <div class="talk-title">Interplay of polarity and motion in swarming Janus particles</div>
+            <div class="talk-meta">
+<em><a href="https://apef2018.org/program">International Conference on Advances in Physics of Emergent orders in Fluctuations 2018</a></em>, November 12–15, 2018, Tokyo, Japan.            </div>
+          </li>
+          <li>
+            <div class="talk-title">Collective properties of artificial self-propelling particles fueled by an AC electric field</div>
+            <div class="talk-meta">
+<em><a href="https://microbes.sciencesconf.org/">Physical Approaches to Understanding Microbial Life</a></em>, August 28 – September 6, 2018, Gif-sur-Yvette, France.            </div>
+          </li>
+          <li>
+            <div class="talk-title">Collective Motion of Asymmetric Self-Propelling Particles under an AC Electric Field (Poster Award)</div>
+            <div class="talk-meta">
+<em><a href="http://sfs-dynamics.jp/sfs2017/">International Symposium on Fluctuation and Structure out of Equilibrium 2017</a></em>, November 20–23, 2017, Miyagi, Japan.            </div>
+          </li>
+          <li>
+            <div class="talk-title">Properties of Directed Collective Motion of Asymmetric Self-Propelling Particles</div>
+            <div class="talk-meta">
+<em><a href="http://sfs-dynamics.jp/eng/kenkyukai/20161028/index.html">Synergy of Fluctuation and Structure Symposium, Current and Future Perspectives in Active Matter</a></em>, October 28–29, 2016, The University of Tokyo, Tokyo, Japan.            </div>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <div class="sec-head">
+          <h2 id="japanese-conferences">Japanese Conferences (Oral)</h2>
+        </div>
+        <ul class="talk-list">
+          <li>
+            <div class="talk-title">Inferring E. coli fitness landscapes through drug resistance time series</div>
+            <div class="talk-jp">大腸菌進化実験の薬剤耐性時系列を用いた適応度地形の推定</div>
+            <div class="talk-meta">
+<em><a href="https://jps2021s.gakkai-web.net/data/html/program11.html">The Physical Society of Japan 2021 Annual Meeting</a></em>, March 14, 2021, Online.            </div>
+          </li>
+          <li>
+            <div class="talk-title">Long-range order in Janus particles fueled by an AC electric field: Algebraic correlations and anomalous fluctuations</div>
+            <div class="talk-meta">
+<em><a href="https://sites.google.com/view/activematter2021">Active Matter Workshop 2021</a></em>, January 23, 2021, Online.            </div>
+          </li>
+          <li>
+            <div class="talk-title">交流電場下での非対称自己駆動粒子集団の統計的性質</div>
+            <div class="talk-meta">
+<em><a href="http://www.rs.tus.ac.jp/jps2018tus/index.html">The Physical Society of Japan 2018 Annual Meeting</a></em>, March 22–25, 2018, Tokyo University of Science, Chiba, Japan.            </div>
+          </li>
+          <li>
+            <div class="talk-title">Directed Collective Motion of Asymmetric Colloidal Particles under an AC electric field</div>
+            <div class="talk-meta">
+<em><a href="http://www.fukui.kyoto-u.ac.jp/users/tarama/workshop/activematter2018.html">Active Matter Workshop 2018</a></em>, January 19–20, 2018, Kyoto University, Kyoto, Japan.            </div>
+          </li>
+          <li>
+            <div class="talk-title">Statistical Properties of Collective Motion of Asymmetric Self-Propelling Particles</div>
+            <div class="talk-meta">
+<em><a href="http://www.fukui.kyoto-u.ac.jp/users/tarama/workshop/activematter2017.html">Active Matter Workshop 2017</a></em>, January 20–21, 2017, Kyushu University, Fukuoka, Japan.            </div>
+          </li>
+        </ul>
+      </section>
+      <section>
+        <div class="sec-head">
+          <h2 id="outreach">Outreach</h2>
+        </div>
+        <p class="sub-h">Public Talks in Japanese</p>
+        <ul class="talk-list">
+          <li>
+            <div class="talk-title">「進化」は予測可能？</div>
+            <div class="talk-meta">
+<em><a href="https://ut-10min.github.io/kf70/talks.html">『10分で伝えます！東大研究最前線』第70回東京大学駒場祭</a></em>, November 22–24, 2019.            </div>
+          </li>
+          <li>
+            <div class="talk-title">迷子の最適戦略</div>
+            <div class="talk-meta">
+<em><a href="https://ut-10min.github.io/mf92/">『10分で伝えます！東大研究最前線』第92回東京大学五月祭</a></em>, May 18–19, 2019.            </div>
+          </li>
+          <li>
+            <div class="talk-title">指紋とトポロジー</div>
+            <div class="talk-meta">
+<em><a href="https://ut-10min.github.io/kf69/talks.html">『10分で伝えます！東大研究最前線』第69回東京大学駒場祭</a></em>, November 23–25, 2018.            </div>
+          </li>
+          <li>
+            <div class="talk-title">大腸菌はサイコロを振るか 〜ギャンブル理論を通して見る生物学〜</div>
+            <div class="talk-meta">
+<em><a href="https://www.facebook.com/events/tokyo-womens-plaza-forum/%E7%AC%AC4%E5%9B%9E-%E5%A4%A7%E8%85%B8%E8%8F%8C%E3%81%AF%E3%82%B5%E3%82%A4%E3%82%B3%E3%83%AD%E3%82%92%E6%8C%AF%E3%82%8B%E3%81%8B-%E3%82%AE%E3%83%A3%E3%83%B3%E3%83%96%E3%83%AB%E7%90%86%E8%AB%96%E3%82%92%E9%80%9A%E3%81%97%E3%81%A6%E8%A6%8B%E3%82%8B%E7%94%9F%E7%89%A9%E5%AD%A6/244813266120454/">CLASP</a></em>, August 25, 2018.            </div>
+          </li>
+          <li>
+            <div class="talk-title">大腸菌はサイコロを振るか？</div>
+            <div class="talk-meta">
+<em><a href="https://ut-10min.github.io/mf91/talks.html">『10分で伝えます！東大研究最前線』第91回東京大学五月祭</a></em>, May 19–20, 2018.            </div>
+          </li>
+          <li>
+            <div class="talk-title">15歳からの相対性理論 ～光速の世界を体験しよう～</div>
+            <div class="talk-meta">
+<em><a href="http://www.kojimachijh-dosokai.jp/dosokai_koushi4.html">千代田区立麹町中学校</a></em>, September 12, 2015.            </div>
+          </li>
+          <li>
+            <div class="talk-title">理科とは何か～アインシュタインから最先端の物理学まで～</div>
+            <div class="talk-meta">
+<em><a href="http://www.kojimachijh-dosokai.jp/dosokai_koushi3.html">千代田区立麹町中学校</a></em>, November 2, 2013.            </div>
+          </li>
+        </ul>
+      </section>
+      <footer>
+<span>Junichiro Iwasawa · Tokyo, Japan</span><span><a href="/research">Research</a> · <a href="/talks">Talks</a> · <a href="/blog">Blog</a> · <a href="/blog_jp">ブログ</a></span>      </footer>
     </div>
   </body>
 </html>
