@@ -90,7 +90,7 @@ def open_models_section():
         Ul(
             Li(
                 Div(
-                    "Open Medical LLMs for the Japanese Medical Licensing Exam (JMLE)",
+                    "LLMs finetuned for Japanese medical domain",
                     cls="models-title",
                 ),
                 Div(

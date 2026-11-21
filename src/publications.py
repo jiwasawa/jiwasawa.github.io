@@ -337,12 +337,7 @@ def publications_section(standalone=False):
         ),
         P(
             Span(cls="swatch"),
-            "Highlighted papers represent major themes across medical AI, evolutionary biology, and active matter. Full record on ",
-            A(
-                "Google Scholar",
-                href="https://scholar.google.co.jp/citations?user=LampCPIAAAAJ&hl=en",
-            ),
-            ".",
+            "Highlighted papers.",
             cls="legend",
         ),
         Ol(*[publication_item(pub) for pub in PUBLICATIONS], cls="pub-list"),
