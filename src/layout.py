@@ -71,11 +71,12 @@ SITE_CSS = """
   /* Bio header */
   .bio {
     display: grid;
-    grid-template-columns: 1fr 196px;
+    grid-template-columns: minmax(0, 1fr) 196px;
     gap: 36px;
     align-items: start;
     margin-bottom: 42px;
   }
+  .bio > * { min-width: 0; }
   h1 {
     margin: 0 0 4px;
     font-size: 31px;
@@ -92,10 +93,14 @@ SITE_CSS = """
   }
   .bio p { margin: 0 0 13px; }
   .bio-links {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    row-gap: 4px;
     margin-top: 18px;
     font-size: 14.5px;
     color: #999999;
-    line-height: 1.8;
+    line-height: 1.7;
   }
   .bio-links a { white-space: nowrap; }
   .bio-links .sep { margin: 0 7px; color: #cccccc; }
@@ -205,12 +210,13 @@ SITE_CSS = """
   }
   .pub-item {
     display: grid;
-    grid-template-columns: 52px 1fr;
+    grid-template-columns: 52px minmax(0, 1fr);
     gap: 12px;
     padding: 11px 12px;
     margin: 0 -12px 4px;
     border-radius: 3px;
   }
+  .pub-item > * { min-width: 0; }
   .pub-item.highlight { background: #fdf9e7; }
   .pub-item.hidden { display: none; }
   .pub-year {
@@ -219,11 +225,12 @@ SITE_CSS = """
     font-variant-numeric: tabular-nums;
     padding-top: 1px;
   }
-  .pub-title { font-weight: 700; color: #111111; }
+  .pub-title { font-weight: 700; color: #111111; overflow-wrap: break-word; }
   .pub-authors {
     font-size: 14px;
     color: #444444;
     margin-top: 2px;
+    overflow-wrap: break-word;
   }
   .pub-authors u {
     text-decoration: underline;
@@ -234,6 +241,7 @@ SITE_CSS = """
     font-size: 14px;
     margin-top: 2px;
     color: #444444;
+    overflow-wrap: break-word;
   }
   .pub-venue em { color: #222222; }
   .pub-actions {
@@ -250,6 +258,7 @@ SITE_CSS = """
     font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, monospace;
     font-size: 12.5px;
   }
+  .model-actions a { overflow-wrap: anywhere; }
   .bib-btn {
     background: none;
     border: none;
@@ -266,6 +275,7 @@ SITE_CSS = """
   }
   .bib-box {
     display: none;
+    max-width: 100%;
     margin: 8px 0 2px;
     padding: 10px 58px 10px 12px;
     background: #f7f7f5;
@@ -276,6 +286,7 @@ SITE_CSS = """
     line-height: 1.5;
     color: #222222;
     white-space: pre-wrap;
+    overflow-wrap: anywhere;
     overflow-x: auto;
     position: relative;
   }
@@ -341,14 +352,19 @@ SITE_CSS = """
   .plain-list li {
     margin-bottom: 8px;
     font-size: 14.5px;
+    overflow-wrap: break-word;
   }
 
   /* Talks subpage */
   .jump-bar {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    row-gap: 4px;
     font-size: 13.5px;
     color: #888888;
     margin: -10px 0 28px;
-    line-height: 1.9;
+    line-height: 1.7;
   }
   .jump-bar .sep { margin: 0 7px; color: #cccccc; }
   .talk-list {
@@ -360,6 +376,7 @@ SITE_CSS = """
     padding: 9px 0;
     border-bottom: 1px solid #f0f0f0;
     font-size: 14.5px;
+    overflow-wrap: break-word;
   }
   .talk-list li:last-child { border-bottom: none; }
   .talk-title { font-weight: 700; color: #111111; }
@@ -388,12 +405,28 @@ SITE_CSS = """
   footer a:hover { color: #1772d0; }
 
   @media (max-width: 680px) {
-    .wrap { padding: 20px 16px 48px; }
-    .bio { grid-template-columns: 1fr; gap: 20px; }
+    .wrap { padding: 18px 16px 48px; }
+    .topnav {
+      justify-content: flex-start;
+      gap: 6px 12px;
+      font-size: 13px;
+      margin-bottom: 24px;
+    }
+    .topnav.with-brand {
+      gap: 8px 12px;
+      margin-bottom: 24px;
+    }
+    .topnav-links { gap: 6px 12px; }
+    .bio { grid-template-columns: minmax(0, 1fr); gap: 20px; margin-bottom: 34px; }
     .bio-photo-col { order: -1; }
     .portrait { width: 148px; height: 148px; margin: 0 auto; }
-    .pub-item { grid-template-columns: 1fr; gap: 2px; }
+    h1 { font-size: 27px; }
+    .bio-links { gap: 6px 14px; }
+    .bio-links .sep { display: none; }
+    .models-list li { padding: 10px 12px; margin: 0 -4px 6px; }
+    .pub-item { grid-template-columns: minmax(0, 1fr); gap: 2px; padding: 10px 12px; margin: 0 -4px 4px; }
     .pub-year { font-size: 12.5px; color: #777777; }
+    .bib-box { padding: 34px 10px 10px 10px; font-size: 11px; }
     .cv-table td { display: block; padding: 2px 0; border: none; }
     .cv-table tr { display: block; padding: 7px 0; border-bottom: 1px solid #f0f0f0; }
     .cv-period { width: auto; }
