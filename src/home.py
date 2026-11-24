@@ -42,7 +42,7 @@ def bio_header():
         ("Google Scholar", "https://scholar.google.co.jp/citations?user=LampCPIAAAAJ&hl=en"),
         ("GitHub", "https://github.com/jiwasawa"),
         ("researchmap", "https://researchmap.jp/jiwasawa?lang=en"),
-        ("LinkedIn", "https://www.linkedin.com/in/junichiro-iwasawa-875b37130/"),
+        ("LinkedIn", "https://www.linkedin.com/in/junichiro-juni-iwasawa-875b37130/"),
         ("X", "https://twitter.com/jiwasawa"),
     ]
     return Header(

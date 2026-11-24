@@ -41,7 +41,7 @@ def sidebar():
                 _social_link(
                     "linkedin",
                     "LinkedIn",
-                    "https://www.linkedin.com/in/junichiro-iwasawa-875b37130/",
+                    "https://www.linkedin.com/in/junichiro-juni-iwasawa-875b37130/",
                 ),
                 _social_link(
                     "graduation-cap",
