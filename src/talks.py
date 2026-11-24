@@ -3,13 +3,18 @@ from fasthtml.common import *
 from src.layout import page_shell
 
 
-def presentation_item(title, title_jp, venue, date, location="", venue_link=""):
+def presentation_item(title, title_jp, venue, date, location="", venue_link="", recording_link="", recording_label="recording & slides"):
     location_text = f", {location}" if location else ""
     venue_node = A(venue, href=venue_link) if venue_link else venue
     parts = [Div(title, cls="talk-title")]
     if title_jp:
         parts.append(Div(title_jp, cls="talk-jp"))
-    parts.append(Div(Em(venue_node), f", {date}{location_text}.", cls="talk-meta"))
+    meta_parts = [Em(venue_node), f", {date}{location_text}."]
+    if recording_link:
+        meta_parts.append(
+            Span(A(f"[{recording_label}]", href=recording_link), cls="pub-actions")
+        )
+    parts.append(Div(*meta_parts, cls="talk-meta"))
     return Li(*parts)
 
 
@@ -27,12 +32,29 @@ def presentations_page():
         H1("Talks & Presentations", cls="page-title"),
         _jump_links(
             [
+                ("Industry & Event Talks", "#industry-talks"),
                 ("Invited Talks", "#invited-talks"),
                 ("International (Oral)", "#international-talks"),
                 ("International (Posters)", "#international-posters"),
                 ("Japanese Conferences", "#japanese-conferences"),
                 ("Outreach", "#outreach"),
             ]
+        ),
+        Section(
+            Div(H2("Industry & Event Talks", id="industry-talks"), cls="sec-head"),
+            Ul(
+                presentation_item(
+                    "Building Specialized Models with Reinforcement Learning in Agent Environments: Latest Customization Techniques and Running Alongside General-Purpose Models",
+                    "エージェント環境 × 強化学習での特化モデル構築 : 最新のカスタマイズ手法と汎用モデルとの併用",
+                    "NVIDIA Agentic AI Day Japan 2026",
+                    "November 10, 2026",
+                    "Tokyo, Japan",
+                    venue_link="https://www.nvidia.com/en-us/on-demand/session/agenticaidayjapan2026-aajp2607/?playlistId=playList-d72f26d4-44e8-4fcb-8daf-eb99c4569119",
+                    recording_link="https://www.nvidia.com/en-us/on-demand/session/agenticaidayjapan2026-aajp2607/?playlistId=playList-d72f26d4-44e8-4fcb-8daf-eb99c4569119",
+                    recording_label="recording & slides (JP)",
+                ),
+                cls="talk-list",
+            ),
         ),
         Section(
             Div(H2("Invited Talks", id="invited-talks"), cls="sec-head"),
